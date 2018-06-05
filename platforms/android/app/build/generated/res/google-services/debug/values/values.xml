@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">882428881680-629f7m06bm6k2fmva0bhsu9ckp4v0ea2.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://control-diamante-1519145676088.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">882428881680</string>
+    <string name="google_api_key" translatable="false">AIzaSyBSrRXm0-C23DDQP3i8eR-NXYiJ5V_pLqo</string>
+    <string name="google_app_id" translatable="false">1:882428881680:android:1138f6b7d6dd2012</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBSrRXm0-C23DDQP3i8eR-NXYiJ5V_pLqo</string>
+    <string name="google_storage_bucket" translatable="false">control-diamante-1519145676088.appspot.com</string>
+    <string name="project_id" translatable="false">control-diamante-1519145676088</string>
+</resources>

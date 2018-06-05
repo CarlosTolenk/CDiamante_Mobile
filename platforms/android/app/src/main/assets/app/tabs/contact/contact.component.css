@@ -1,0 +1,24 @@
+.cardStyle {
+    background-color: white;
+    color:black;
+}
+
+.office{
+    color: red;
+    text-align: center;
+    margin-left: 27;    
+}
+
+.default-card-view{
+  font-size: 12;
+  text-align: left;
+}
+
+.font-awesome {
+    font-family: "FontAwesome";
+    font-size: 12;
+}
+
+Button label{
+    font-size: 12;
+}

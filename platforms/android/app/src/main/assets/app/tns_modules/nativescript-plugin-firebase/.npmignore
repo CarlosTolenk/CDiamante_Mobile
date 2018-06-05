@@ -1,0 +1,13 @@
+*.map
+*.ts
+!*.d.ts
+tsconfig.json
+references.d.ts
+platforms/android/libraryproject/
+platforms/ios/typings/
+platforms/ios_lib/
+platforms/android/typings/
+platforms/web
+platforms/ios/Podfile
+platforms/ios/build.xcconfig
+platforms/android/include.gradle

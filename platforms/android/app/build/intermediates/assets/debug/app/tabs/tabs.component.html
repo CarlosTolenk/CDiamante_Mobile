@@ -1,0 +1,27 @@
+<ActionBar class="action-bar">
+    <Label class="action-bar-title" text="CDiamante"></Label>
+</ActionBar>
+
+<!--
+The TabView component provides a simple way to navigate between different views by
+tapping on some of the tabs or by swiping between the views.
+Learn more about the TabView component in this documentation article:
+http://docs.nativescript.org/angular/code-samples/ui/tab-view
+-->
+<TabView  class="tab-view" (selectedIndexChanged)="onSelectedIndexChanged($event)" androidTabsPosition="bottom" tabTextColor="#DFE2E8" selectedTabTextColor="#FFFFFF" androidSelectedTabHighlightColor="#FFFFFF">
+    <StackLayout  *tabItem="{iconSource: getIconSource('whitehome')}">
+        <Home></Home>
+    </StackLayout> 
+
+    <StackLayout *tabItem="{iconSource: getIconSource('television')}">
+        <Canal></Canal>
+    </StackLayout>
+
+    <StackLayout *tabItem="{ iconSource: getIconSource('radio')}">
+        <Radio></Radio>
+    </StackLayout>
+
+    <StackLayout *tabItem="{ iconSource: getIconSource('chat')}">
+        <Contact></Contact>
+    </StackLayout>
+</TabView>

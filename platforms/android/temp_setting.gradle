@@ -1,0 +1,13 @@
+android {
+            defaultConfig {
+                applicationId = "cdiamante.controldiamante.com"
+
+                if (false) {
+                    minSdkVersion = false
+                }
+
+                if (false) {
+                    targetSdkVersion = false
+                }
+            }
+        }
