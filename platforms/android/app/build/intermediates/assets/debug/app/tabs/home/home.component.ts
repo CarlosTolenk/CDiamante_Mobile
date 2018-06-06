@@ -1,13 +1,19 @@
-import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
+//Component and Modules
+import { Component, ElementRef, OnInit, ViewChild, NgZone, DoCheck} from "@angular/core";
+import { Observable } from 'rxjs';
+
 import { Page } from "ui/page";
 import { Color } from "color";
 import { View } from "ui/core/view";
-//Plugin
+import { Planes } from "../../models/planes";
+import { firestore } from "nativescript-plugin-firebase";
 
+//Plugin
 import * as SocialShare from "nativescript-social-share";
 import * as ImageSource from "image-source";
 
-import firebase = require("nativescript-plugin-firebase");
+const firebase = require("nativescript-plugin-firebase/app");
+const firebaseWebApi = require("nativescript-plugin-firebase/app");
 
 
 // import { registerElement } from 'nativescript-angular/element-registry';
@@ -21,42 +27,73 @@ import { CardView } from 'nativescript-cardview';
     styleUrls: ['./home.component.css'],
     
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, DoCheck {
 
     public items:any;
     public image:string;
     @ViewChild("likes") container: ElementRef;
     public toogleHeart:string;
     public toogleLike:boolean;
-    public pressShared:string;   
+    public pressShared:string;
+    public planes: Array<Planes> = [];
+    public myPlanes$: Observable<Array<Planes>>;
 
-    constructor() {
+    constructor(private ngZone: NgZone) {
         // Use the constructor to inject services.
         this.toogleHeart = "font-awesome ico-dislike";
         this.toogleLike = false;
-        this.pressShared = "font-awesome ico-share";      
+        this.pressShared = "font-awesome ico-share";  
+        // this.planes = new Array();    
 
+   
     }
 
     ngOnInit(): void {
         // Use the "ngOnInit" handler to initialize data for the view.
-        firebase.init({
-            // Optionally pass in properties for database, authentication and cloud messaging,
-            // see their respective docs.
-          }).then(
-            instance => {
-              console.log("firebase.init done");
-            },
-            error => {
-              console.log(`firebase.init error: ${error}`);
-            }
-          );        
+        firebase.initializeApp({
+            persist: false
+          }).then(() => {
+            console.log("Firebase initialized");
+        });    
+
+        const planesCollection = firebase.firestore().collection("planes"); 
+        this.ngZone.run(() => {
+            this.planes = [];
+            planesCollection.get().then(querySnapshot => {
+                querySnapshot.forEach(doc => {
+                    // console.log(`${doc.id} => ${doc.data()}`);
+                    this.planes.push(doc.data());               
+                });
+            });
+        });       
+            
+        
+        this.myPlanes$ = Observable.create(subscriber => {
+            const docRef: firestore.DocumentReference = firebase.firestore().collection("planes");
+            docRef.onSnapshot((doc: firestore.DocumentSnapshot) => {
+              this.ngZone.run(() => {
+                this.planes = <any>doc.data();
+                subscriber.next(this.planes);
+                console.log(this.planes);
+              });
+            });
+          });    
+        
+      
+       
+       
+        
+    }
+
+    ngDoCheck() {
+     
     }
 
     like(){
         if(!this.toogleLike){
             this.toogleLike = true;
             this.toogleHeart = "font-awesome ico-like"
+            console.dir(this.planes);
         }else{
             this.toogleLike = false;
             this.toogleHeart = "font-awesome ico-dislike"

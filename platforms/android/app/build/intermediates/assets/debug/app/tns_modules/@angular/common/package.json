@@ -1,32 +1,28 @@
 {
-  "_args": [
-    [
-      "@angular/common@6.0.3",
-      "C:\\Users\\Carlos Tolentino\\Desktop\\CDiamante_Mobile\\CDiamante"
-    ]
-  ],
-  "_from": "@angular/common@6.0.3",
-  "_id": "@angular/common@6.0.3",
+  "_from": "@angular/common@6.0.4",
+  "_id": "@angular/common@6.0.4",
   "_inBundle": false,
-  "_integrity": "sha512-tqEYeEXoaw2kzSUfTrmC3ruJ87trS61SHayIf56f/jtEVn+4pbgJDTNvLSnB6QEaMTn7sX6QBroauMWmdTVSvA==",
+  "_integrity": "sha512-z2UE6a43u49omsqjzwdHhwD+wpCPauuD13FMkVQMLwzugKhNri0LjMk5I0I9xLz9OyXICm2B+wPAQN4d07savg==",
   "_location": "/@angular/common",
   "_phantomChildren": {},
   "_requested": {
     "type": "version",
     "registry": true,
-    "raw": "@angular/common@6.0.3",
+    "raw": "@angular/common@6.0.4",
     "name": "@angular/common",
     "escapedName": "@angular%2fcommon",
     "scope": "@angular",
-    "rawSpec": "6.0.3",
+    "rawSpec": "6.0.4",
     "saveSpec": null,
-    "fetchSpec": "6.0.3"
+    "fetchSpec": "6.0.4"
   },
   "_requiredBy": [
+    "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/@angular/common/-/common-6.0.3.tgz",
-  "_spec": "6.0.3",
+  "_resolved": "https://registry.npmjs.org/@angular/common/-/common-6.0.4.tgz",
+  "_shasum": "e3d194a1bb1e143044774488d610437a982179fa",
+  "_spec": "@angular/common@6.0.4",
   "_where": "C:\\Users\\Carlos Tolentino\\Desktop\\CDiamante_Mobile\\CDiamante",
   "author": {
     "name": "angular"
@@ -34,9 +30,11 @@
   "bugs": {
     "url": "https://github.com/angular/angular/issues"
   },
+  "bundleDependencies": false,
   "dependencies": {
     "tslib": "^1.9.0"
   },
+  "deprecated": false,
   "description": "Angular - commonly needed directives and services",
   "es2015": "./fesm2015/common.js",
   "esm2015": "./esm2015/common.js",
@@ -73,7 +71,7 @@
   },
   "peerDependencies": {
     "rxjs": "^6.0.0",
-    "@angular/core": "6.0.3"
+    "@angular/core": "6.0.4"
   },
   "repository": {
     "type": "git",
@@ -81,5 +79,5 @@
   },
   "sideEffects": false,
   "typings": "./common.d.ts",
-  "version": "6.0.3"
+  "version": "6.0.4"
 }
