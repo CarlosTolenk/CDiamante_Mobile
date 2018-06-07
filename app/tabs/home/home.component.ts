@@ -20,6 +20,10 @@ const firebaseWebApi = require("nativescript-plugin-firebase/app");
 import { CardView } from 'nativescript-cardview';
 // registerElement('CardView', () => CardView);
 
+
+
+
+
 @Component({
     selector: "Home",
     moduleId: module.id,
@@ -35,15 +39,16 @@ export class HomeComponent implements OnInit, DoCheck {
     public toogleHeart:string;
     public toogleLike:boolean;
     public pressShared:string;
-    public planes: Array<Planes> = [];
-    public myPlanes$: Observable<Array<any>>;
+    public planes: Array<any> = [];
+    public changePlanes: Array<any> = [];
+
 
     constructor(private ngZone: NgZone) {
         // Use the constructor to inject services.
         this.toogleHeart = "font-awesome ico-dislike";
         this.toogleLike = false;
         this.pressShared = "font-awesome ico-share";  
-        // this.planes = new Array();    
+        
 
    
     }
@@ -56,50 +61,64 @@ export class HomeComponent implements OnInit, DoCheck {
             console.log("Firebase initialized");
         });    
 
+         
         const planesCollection = firebase.firestore().collection("planes"); 
         this.ngZone.run(() => {
             this.planes = [];
             planesCollection.get().then(querySnapshot => {
                 querySnapshot.forEach(doc => {
                     // console.log(`${doc.id} => ${doc.data()}`);
-                    this.planes.push(doc.data());               
+                    this.planes.push(doc.data());  
+                    // console.dir(this.planes);             
                 });
             });
-        });       
+        }); 
+        
+        // this.firestoreDocumentObservable(); 
+    }
+
+        ngDoCheck(): void{
             
+            this.firestoreDocumentObservable(); 
+         
         
-        
-        
-      
-       
-       
-        
-    }
+        }
 
-    firestoreDocumentObservable(): void {
-        this.myPlanes$ = Observable.create(subscriber => {
-            const colRef: firestore.CollectionReference = firebase.firestore().collection("planes");
-            colRef.onSnapshot((snapshot: firestore.QuerySnapshot) => {
-              this.ngZone.run(() => {
+    firestoreDocumentObservable(): void {    
+        const changePlanesCollection = firebase.firestore().collection("planes");
+        this.ngZone.run(()=>{
+            const unsubscribe = changePlanesCollection.onSnapshot((snapshot: firestore.QuerySnapshot) => {
+                this.changePlanes = [];
                 this.planes = [];
-                console.log("Mierda");
-                snapshot.forEach(docSnap => this.planes.push(<Planes>docSnap.data()));
-                subscriber.next(this.planes);
+                snapshot.forEach(change => {
+                  // console.log(change.data());
+                  this.changePlanes.push(change.data());
+                
+                });           
+      
+                  for ( var i = 0; i<this.changePlanes.length;i++){ 
+                      console.log(i);        
+                      this.planes[i] = this.changePlanes[i];
+                      console.log(this.planes[i]);
+                  }
+              
               });
-            });
-          });
+        });
+       
+       
+       
     }
 
-    ngDoCheck() {
-        
-        
-    }
+ 
+
+
+  
 
     like(){
         if(!this.toogleLike){
             this.toogleLike = true;
             this.toogleHeart = "font-awesome ico-like"
-            this.firestoreDocumentObservable();
+          
         }else{
             this.toogleLike = false;
             this.toogleHeart = "font-awesome ico-dislike"

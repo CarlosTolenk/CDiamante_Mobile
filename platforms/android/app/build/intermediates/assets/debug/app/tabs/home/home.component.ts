@@ -20,6 +20,11 @@ const firebaseWebApi = require("nativescript-plugin-firebase/app");
 import { CardView } from 'nativescript-cardview';
 // registerElement('CardView', () => CardView);
 
+import { registerElement } from "nativescript-angular/element-registry";
+registerElement("PullToRefresh", () => require("nativescript-pulltorefresh").PullToRefresh);
+
+
+
 @Component({
     selector: "Home",
     moduleId: module.id,
@@ -36,7 +41,7 @@ export class HomeComponent implements OnInit, DoCheck {
     public toogleLike:boolean;
     public pressShared:string;
     public planes: Array<Planes> = [];
-    public myPlanes$: Observable<Array<Planes>>;
+    public myPlanes$: Observable<Array<any>>;
 
     constructor(private ngZone: NgZone) {
         // Use the constructor to inject services.
@@ -68,16 +73,7 @@ export class HomeComponent implements OnInit, DoCheck {
         });       
             
         
-        this.myPlanes$ = Observable.create(subscriber => {
-            const docRef: firestore.DocumentReference = firebase.firestore().collection("planes");
-            docRef.onSnapshot((doc: firestore.DocumentSnapshot) => {
-              this.ngZone.run(() => {
-                this.planes = <any>doc.data();
-                subscriber.next(this.planes);
-                console.log(this.planes);
-              });
-            });
-          });    
+        
         
       
        
@@ -85,15 +81,38 @@ export class HomeComponent implements OnInit, DoCheck {
         
     }
 
-    ngDoCheck() {
-     
+    firestoreDocumentObservable(): void {
+        this.myPlanes$ = Observable.create(subscriber => {
+            const colRef: firestore.CollectionReference = firebase.firestore().collection("planes");
+            colRef.onSnapshot((snapshot: firestore.QuerySnapshot) => {
+              this.ngZone.run(() => {
+                this.planes = [];
+                console.log("Mierda");
+                snapshot.forEach(docSnap => this.planes.push(<Planes>docSnap.data()));
+                subscriber.next(this.planes);
+              });
+            });
+          });
     }
+
+    ngDoCheck() {
+        
+        
+    }
+
+
+    refreshList(args) {
+        var pullRefresh = args.object;
+        setTimeout(function () {
+           pullRefresh.refreshing = false;
+        }, 1000);
+   }
 
     like(){
         if(!this.toogleLike){
             this.toogleLike = true;
             this.toogleHeart = "font-awesome ico-like"
-            console.dir(this.planes);
+            this.firestoreDocumentObservable();
         }else{
             this.toogleLike = false;
             this.toogleHeart = "font-awesome ico-dislike"

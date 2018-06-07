@@ -118,6 +118,8 @@ C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\a
 C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\assets\app\tns_modules\nativescript-plugin-firebase\scripts\entitlements-after-prepare.js
 C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\assets\app\tns_modules\nativescript-plugin-firebase\scripts\entitlements-before-prepare.js
 C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\assets\app\tns_modules\nativescript-plugin-firebase\scripts\postinstall.js
+C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\assets\app\tns_modules\nativescript-pulltorefresh\pulltorefresh-common.js
+C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\assets\app\tns_modules\nativescript-pulltorefresh\pulltorefresh.js
 C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\assets\app\tns_modules\nativescript-social-share\social-share.js
 C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\assets\app\tns_modules\tns-core-modules\application\application-common.js
 C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\assets\app\tns_modules\tns-core-modules\application\application.js

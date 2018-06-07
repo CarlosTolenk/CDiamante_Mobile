@@ -12,6 +12,7 @@
     "nativescript-cardview": true,
     "nativescript-phone": true,
     "nativescript-plugin-firebase": true,
+    "nativescript-pulltorefresh": true,
     "nativescript-social-share": true,
     "nativescript-theme-core": true,
     "reflect-metadata": true,
