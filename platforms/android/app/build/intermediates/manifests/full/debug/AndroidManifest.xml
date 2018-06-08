@@ -33,13 +33,7 @@
         android:name="cdiamante.controldiamante.com.permission.C2D_MESSAGE"
         android:protectionLevel="signature" />
 
-    <uses-permission android:name="cdiamante.controldiamante.com.permission.C2D_MESSAGE" /> <!-- for ML Kit -->
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.FLASHLIGHT" />
-
-    <uses-feature
-        android:name="android.hardware.camera"
-        android:required="false" />
+    <uses-permission android:name="cdiamante.controldiamante.com.permission.C2D_MESSAGE" />
 
     <application
         android:name="com.tns.NativeScriptApplication"

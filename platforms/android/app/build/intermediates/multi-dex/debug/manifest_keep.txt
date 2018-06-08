@@ -1,3 +1,3 @@
-# Referenced at C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\build\intermediates\manifests\full\debug\AndroidManifest.xml:44
+# Referenced at C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\build\intermediates\manifests\full\debug\AndroidManifest.xml:38
 -keep class com.tns.NativeScriptApplication { <init>(...); }
 

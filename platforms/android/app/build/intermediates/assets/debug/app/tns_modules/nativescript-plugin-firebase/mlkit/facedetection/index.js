@@ -8,7 +8,11 @@ var MLKitFaceDetection = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     MLKitFaceDetection.prototype.createDetector = function () {
-        return getFaceDetector();
+        return getFaceDetector({
+            detectionMode: this.detectionMode,
+            enableFaceTracking: this.enableFaceTracking,
+            minimumFaceSize: this.minimumFaceSize
+        });
     };
     MLKitFaceDetection.prototype.createSuccessListener = function () {
         var _this = this;
@@ -28,7 +32,8 @@ var MLKitFaceDetection = /** @class */ (function (_super) {
                     result.faces.push({
                         smilingProbability: face.getSmilingProbability() !== com.google.firebase.ml.vision.face.FirebaseVisionFace.UNCOMPUTED_PROBABILITY ? face.getSmilingProbability() : undefined,
                         leftEyeOpenProbability: face.getLeftEyeOpenProbability() !== com.google.firebase.ml.vision.face.FirebaseVisionFace.UNCOMPUTED_PROBABILITY ? face.getLeftEyeOpenProbability() : undefined,
-                        rightEyeOpenProbability: face.getRightEyeOpenProbability() !== com.google.firebase.ml.vision.face.FirebaseVisionFace.UNCOMPUTED_PROBABILITY ? face.getRightEyeOpenProbability() : undefined
+                        rightEyeOpenProbability: face.getRightEyeOpenProbability() !== com.google.firebase.ml.vision.face.FirebaseVisionFace.UNCOMPUTED_PROBABILITY ? face.getRightEyeOpenProbability() : undefined,
+                        trackingId: face.getTrackingId() !== com.google.firebase.ml.vision.face.FirebaseVisionFace.INVALID_ID ? face.getTrackingId() : undefined
                     });
                 }
                 _this.notify({
@@ -42,20 +47,20 @@ var MLKitFaceDetection = /** @class */ (function (_super) {
     return MLKitFaceDetection;
 }(facedetection_common_1.MLKitFaceDetection));
 exports.MLKitFaceDetection = MLKitFaceDetection;
-function getFaceDetector() {
+function getFaceDetector(options) {
     var faceDetectorOptions = new com.google.firebase.ml.vision.face.FirebaseVisionFaceDetectorOptions.Builder()
-        .setModeType(com.google.firebase.ml.vision.face.FirebaseVisionFaceDetectorOptions.ACCURATE_MODE)
-        .setLandmarkType(com.google.firebase.ml.vision.face.FirebaseVisionFaceDetectorOptions.ALL_LANDMARKS)
-        .setClassificationType(com.google.firebase.ml.vision.face.FirebaseVisionFaceDetectorOptions.ALL_CLASSIFICATIONS)
-        .setMinFaceSize(0.15)
-        .setTrackingEnabled(false)
+        .setModeType(options.detectionMode === "accurate" ? com.google.firebase.ml.vision.face.FirebaseVisionFaceDetectorOptions.ACCURATE_MODE : com.google.firebase.ml.vision.face.FirebaseVisionFaceDetectorOptions.FAST_MODE)
+        .setLandmarkType(com.google.firebase.ml.vision.face.FirebaseVisionFaceDetectorOptions.ALL_LANDMARKS) // TODO make configurable
+        .setClassificationType(com.google.firebase.ml.vision.face.FirebaseVisionFaceDetectorOptions.ALL_CLASSIFICATIONS) // TODO make configurable
+        .setMinFaceSize(options.minimumFaceSize)
+        .setTrackingEnabled(options.enableFaceTracking === true)
         .build();
     return com.google.firebase.ml.vision.FirebaseVision.getInstance().getVisionFaceDetector(faceDetectorOptions);
 }
 function detectFacesOnDevice(options) {
     return new Promise(function (resolve, reject) {
         try {
-            var firebaseVisionFaceDetector_1 = getFaceDetector();
+            var firebaseVisionFaceDetector_1 = getFaceDetector(options);
             var onSuccessListener = new com.google.android.gms.tasks.OnSuccessListener({
                 onSuccess: function (faces) {
                     var result = {
@@ -67,7 +72,8 @@ function detectFacesOnDevice(options) {
                         result.faces.push({
                             smilingProbability: face.getSmilingProbability() !== com.google.firebase.ml.vision.face.FirebaseVisionFace.UNCOMPUTED_PROBABILITY ? face.getSmilingProbability() : undefined,
                             leftEyeOpenProbability: face.getLeftEyeOpenProbability() !== com.google.firebase.ml.vision.face.FirebaseVisionFace.UNCOMPUTED_PROBABILITY ? face.getLeftEyeOpenProbability() : undefined,
-                            rightEyeOpenProbability: face.getRightEyeOpenProbability() !== com.google.firebase.ml.vision.face.FirebaseVisionFace.UNCOMPUTED_PROBABILITY ? face.getRightEyeOpenProbability() : undefined
+                            rightEyeOpenProbability: face.getRightEyeOpenProbability() !== com.google.firebase.ml.vision.face.FirebaseVisionFace.UNCOMPUTED_PROBABILITY ? face.getRightEyeOpenProbability() : undefined,
+                            trackingId: face.getTrackingId() !== com.google.firebase.ml.vision.face.FirebaseVisionFace.INVALID_ID ? face.getTrackingId() : undefined
                         });
                     }
                     resolve(result);

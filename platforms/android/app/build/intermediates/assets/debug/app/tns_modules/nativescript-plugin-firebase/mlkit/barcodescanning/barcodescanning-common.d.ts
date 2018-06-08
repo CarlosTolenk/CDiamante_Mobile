@@ -16,12 +16,10 @@ export declare enum BarcodeFormat {
     AZTEC = 4096,
 }
 export declare const formatsProperty: any;
-export declare const preferFrontCameraProperty: Property<MLKitBarcodeScanner, boolean>;
 export declare const beepOnScanProperty: Property<MLKitBarcodeScanner, boolean>;
 export declare const reportDuplicatesProperty: Property<MLKitBarcodeScanner, boolean>;
 export declare abstract class MLKitBarcodeScanner extends MLKitCameraView {
     protected formats: string;
-    protected preferFrontCamera: boolean;
     protected beepOnScan: boolean;
     protected reportDuplicates: boolean;
 }

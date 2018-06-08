@@ -5,6 +5,7 @@ import { CanalComponent } from "./canal/canal.component";
 import { HomeComponent } from "./home/home.component";
 import { RadioComponent } from "./radio/radio.component";
 import { ContactComponent } from "./contact/contact.component";
+import { ProductoComponent } from "./producto/producto.component"
 import { TabsRoutingModule } from "./tabs-routing.module";
 import { TabsComponent } from "./tabs.component";
 
@@ -18,7 +19,8 @@ import { TabsComponent } from "./tabs.component";
         HomeComponent,
         CanalComponent,
         RadioComponent,
-        ContactComponent
+        ContactComponent,
+        ProductoComponent
     ],
     schemas: [
         NO_ERRORS_SCHEMA

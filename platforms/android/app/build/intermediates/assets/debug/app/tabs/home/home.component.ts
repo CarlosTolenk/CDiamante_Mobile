@@ -1,6 +1,8 @@
 //Component and Modules
 import { Component, ElementRef, OnInit, ViewChild, NgZone, DoCheck} from "@angular/core";
 import { Observable } from 'rxjs';
+import { RouterExtensions } from "nativescript-angular/router";
+
 
 import { Page } from "ui/page";
 import { Color } from "color";
@@ -20,8 +22,7 @@ const firebaseWebApi = require("nativescript-plugin-firebase/app");
 import { CardView } from 'nativescript-cardview';
 // registerElement('CardView', () => CardView);
 
-import { registerElement } from "nativescript-angular/element-registry";
-registerElement("PullToRefresh", () => require("nativescript-pulltorefresh").PullToRefresh);
+
 
 
 
@@ -40,15 +41,18 @@ export class HomeComponent implements OnInit, DoCheck {
     public toogleHeart:string;
     public toogleLike:boolean;
     public pressShared:string;
-    public planes: Array<Planes> = [];
-    public myPlanes$: Observable<Array<any>>;
+    public planes: Array<any> = [];
+    public changePlanes: Array<any> = [];
 
-    constructor(private ngZone: NgZone) {
+
+    constructor(
+        private ngZone: NgZone,
+        private router: RouterExtensions
+     ){
         // Use the constructor to inject services.
         this.toogleHeart = "font-awesome ico-dislike";
         this.toogleLike = false;
-        this.pressShared = "font-awesome ico-share";  
-        // this.planes = new Array();    
+        this.pressShared = "font-awesome ico-share";         
 
    
     }
@@ -61,58 +65,70 @@ export class HomeComponent implements OnInit, DoCheck {
             console.log("Firebase initialized");
         });    
 
+         
         const planesCollection = firebase.firestore().collection("planes"); 
         this.ngZone.run(() => {
             this.planes = [];
             planesCollection.get().then(querySnapshot => {
                 querySnapshot.forEach(doc => {
                     // console.log(`${doc.id} => ${doc.data()}`);
-                    this.planes.push(doc.data());               
+                    this.planes.push(doc.data());  
+                    // console.dir(this.planes);             
                 });
             });
-        });       
-            
+        }); 
         
-        
-        
-      
-       
-       
-        
+        // this.firestoreDocumentObservable(); 
     }
 
-    firestoreDocumentObservable(): void {
-        this.myPlanes$ = Observable.create(subscriber => {
-            const colRef: firestore.CollectionReference = firebase.firestore().collection("planes");
-            colRef.onSnapshot((snapshot: firestore.QuerySnapshot) => {
-              this.ngZone.run(() => {
+        ngDoCheck(): void{            
+            // this.firestoreDocumentObservable();         
+        }
+
+    firestoreDocumentObservable(): void {    
+        const changePlanesCollection = firebase.firestore().collection("planes");
+        this.ngZone.run(()=>{
+            const unsubscribe = changePlanesCollection.onSnapshot((snapshot: firestore.QuerySnapshot) => {
+                this.changePlanes = [];
                 this.planes = [];
-                console.log("Mierda");
-                snapshot.forEach(docSnap => this.planes.push(<Planes>docSnap.data()));
-                subscriber.next(this.planes);
+                snapshot.forEach(change => {
+                  // console.log(change.data());
+                  this.changePlanes.push(change.data());
+                
+                });           
+      
+                  for ( var i = 0; i<this.changePlanes.length;i++){ 
+                      console.log(i);        
+                      this.planes[i] = this.changePlanes[i];
+                      console.log(this.planes[i]);
+                  }
+              
               });
-            });
-          });
+        });       
+       
     }
 
-    ngDoCheck() {
-        
-        
+    itemNext(){
+        console.log("Ir a item");
+        this.router.navigate(["radio"], {
+            transition: {
+                name: "flip",
+                duration: 2000,
+                curve: "linear"
+            }
+        });
     }
 
+ 
 
-    refreshList(args) {
-        var pullRefresh = args.object;
-        setTimeout(function () {
-           pullRefresh.refreshing = false;
-        }, 1000);
-   }
+
+  
 
     like(){
         if(!this.toogleLike){
             this.toogleLike = true;
             this.toogleHeart = "font-awesome ico-like"
-            this.firestoreDocumentObservable();
+          
         }else{
             this.toogleLike = false;
             this.toogleHeart = "font-awesome ico-dislike"

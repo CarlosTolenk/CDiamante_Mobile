@@ -4,7 +4,7 @@
             "outputFile": "C:\\Users\\Carlos Tolentino\\Desktop\\CDiamante_Mobile\\CDiamante\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v22\\values-v22.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Carlos Tolentino\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\ad8547396b63f5246cb72d5694adffee\\res\\values-v22\\values-v22.xml",
+                    "source": "C:\\Users\\Carlos Tolentino\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\7e4de3a6f9201cdfd2ab2d1bf9758b1f\\res\\values-v22\\values-v22.xml",
                     "from": {
                         "startLines": "2,3,4,9",
                         "startColumns": "4,4,4,4",

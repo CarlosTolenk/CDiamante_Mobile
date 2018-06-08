@@ -1,9 +1,18 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var dialogs_1 = require("tns-core-modules/ui/dialogs");
+var application_settings_1 = require("tns-core-modules/application-settings");
+var firebase_1 = require("./firebase");
 var analytics = require("./analytics/analytics");
 var mlkit = require("./mlkit");
-var applicationSettings = require("tns-core-modules/application-settings");
+// note that this implementation is overridden for iOS
+var FieldValue = /** @class */ (function () {
+    function FieldValue() {
+        this.serverTimestamp = function () { return firebase_1.FIRESTORE_SERVER_TS; };
+    }
+    return FieldValue;
+}());
+exports.FieldValue = FieldValue;
 exports.firebase = {
     initialized: false,
     instance: null,
@@ -14,7 +23,9 @@ exports.firebase = {
     _dynamicLinkCallback: null,
     analytics: analytics,
     mlkit: mlkit,
-    firestore: {},
+    firestore: {
+        FieldValue: FieldValue
+    },
     invites: {
         MATCH_TYPE: {
             WEAK: 0,
@@ -106,10 +117,10 @@ exports.firebase = {
         });
     },
     rememberEmailForEmailLinkLogin: function (email) {
-        applicationSettings.setString("FirebasePlugin.EmailLinkLogin", email);
+        application_settings_1.setString("FirebasePlugin.EmailLinkLogin", email);
     },
     getRememberedEmailForEmailLinkLogin: function () {
-        return applicationSettings.getString("FirebasePlugin.EmailLinkLogin");
+        return application_settings_1.getString("FirebasePlugin.EmailLinkLogin");
     },
     strongTypeify: function (value) {
         if (value === "true") {

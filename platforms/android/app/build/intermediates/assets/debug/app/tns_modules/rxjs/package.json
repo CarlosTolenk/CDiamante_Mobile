@@ -1,4 +1,10 @@
 {
+  "_args": [
+    [
+      "rxjs@6.2.0",
+      "C:\\Users\\Carlos Tolentino\\Desktop\\CDiamante_Mobile\\CDiamante"
+    ]
+  ],
   "_from": "rxjs@6.2.0",
   "_id": "rxjs@6.2.0",
   "_inBundle": false,
@@ -16,14 +22,12 @@
     "fetchSpec": "6.2.0"
   },
   "_requiredBy": [
-    "#USER",
     "/",
     "/@angular-devkit/core",
     "/listr"
   ],
   "_resolved": "https://registry.npmjs.org/rxjs/-/rxjs-6.2.0.tgz",
-  "_shasum": "e024d0e180b72756a83c2aaea8f25423751ba978",
-  "_spec": "rxjs@6.2.0",
+  "_spec": "6.2.0",
   "_where": "C:\\Users\\Carlos Tolentino\\Desktop\\CDiamante_Mobile\\CDiamante",
   "author": {
     "name": "Ben Lesh",
@@ -32,7 +36,6 @@
   "bugs": {
     "url": "https://github.com/ReactiveX/RxJS/issues"
   },
-  "bundleDependencies": false,
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
@@ -67,7 +70,6 @@
   "dependencies": {
     "tslib": "^1.9.0"
   },
-  "deprecated": false,
   "description": "Reactive Extensions for modern JavaScript",
   "devDependencies": {
     "@angular-devkit/build-optimizer": "0.4.6",

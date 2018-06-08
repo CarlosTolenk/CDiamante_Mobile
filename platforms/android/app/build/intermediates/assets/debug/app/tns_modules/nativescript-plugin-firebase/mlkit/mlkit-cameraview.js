@@ -20,12 +20,26 @@ var MLKitCameraView = /** @class */ (function (_super) {
     }
     MLKitCameraView.prototype.disposeNativeView = function () {
         _super.prototype.disposeNativeView.call(this);
+        this.surfaceView = null;
+        if (this.camera != null) {
+            this.camera.stopPreview();
+            this.camera.setPreviewCallbackWithBuffer(null);
+            try {
+                this.camera.setPreviewDisplay(null);
+            }
+            catch (e) {
+                console.log("Error cleaning up the ML Kit camera (you can probably ignore this): " + e);
+            }
+            this.camera.release();
+            this.camera = null;
+        }
+        this.bytesToByteBuffer.clear();
         if (this.detector) {
             this.detector.close();
             this.detector = undefined;
         }
-        this.bytesToByteBuffer = new Map();
-        this.surfaceView = null;
+        this.lastVisionImage = null;
+        this.pendingFrameData = null;
     };
     MLKitCameraView.prototype.createNativeView = function () {
         var _this = this;
@@ -79,21 +93,21 @@ var MLKitCameraView = /** @class */ (function (_super) {
                     break;
                 }
             }
-            var camera = android.hardware.Camera.open(requestedCameraId);
-            var sizePair = _this.selectSizePair(camera, 800, 600); // TODO based on wrapping frame
+            _this.camera = android.hardware.Camera.open(requestedCameraId);
+            var sizePair = _this.selectSizePair(_this.camera, 800, 600); // TODO based on wrapping frame
             if (!sizePair) {
                 console.log("Could not find suitable preview size.");
                 return;
             }
             var pictureSize = sizePair.pictureSize;
             var previewSize = sizePair.previewSize;
-            var parameters = camera.getParameters();
+            var parameters = _this.camera.getParameters();
             if (pictureSize) {
                 parameters.setPictureSize(pictureSize.width, pictureSize.height);
             }
             parameters.setPreviewSize(previewSize.width, previewSize.height);
             parameters.setPreviewFormat(android.graphics.ImageFormat.NV21);
-            _this.setRotation(camera, parameters, requestedCameraId);
+            _this.setRotation(_this.camera, parameters, requestedCameraId);
             if (parameters.getSupportedFocusModes().contains(android.hardware.Camera.Parameters.FOCUS_MODE_CONTINUOUS_VIDEO)) {
                 parameters.setFocusMode(android.hardware.Camera.Parameters.FOCUS_MODE_CONTINUOUS_VIDEO);
                 console.log("Camera auto focus is supported.");
@@ -102,7 +116,7 @@ var MLKitCameraView = /** @class */ (function (_super) {
                 console.log("Camera auto focus is not supported on this device.");
             }
             // TODO this setter seems odd, but it's part of the example: https://github.com/firebase/quickstart-android/blob/0f4c86877fc5f771cac95797dffa8bd026dd9dc7/mlkit/app/src/main/java/com/google/firebase/samples/apps/mlkit/CameraSource.java#L312
-            camera.setParameters(parameters);
+            _this.camera.setParameters(parameters);
             _this.detector = _this.createDetector();
             var onSuccessListener = _this.createSuccessListener();
             var onFailureListener = _this.createFailureListener();
@@ -113,7 +127,7 @@ var MLKitCameraView = /** @class */ (function (_super) {
                 .setRotation(_this.rotation)
                 .build();
             var throttle = 0;
-            camera.setPreviewCallbackWithBuffer(new android.hardware.Camera.PreviewCallback({
+            _this.camera.setPreviewCallbackWithBuffer(new android.hardware.Camera.PreviewCallback({
                 onPreviewFrame: function (byteArray, camera) {
                     if (_this.pendingFrameData !== null) {
                         camera.addCallbackBuffer(_this.pendingFrameData.array());
@@ -136,12 +150,12 @@ var MLKitCameraView = /** @class */ (function (_super) {
                         .addOnFailureListener(onFailureListener);
                 }
             }));
-            camera.addCallbackBuffer(_this.createPreviewBuffer(previewSize));
-            camera.addCallbackBuffer(_this.createPreviewBuffer(previewSize));
-            camera.addCallbackBuffer(_this.createPreviewBuffer(previewSize));
-            camera.addCallbackBuffer(_this.createPreviewBuffer(previewSize));
-            camera.setPreviewDisplay(surfaceHolder);
-            camera.startPreview();
+            _this.camera.addCallbackBuffer(_this.createPreviewBuffer(previewSize));
+            _this.camera.addCallbackBuffer(_this.createPreviewBuffer(previewSize));
+            _this.camera.addCallbackBuffer(_this.createPreviewBuffer(previewSize));
+            _this.camera.addCallbackBuffer(_this.createPreviewBuffer(previewSize));
+            _this.camera.setPreviewDisplay(surfaceHolder);
+            _this.camera.startPreview();
         }, 500); // TODO 500 works fine on my device, but would be wise to explore the boundaries
     };
     MLKitCameraView.prototype.createFailureListener = function () {

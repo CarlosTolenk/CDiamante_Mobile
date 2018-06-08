@@ -21,12 +21,7 @@ var MLKitBarcodeScanner = /** @class */ (function (_super) {
         var _this = this;
         return new com.google.android.gms.tasks.OnSuccessListener({
             onSuccess: function (barcodes) {
-                if (barcodes.size() === 0)
-                    return;
-                // const imageSource = new ImageSource();
-                // imageSource.setNativeSource(this.lastVisionImage.getBitmapForDebugging());
                 var result = {
-                    // imageSource: imageSource,
                     barcodes: []
                 };
                 // see https://github.com/firebase/quickstart-android/blob/0f4c86877fc5f771cac95797dffa8bd026dd9dc7/mlkit/app/src/main/java/com/google/firebase/samples/apps/mlkit/textrecognition/TextRecognitionProcessor.java#L62
@@ -34,7 +29,8 @@ var MLKitBarcodeScanner = /** @class */ (function (_super) {
                     var barcode = barcodes.get(i);
                     result.barcodes.push({
                         value: barcode.getRawValue(),
-                        format: barcodescanning_common_1.BarcodeFormat[barcode.getFormat()]
+                        format: barcodescanning_common_1.BarcodeFormat[barcode.getFormat()],
+                        android: barcode
                     });
                 }
                 _this.notify({
@@ -73,7 +69,8 @@ function scanBarcodesOnDevice(options) {
                         var barcode = barcodes.get(i);
                         result.barcodes.push({
                             value: barcode.getRawValue(),
-                            format: barcodescanning_common_1.BarcodeFormat[barcode.getFormat()]
+                            format: barcodescanning_common_1.BarcodeFormat[barcode.getFormat()],
+                            android: barcode
                         });
                     }
                     resolve(result);

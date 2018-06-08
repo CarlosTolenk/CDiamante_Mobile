@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 var firebase = require("../../firebase");
+var firebase_1 = require("../../firebase");
 var firestore;
 (function (firestore) {
     var Firestore = /** @class */ (function () {
@@ -8,6 +9,11 @@ var firestore;
         }
         Firestore.prototype.collection = function (collectionPath) {
             return firebase.firestore.collection(collectionPath);
+        };
+        Firestore.prototype.FieldValue = function () {
+            return {
+                serverTimestamp: function () { return firebase_1.FIRESTORE_SERVER_TS; }
+            };
         };
         return Firestore;
     }());

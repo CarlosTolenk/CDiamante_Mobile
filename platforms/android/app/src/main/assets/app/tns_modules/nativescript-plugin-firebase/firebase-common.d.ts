@@ -1,4 +1,7 @@
 import { firestore } from "./firebase";
+export declare class FieldValue {
+    serverTimestamp: () => string;
+}
 export declare const firebase: any;
 export declare class DocumentSnapshot implements firestore.DocumentSnapshot {
     id: string;

@@ -1,4 +1,10 @@
 {
+  "_args": [
+    [
+      "@angular/animations@6.0.4",
+      "C:\\Users\\Carlos Tolentino\\Desktop\\CDiamante_Mobile\\CDiamante"
+    ]
+  ],
   "_from": "@angular/animations@6.0.4",
   "_id": "@angular/animations@6.0.4",
   "_inBundle": false,
@@ -17,12 +23,10 @@
     "fetchSpec": "6.0.4"
   },
   "_requiredBy": [
-    "#USER",
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/@angular/animations/-/animations-6.0.4.tgz",
-  "_shasum": "4e22612e8fed3193983d985c748514a03404bd96",
-  "_spec": "@angular/animations@6.0.4",
+  "_spec": "6.0.4",
   "_where": "C:\\Users\\Carlos Tolentino\\Desktop\\CDiamante_Mobile\\CDiamante",
   "author": {
     "name": "angular"
@@ -30,11 +34,9 @@
   "bugs": {
     "url": "https://github.com/angular/angular/issues"
   },
-  "bundleDependencies": false,
   "dependencies": {
     "tslib": "^1.9.0"
   },
-  "deprecated": false,
   "description": "Angular - animations integration with web-animations",
   "es2015": "./fesm2015/animations.js",
   "esm2015": "./esm2015/animations.js",

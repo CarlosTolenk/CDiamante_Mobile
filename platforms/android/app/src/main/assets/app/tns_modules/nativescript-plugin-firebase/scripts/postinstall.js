@@ -3093,7 +3093,7 @@ function writePodFile(result) {
     }
     try {
         fs.writeFileSync(directories.ios + '/Podfile',
-`pod 'Firebase/Core', '~> 5.0.0' 
+`pod 'Firebase/Core', '~> 5.1.0' 
 pod 'Firebase/Auth'
 
 # Realtime DB
@@ -3158,7 +3158,7 @@ end`) + `
 /**
  * Create the iOS build script for uploading dSYM files to Crashlytics
  *
- * @param {any} enable Is Crashlytics enbled
+ * @param {any} enable Is Crashlytics enabled
  */
 function writeBuildscriptHook(enable) {
     var scriptPath = path.join(appRoot, "hooks", "after-prepare", "firebase-crashlytics-buildscript.js");
@@ -3244,7 +3244,7 @@ module.exports = function($logger, $projectData, hookArgs) {
             xcodeProject.parseSync();
             var options = { shellPath: '/bin/sh', shellScript: '\${PODS_ROOT}/Fabric/run' };
             xcodeProject.addBuildPhase(
-              [], 'PBXShellScriptBuildPhase', 'Configure Crashlytics', xcodeProject.getFirstTarget().uuid, options
+              [], 'PBXShellScriptBuildPhase', 'Configure Crashlytics', undefined, options
             ).buildPhase;
             fs.writeFileSync(xcodeProjectPath, xcodeProject.writeSync());
             $logger.trace('Xcode project written');
@@ -3349,38 +3349,38 @@ dependencies {
     compile "com.android.support:support-compat:$supportVersion"
 
     // make sure you have these versions by updating your local Android SDK's (Android Support repo and Google repo)
-    compile "com.google.firebase:firebase-core:15.0.2"
-    compile "com.google.firebase:firebase-auth:15.1.0"
+    compile "com.google.firebase:firebase-core:16.0.0"
+    compile "com.google.firebase:firebase-auth:16.0.1"
 
     // for reading google-services.json and configuration
     compile "com.google.android.gms:play-services-base:$googlePlayServicesVersion"
 
     // Realtime DB
-    ` + (!isPresent(result.realtimedb) || isSelected(result.realtimedb) ? `` : `//`) + ` compile "com.google.firebase:firebase-database:15.0.0"
+    ` + (!isPresent(result.realtimedb) || isSelected(result.realtimedb) ? `` : `//`) + ` compile "com.google.firebase:firebase-database:16.0.1"
 
     // Cloud Firestore
-    ` + (isSelected(result.firestore) ? `` : `//`) + ` compile "com.google.firebase:firebase-firestore:16.0.0"
+    ` + (isSelected(result.firestore) ? `` : `//`) + ` compile "com.google.firebase:firebase-firestore:17.0.1"
 
     // Remote Config
-    ` + (isSelected(result.remote_config) ? `` : `//`) + ` compile "com.google.firebase:firebase-config:15.0.2"
+    ` + (isSelected(result.remote_config) ? `` : `//`) + ` compile "com.google.firebase:firebase-config:16.0.0"
 
     // Crash Reporting
-    ` + (isSelected(result.crash_reporting) && !isSelected(result.crashlytics) ? `` : `//`) + ` compile "com.google.firebase:firebase-crash:15.0.2"
+    ` + (isSelected(result.crash_reporting) && !isSelected(result.crashlytics) ? `` : `//`) + ` compile "com.google.firebase:firebase-crash:16.0.0"
 
     // Crashlytics
-    ` + (isSelected(result.crashlytics) ? `` : `//`) + ` compile "com.crashlytics.sdk.android:crashlytics:2.9.1"
+    ` + (isSelected(result.crashlytics) ? `` : `//`) + ` compile "com.crashlytics.sdk.android:crashlytics:2.9.3"
 
     // Firebase Cloud Messaging (FCM)
-    ` + (isSelected(result.messaging) ? `` : `//`) + ` compile "com.google.firebase:firebase-messaging:15.0.2"
+    ` + (isSelected(result.messaging) ? `` : `//`) + ` compile "com.google.firebase:firebase-messaging:17.0.0"
 
     // Cloud Storage
-    ` + (isSelected(result.storage) ? `` : `//`) + ` compile "com.google.firebase:firebase-storage:15.0.2"
+    ` + (isSelected(result.storage) ? `` : `//`) + ` compile "com.google.firebase:firebase-storage:16.0.1"
 
-    // AdMob
-    ` + (isSelected(result.admob) ? `` : `//`) + ` compile "com.google.firebase:firebase-ads:15.0.0"
+    // AdMob / Ads
+    ` + (isSelected(result.admob) ? `` : `//`) + ` compile "com.google.firebase:firebase-ads:15.0.1"
 
     // ML Kit
-    ` + (isSelected(result.ml_kit) ? `` : `//`) + ` compile "com.google.firebase:firebase-ml-vision:15.0.0"
+    ` + (isSelected(result.ml_kit) ? `` : `//`) + ` compile "com.google.firebase:firebase-ml-vision:16.0.0"
     ` + (isSelected(result.ml_kit_image_labeling) ? `` : `//`) + ` compile "com.google.firebase:firebase-ml-vision-image-label-model:15.0.0"
 
     // Facebook Authentication
@@ -3390,7 +3390,7 @@ dependencies {
     ` + (isSelected(result.google_auth) ? `` : `//`) + ` compile "com.google.android.gms:play-services-auth:$googlePlayServicesVersion"
 
     // Firebase Invites / Dynamic Links
-    ` + (isSelected(result.invites) ? `` : `//`) + ` compile "com.google.firebase:firebase-invites:$googlePlayServicesVersion"
+    ` + (isSelected(result.invites) ? `` : `//`) + ` compile "com.google.firebase:firebase-invites:16.0.0"
 }
 
 apply plugin: "com.google.gms.google-services"
@@ -3425,13 +3425,21 @@ module.exports = function($logger, $projectData, hookArgs) {
             if (fs.existsSync(sourceGoogleJson) && fs.existsSync(path.dirname(destinationGoogleJson))) {
                 $logger.out("Copy " + sourceGoogleJson + " to " + destinationGoogleJson + ".");
                 fs.writeFileSync(destinationGoogleJson, fs.readFileSync(sourceGoogleJson));
-                resolve()
+                resolve();
             } else {
                 $logger.warn("Unable to copy google-services.json.");
                 reject();
             }
+        } else if (hookArgs.platform.toLowerCase() === 'ios') {
+            var sourceGooglePlist = path.join($projectData.appResourcesDirectoryPath, "iOS", "GoogleService-Info.plist");
+            if (!fs.existsSync(sourceGooglePlist)) {
+                $logger.warn(sourceGooglePlist + " does not exist. Please follow the installation instructions from the documentation");
+                return reject();
+            } else {
+                resolve();
+            }
         } else {
-            resolve()
+            resolve();
         }
     });
 };
@@ -3484,7 +3492,7 @@ module.exports = function($logger, $projectData) {
 
             let gradlePattern = /classpath ('|")com\\.android\\.tools\\.build:gradle:\\d+\\.\\d+\\.\\d+('|")/;
             let googleServicesPattern = /classpath ('|")com\\.google\\.gms:google-services:\\d+\\.\\d+\\.\\d+('|")/;
-            let latestGoogleServicesPlugin = 'classpath "com.google.gms:google-services:3.3.1"';
+            let latestGoogleServicesPlugin = 'classpath "com.google.gms:google-services:4.0.1"';
             if (googleServicesPattern.test(buildGradleContent)) {
                 buildGradleContent = buildGradleContent.replace(googleServicesPattern, latestGoogleServicesPlugin);
             } else {

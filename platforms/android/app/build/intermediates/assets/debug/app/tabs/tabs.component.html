@@ -10,18 +10,18 @@ http://docs.nativescript.org/angular/code-samples/ui/tab-view
 -->
 <TabView  class="tab-view" (selectedIndexChanged)="onSelectedIndexChanged($event)" androidTabsPosition="bottom" tabTextColor="#DFE2E8" selectedTabTextColor="#FFFFFF" androidSelectedTabHighlightColor="#FFFFFF">
     <StackLayout  *tabItem="{iconSource: getIconSource('whitehome')}">
-        <Home></Home>
-    </StackLayout> 
+       <Home></Home>
+    </StackLayout>  
 
     <StackLayout *tabItem="{iconSource: getIconSource('television')}">
         <Canal></Canal>
     </StackLayout>
 
-    <StackLayout *tabItem="{ iconSource: getIconSource('radio')}">
+    <StackLayout *tabItem="{iconSource: getIconSource('radio')}">
         <Radio></Radio>
     </StackLayout>
 
-    <StackLayout *tabItem="{ iconSource: getIconSource('chat')}">
+    <StackLayout *tabItem="{iconSource: getIconSource('chat')}">
         <Contact></Contact>
     </StackLayout>
 </TabView>

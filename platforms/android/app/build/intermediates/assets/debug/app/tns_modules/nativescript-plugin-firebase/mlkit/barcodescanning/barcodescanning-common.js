@@ -25,11 +25,6 @@ exports.formatsProperty = new properties_1.Property({
     name: "formats",
     defaultValue: null,
 });
-exports.preferFrontCameraProperty = new properties_1.Property({
-    name: "preferFrontCamera",
-    defaultValue: false,
-    valueConverter: view_base_1.booleanConverter
-});
 exports.beepOnScanProperty = new properties_1.Property({
     name: "beepOnScan",
     defaultValue: true,
@@ -48,9 +43,6 @@ var MLKitBarcodeScanner = /** @class */ (function (_super) {
     MLKitBarcodeScanner.prototype[exports.formatsProperty.setNative] = function (value) {
         this.formats = value;
     };
-    MLKitBarcodeScanner.prototype[exports.preferFrontCameraProperty.setNative] = function (value) {
-        this.preferFrontCamera = value;
-    };
     MLKitBarcodeScanner.prototype[exports.beepOnScanProperty.setNative] = function (value) {
         this.beepOnScan = value;
     };
@@ -61,6 +53,5 @@ var MLKitBarcodeScanner = /** @class */ (function (_super) {
 }(mlkit_cameraview_1.MLKitCameraView));
 exports.MLKitBarcodeScanner = MLKitBarcodeScanner;
 exports.formatsProperty.register(MLKitBarcodeScanner);
-exports.preferFrontCameraProperty.register(MLKitBarcodeScanner);
 exports.beepOnScanProperty.register(MLKitBarcodeScanner);
 exports.reportDuplicatesProperty.register(MLKitBarcodeScanner);

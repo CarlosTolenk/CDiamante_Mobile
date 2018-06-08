@@ -1,27 +1,31 @@
 {
-  "_from": "nativescript-plugin-firebase",
-  "_id": "nativescript-plugin-firebase@6.0.2",
+  "_args": [
+    [
+      "nativescript-plugin-firebase@6.1.0",
+      "C:\\Users\\Carlos Tolentino\\Desktop\\CDiamante_Mobile\\CDiamante"
+    ]
+  ],
+  "_from": "nativescript-plugin-firebase@6.1.0",
+  "_id": "nativescript-plugin-firebase@6.1.0",
   "_inBundle": false,
-  "_integrity": "sha1-rCf08E54cF9gYZ8BhDuv6/r2P0s=",
+  "_integrity": "sha512-n5ed7uuYAZzfL25k+Jhn+1btb9HsnDaA8Riqu4ZQZlGWDQdmFTIaMZakLGOs4l/xA6GCTMx0p7KFIE82A/HQFw==",
   "_location": "/nativescript-plugin-firebase",
   "_phantomChildren": {},
   "_requested": {
-    "type": "tag",
+    "type": "version",
     "registry": true,
-    "raw": "nativescript-plugin-firebase",
+    "raw": "nativescript-plugin-firebase@6.1.0",
     "name": "nativescript-plugin-firebase",
     "escapedName": "nativescript-plugin-firebase",
-    "rawSpec": "",
+    "rawSpec": "6.1.0",
     "saveSpec": null,
-    "fetchSpec": "latest"
+    "fetchSpec": "6.1.0"
   },
   "_requiredBy": [
-    "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/nativescript-plugin-firebase/-/nativescript-plugin-firebase-6.0.2.tgz",
-  "_shasum": "ac27f4f04e78705f60619f01843bafebfaf63f4b",
-  "_spec": "nativescript-plugin-firebase",
+  "_resolved": "https://registry.npmjs.org/nativescript-plugin-firebase/-/nativescript-plugin-firebase-6.1.0.tgz",
+  "_spec": "6.1.0",
   "_where": "C:\\Users\\Carlos Tolentino\\Desktop\\CDiamante_Mobile\\CDiamante",
   "author": {
     "name": "Eddy Verbruggen",
@@ -30,7 +34,6 @@
   "bugs": {
     "url": "https://github.com/eddyverbruggen/nativescript-plugin-firebase/issues"
   },
-  "bundleDependencies": false,
   "config": {
     "typingsproject": "demo-ng"
   },
@@ -40,7 +43,6 @@
     "prompt-lite": "~0.1.0",
     "xcode": "~0.9.0"
   },
-  "deprecated": false,
   "description": "Fire. Base. Firebase!",
   "devDependencies": {
     "rimraf": "^2.6.2",
@@ -139,5 +141,5 @@
     "tslint.demo": "tslint --config '../tslint.json' '../demo/app/*.ts' --exclude '**/node_modules/**'"
   },
   "typings": "index.d.ts",
-  "version": "6.0.2"
+  "version": "6.1.0"
 }

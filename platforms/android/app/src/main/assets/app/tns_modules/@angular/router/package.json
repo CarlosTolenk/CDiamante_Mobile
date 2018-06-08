@@ -1,4 +1,10 @@
 {
+  "_args": [
+    [
+      "@angular/router@6.0.4",
+      "C:\\Users\\Carlos Tolentino\\Desktop\\CDiamante_Mobile\\CDiamante"
+    ]
+  ],
   "_from": "@angular/router@6.0.4",
   "_id": "@angular/router@6.0.4",
   "_inBundle": false,
@@ -17,12 +23,10 @@
     "fetchSpec": "6.0.4"
   },
   "_requiredBy": [
-    "#USER",
     "/"
   ],
   "_resolved": "https://registry.npmjs.org/@angular/router/-/router-6.0.4.tgz",
-  "_shasum": "81c96dfa42a8c4a218cbd450b1e8959a76ea9595",
-  "_spec": "@angular/router@6.0.4",
+  "_spec": "6.0.4",
   "_where": "C:\\Users\\Carlos Tolentino\\Desktop\\CDiamante_Mobile\\CDiamante",
   "author": {
     "name": "angular"
@@ -30,11 +34,9 @@
   "bugs": {
     "url": "https://github.com/angular/angular/issues"
   },
-  "bundleDependencies": false,
   "dependencies": {
     "tslib": "^1.9.0"
   },
-  "deprecated": false,
   "description": "Angular - the routing library",
   "es2015": "./fesm2015/router.js",
   "esm2015": "./esm2015/router.js",

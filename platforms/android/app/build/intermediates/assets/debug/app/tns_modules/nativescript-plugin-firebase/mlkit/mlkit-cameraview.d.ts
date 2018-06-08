@@ -6,6 +6,7 @@ export declare abstract class MLKitCameraView extends MLKitCameraViewBase {
     protected rotation: any;
     protected lastVisionImage: any;
     private detector;
+    private camera;
     disposeNativeView(): void;
     createNativeView(): Object;
     private hasCamera();

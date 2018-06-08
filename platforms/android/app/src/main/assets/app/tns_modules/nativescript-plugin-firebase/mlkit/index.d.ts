@@ -6,7 +6,7 @@ import * as landmarkrecognition from "./landmarkrecognition";
 import { ImageSource } from "tns-core-modules/image-source";
 import { Image } from "tns-core-modules/ui/image";
 export interface MLKitOptions {
-    image: Image | ImageSource;
+    image?: Image | ImageSource;
 }
 export declare type MLKitCloudModelType = "stable" | "latest";
 export interface MLKitCloudOptions extends MLKitOptions {

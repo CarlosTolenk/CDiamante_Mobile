@@ -3,10 +3,11 @@ var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 var firebase_common_1 = require("./firebase-common");
 var appModule = require("tns-core-modules/application");
-var utils = require("tns-core-modules/utils/utils");
+var utils_1 = require("tns-core-modules/utils/utils");
 var lazy_1 = require("tns-core-modules/utils/lazy");
-var frame = require("tns-core-modules/ui/frame");
-var fs = require("tns-core-modules/file-system");
+var frame_1 = require("tns-core-modules/ui/frame");
+var file_system_1 = require("tns-core-modules/file-system");
+var firebase_1 = require("./firebase");
 firebase_common_1.firebase._launchNotification = null;
 firebase_common_1.firebase._cachedDynamicLink = null;
 // we need to cache and restore the context, otherwise the next invocation is broken
@@ -119,7 +120,11 @@ firebase_common_1.firebase.toHashMap = function (obj) {
                 node.put(property, null);
             }
             else {
-                if (obj[property] instanceof Date) {
+                // note that the Android Firestore SDK only supports this for 'update' (not for 'set')
+                if (obj[property] === firebase_1.FIRESTORE_SERVER_TS) {
+                    node.put(property, com.google.firebase.firestore.FieldValue.serverTimestamp());
+                }
+                else if (obj[property] instanceof Date) {
                     node.put(property, new java.util.Date(obj[property].getTime()));
                 }
                 else if (Array.isArray(obj[property])) {
@@ -127,6 +132,7 @@ firebase_common_1.firebase.toHashMap = function (obj) {
                 }
                 else {
                     switch (typeof obj[property]) {
+                        case 'object':
                         case 'object':
                             node.put(property, firebase_common_1.firebase.toHashMap(obj[property], node));
                             break;
@@ -565,7 +571,7 @@ firebase_common_1.firebase.admob.showBanner = function (arg) {
             firebase_common_1.firebase.admob.adView.setAdListener(new BannerAdListener());
             var ad = firebase_common_1.firebase.admob._buildAdRequest(settings);
             firebase_common_1.firebase.admob.adView.loadAd(ad);
-            var density = utils.layout.getDisplayDensity(), top_1 = settings.margins.top * density, bottom = settings.margins.bottom * density;
+            var density = utils_1.layout.getDisplayDensity(), top_1 = settings.margins.top * density, bottom = settings.margins.bottom * density;
             var relativeLayoutParams = new android.widget.RelativeLayout.LayoutParams(android.widget.RelativeLayout.LayoutParams.MATCH_PARENT, android.widget.RelativeLayout.LayoutParams.WRAP_CONTENT);
             if (bottom > -1) {
                 relativeLayoutParams.bottomMargin = bottom;
@@ -583,8 +589,8 @@ firebase_common_1.firebase.admob.showBanner = function (arg) {
             // Wrapping it in a timeout makes sure that when this function is loaded from a Page.loaded event 'frame.topmost()' doesn't resolve to 'undefined'.
             // Also, in NativeScript 4+ it may be undefined anyway.. so using the appModule in that case.
             setTimeout(function () {
-                if (frame.topmost() !== undefined) {
-                    frame.topmost().currentPage.android.getParent().addView(adViewLayout_1, relativeLayoutParamsOuter_1);
+                if (frame_1.topmost() !== undefined) {
+                    frame_1.topmost().currentPage.android.getParent().addView(adViewLayout_1, relativeLayoutParamsOuter_1);
                 }
                 else {
                     appModule.android.foregroundActivity.getWindow().getDecorView().addView(adViewLayout_1, relativeLayoutParamsOuter_1);
@@ -1057,8 +1063,7 @@ firebase_common_1.firebase.login = function (arg) {
                 });
                 firebase_common_1.firebase._verifyPhoneNumberInProgress = true;
                 com.google.firebase.auth.PhoneAuthProvider.getInstance().verifyPhoneNumber(arg.phoneOptions.phoneNumber, 60, // timeout (in seconds, because of the next argument)
-                java.util.concurrent.TimeUnit.SECONDS, appModule.android.foregroundActivity, // or utils.ad.getApplicationContext()
-                new OnVerificationStateChangedCallbacks());
+                java.util.concurrent.TimeUnit.SECONDS, appModule.android.foregroundActivity, new OnVerificationStateChangedCallbacks());
             }
             else if (arg.type === firebase_common_1.firebase.LoginType.CUSTOM) {
                 if (!arg.customOptions || (!arg.customOptions.token && !arg.customOptions.tokenProviderFn)) {
@@ -1111,7 +1116,7 @@ firebase_common_1.firebase.login = function (arg) {
                 if (arg.facebookOptions && arg.facebookOptions.scope) {
                     scope = arg.facebookOptions.scope;
                 }
-                var permissions = utils.ad.collections.stringArrayToStringSet(scope);
+                var permissions = utils_1.ad.collections.stringArrayToStringSet(scope);
                 var activity = appModule.android.foregroundActivity;
                 fbLoginManager.logInWithReadPermissions(activity, permissions);
             }
@@ -1120,8 +1125,8 @@ firebase_common_1.firebase.login = function (arg) {
                     reject("Google Sign In not installed - see gradle config");
                     return;
                 }
-                var clientStringId = utils.ad.resources.getStringId("default_web_client_id");
-                var clientId = utils.ad.getApplicationContext().getResources().getString(clientStringId);
+                var clientStringId = utils_1.ad.resources.getStringId("default_web_client_id");
+                var clientId = utils_1.ad.getApplicationContext().getResources().getString(clientStringId);
                 // Configure Google Sign In
                 var googleSignInOptionsBuilder = new com.google.android.gms.auth.api.signin.GoogleSignInOptions.Builder(com.google.android.gms.auth.api.signin.GoogleSignInOptions.DEFAULT_SIGN_IN)
                     .requestIdToken(clientId)
@@ -1832,7 +1837,7 @@ firebase_common_1.firebase.uploadFile = function (arg) {
                 */
             }
             else if (arg.localFullPath) {
-                if (!fs.File.exists(arg.localFullPath)) {
+                if (!file_system_1.File.exists(arg.localFullPath)) {
                     reject("File does not exist: " + arg.localFullPath);
                     return;
                 }
@@ -1955,6 +1960,7 @@ firebase_common_1.firebase.subscribeToTopic = function (topicName) {
                 reject("Uncomment firebase-messaging in the plugin's include.gradle first");
                 return;
             }
+            // TODO since Cloud Messaging 17.0.0 this returns a Task instead of void (so we can resolve onSuccess)
             com.google.firebase.messaging.FirebaseMessaging.getInstance().subscribeToTopic(topicName);
             resolve();
         }

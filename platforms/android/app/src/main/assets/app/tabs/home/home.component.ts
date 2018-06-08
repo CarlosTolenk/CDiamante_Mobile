@@ -1,6 +1,8 @@
 //Component and Modules
 import { Component, ElementRef, OnInit, ViewChild, NgZone, DoCheck} from "@angular/core";
 import { Observable } from 'rxjs';
+import { RouterExtensions } from "nativescript-angular/router";
+
 
 import { Page } from "ui/page";
 import { Color } from "color";
@@ -43,12 +45,14 @@ export class HomeComponent implements OnInit, DoCheck {
     public changePlanes: Array<any> = [];
 
 
-    constructor(private ngZone: NgZone) {
+    constructor(
+        private ngZone: NgZone,
+        private router: RouterExtensions
+     ){
         // Use the constructor to inject services.
         this.toogleHeart = "font-awesome ico-dislike";
         this.toogleLike = false;
-        this.pressShared = "font-awesome ico-share";  
-        
+        this.pressShared = "font-awesome ico-share";         
 
    
     }
@@ -77,11 +81,8 @@ export class HomeComponent implements OnInit, DoCheck {
         // this.firestoreDocumentObservable(); 
     }
 
-        ngDoCheck(): void{
-            
-            this.firestoreDocumentObservable(); 
-         
-        
+        ngDoCheck(): void{            
+            // this.firestoreDocumentObservable();         
         }
 
     firestoreDocumentObservable(): void {    
@@ -103,10 +104,19 @@ export class HomeComponent implements OnInit, DoCheck {
                   }
               
               });
+        });       
+       
+    }
+
+    itemNext(){
+        console.log("Ir a item");
+        this.router.navigate(["radio"], {
+            transition: {
+                name: "flip",
+                duration: 2000,
+                curve: "linear"
+            }
         });
-       
-       
-       
     }
 
  
