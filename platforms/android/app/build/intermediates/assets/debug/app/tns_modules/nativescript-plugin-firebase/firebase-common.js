@@ -2,13 +2,12 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var dialogs_1 = require("tns-core-modules/ui/dialogs");
 var application_settings_1 = require("tns-core-modules/application-settings");
-var firebase_1 = require("./firebase");
 var analytics = require("./analytics/analytics");
 var mlkit = require("./mlkit");
 // note that this implementation is overridden for iOS
 var FieldValue = /** @class */ (function () {
     function FieldValue() {
-        this.serverTimestamp = function () { return firebase_1.FIRESTORE_SERVER_TS; };
+        this.serverTimestamp = function () { return "SERVER_TIMESTAMP"; };
     }
     return FieldValue;
 }());

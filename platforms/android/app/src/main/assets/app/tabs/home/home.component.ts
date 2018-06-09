@@ -61,7 +61,7 @@ export class HomeComponent implements OnInit, DoCheck {
         //     console.log("Firebase initialized");
         // });    
 
-        this._planesService.getConexion(); 
+        // this._planesService.getConexion(); 
         this.planes =  this._planesService.getAllPlanes();
 
         // const planesCollection = firebase.firestore().collection("planes"); 

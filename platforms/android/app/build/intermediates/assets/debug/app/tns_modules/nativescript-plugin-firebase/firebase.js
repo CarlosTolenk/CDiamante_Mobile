@@ -7,7 +7,6 @@ var utils_1 = require("tns-core-modules/utils/utils");
 var lazy_1 = require("tns-core-modules/utils/lazy");
 var frame_1 = require("tns-core-modules/ui/frame");
 var file_system_1 = require("tns-core-modules/file-system");
-var firebase_1 = require("./firebase");
 firebase_common_1.firebase._launchNotification = null;
 firebase_common_1.firebase._cachedDynamicLink = null;
 // we need to cache and restore the context, otherwise the next invocation is broken
@@ -121,7 +120,7 @@ firebase_common_1.firebase.toHashMap = function (obj) {
             }
             else {
                 // note that the Android Firestore SDK only supports this for 'update' (not for 'set')
-                if (obj[property] === firebase_1.FIRESTORE_SERVER_TS) {
+                if (obj[property] === "SERVER_TIMESTAMP") {
                     node.put(property, com.google.firebase.firestore.FieldValue.serverTimestamp());
                 }
                 else if (obj[property] instanceof Date) {
