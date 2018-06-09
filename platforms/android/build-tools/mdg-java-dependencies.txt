@@ -73,4 +73,3 @@ C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\a
 C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\build\exploded-dependencies\73\jsr305-3.0.0.jar
 C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\build\exploded-dependencies\8\classes.jar
 C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\build\exploded-dependencies\9\classes.jar
-C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\build\intermediates\classes\debug

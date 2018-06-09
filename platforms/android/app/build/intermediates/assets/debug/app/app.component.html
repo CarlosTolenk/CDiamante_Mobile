@@ -1,1 +1,28 @@
-<page-router-outlet></page-router-outlet>
+<!-- <page-router-outlet></page-router-outlet> -->
+<!-- <ActionBar class="action-bar">
+    <Label class="action-bar-title" text="CDiamanteGold"></Label>
+</ActionBar> -->
+
+<TabView class="tab-view" androidTabsPosition="bottom" androidTabsPosition="bottom" tabTextColor="#DFE2E8" selectedTabTextColor="#FFFFFF" androidSelectedTabHighlightColor="#FFFFFF">
+
+    <page-router-outlet
+        *tabItem="{iconSource: getIconSource('whitehome')}"
+        name="homeTab">
+    </page-router-outlet>
+
+    <page-router-outlet
+        *tabItem="{iconSource: getIconSource('television')}"
+        name="canalTab">
+    </page-router-outlet>
+
+    <page-router-outlet
+        *tabItem="{iconSource: getIconSource('radio')}"
+        name="radioTab">
+    </page-router-outlet>
+
+    <page-router-outlet
+        *tabItem="{iconSource: getIconSource('chat')}"
+        name="contactTab">
+    </page-router-outlet>
+
+</TabView>

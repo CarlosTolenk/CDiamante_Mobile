@@ -4,6 +4,7 @@ C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\a
 C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\assets\app\main.aot.js
 C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\assets\app\main.js
 C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\assets\app\models\planes.js
+C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\assets\app\services\planes.services.js
 C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\assets\app\tabs\canal\browse.component.js
 C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\assets\app\tabs\canal\canal.component.js
 C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\assets\app\tabs\contact\contact.component.js

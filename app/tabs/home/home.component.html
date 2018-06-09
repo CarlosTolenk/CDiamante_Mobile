@@ -21,7 +21,7 @@
 								<Image src="res://icon"  class="logo-image" stretch="aspectFit" verticalAlignment="stretch" col="1" row="1" rowSpan="2"></Image>		
 								<Label class="text-plan" [nsRouterLink]="['../item', 5]"  horizontalAlignment="left" textWrap="true" [text]="plan.nombre_plan" row="1" col="2"></Label>
 								<Label class="font-awesome text-date " horizontalAlignment="left" text="&#xf017; 06 Jun" row="1" col="3"></Label>
-								<Image [src]="plan.imagen_url" stretch="fill" colSpan="3" col="1" row="3" rowSpan="2"></Image>
+								<Image [src]="plan.imagen_url" [nsRouterLink]="['../item', 5]"  stretch="fill" colSpan="3" col="1" row="3" rowSpan="2"></Image>
 								<Label horizontalAlignment="left"  class="{{toogleHeart}}" (tap)="like()" col="1" row="5" text="&#xf004;" ></Label>
 								<Label horizontalAlignment="left" class="{{pressShared}}" text="&#xf1e0; Compartir"(tap)="share()" col="3" row="5" colSpan="2"></Label>
 								<!-- <Button horizontalAlignment="left" class="btn btn-active" id="button" text="Tap me!" (tap)="share()" row="5" col="4"></Button>					 -->

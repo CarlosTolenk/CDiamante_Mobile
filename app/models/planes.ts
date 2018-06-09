@@ -1,4 +1,5 @@
 export interface Planes {
+    id:string,
     cantidad_mensaje: string;
     cantidad_numero: string;
     duracion: string;
@@ -7,5 +8,5 @@ export interface Planes {
     like_recibidos:number,
     nombre_plan:string,
     precio:number,
-    loterias:[2]
+    loterias:[2]    
   }

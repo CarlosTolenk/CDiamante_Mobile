@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:2:1-21:12
-INJECTED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:2:1-21:12
-INJECTED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:2:1-21:12
-INJECTED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:2:1-21:12
+ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:2:1-22:12
+INJECTED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:2:1-22:12
+INJECTED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:2:1-22:12
+INJECTED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:2:1-22:12
 MERGED from [com.android.support:cardview-v7:25.3.1] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\cardview-v7-25.3.1.aar\7985eff6de57d9b958e3ac8d61b69c3e\AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:design:25.3.1] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\design-25.3.1.aar\0b4d51aa7afe5619543db8e631b3da80\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:appcompat-v7:25.3.1] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.3.1.aar\7e4de3a6f9201cdfd2ab2d1bf9758b1f\AndroidManifest.xml:17:1-31:12
@@ -61,9 +61,9 @@ MERGED from [com.crashlytics.sdk.android:answers:1.4.2] C:\Users\Carlos Tolentin
 MERGED from [com.crashlytics.sdk.android:beta:1.2.8] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\beta-1.2.8.aar\2780b7fbb06e7d806ee9d2ee77bd92ac\AndroidManifest.xml:2:1-13:12
 MERGED from [io.fabric.sdk.android:fabric:1.4.3] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\fabric-1.4.3.aar\4e9d2a592df4e8aafc2063fca76efa58\AndroidManifest.xml:22:1-33:12
 MERGED from [com.google.android.gms:play-services-measurement-base:15.0.4] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-15.0.4.aar\afa03860221c69577ec855fa0a487f2e\AndroidManifest.xml:17:1-24:12
-INJECTED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:2:1-21:12
-INJECTED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:2:1-21:12
-INJECTED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:2:1-21:12
+INJECTED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:2:1-22:12
+INJECTED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:2:1-22:12
+INJECTED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:2:1-22:12
 	package
 		ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:3:64-103
 		INJECTED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml
@@ -230,8 +230,22 @@ uses-permission#android.permission.INTERNAL_SYSTEM_WINDOW
 ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:7:5-81
 	android:name
 		ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:7:22-78
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:8:5-78
+MERGED from [com.google.firebase:firebase-measurement-connector-impl:16.0.0] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-impl-16.0.0.aar\d47175a38d6c1013ba885891c2263871\AndroidManifest.xml:23:5-79
+MERGED from [com.google.firebase:firebase-measurement-connector-impl:16.0.0] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-impl-16.0.0.aar\d47175a38d6c1013ba885891c2263871\AndroidManifest.xml:23:5-79
+MERGED from [com.google.firebase:firebase-analytics:16.0.0] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.0.0.aar\0018b35dc6778dec80ac4582db24fa33\AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-analytics:16.0.0] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.0.0.aar\0018b35dc6778dec80ac4582db24fa33\AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-analytics-impl:16.0.0] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-16.0.0.aar\1a0691640585eaf11a7458561964d626\AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-analytics-impl:16.0.0] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-16.0.0.aar\1a0691640585eaf11a7458561964d626\AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\13f2151e940cb2a1fd7fc83c32bc1797\AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\13f2151e940cb2a1fd7fc83c32bc1797\AndroidManifest.xml:22:5-79
+MERGED from [com.google.firebase:firebase-storage-common:16.0.1] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\firebase-storage-common-16.0.1.aar\13a4d6453a30a734b486c369b5df095c\AndroidManifest.xml:7:5-79
+MERGED from [com.google.firebase:firebase-storage-common:16.0.1] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\firebase-storage-common-16.0.1.aar\13a4d6453a30a734b486c369b5df095c\AndroidManifest.xml:7:5-79
+	android:name
+		ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:8:22-76
 uses-permission#android.permission.INTERNET
-ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:8:5-67
+ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:9:5-67
 MERGED from [com.google.firebase:firebase-measurement-connector-impl:16.0.0] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-impl-16.0.0.aar\d47175a38d6c1013ba885891c2263871\AndroidManifest.xml:22:5-67
 MERGED from [com.google.firebase:firebase-measurement-connector-impl:16.0.0] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-impl-16.0.0.aar\d47175a38d6c1013ba885891c2263871\AndroidManifest.xml:22:5-67
 MERGED from [com.google.firebase:firebase-analytics:16.0.0] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.0.0.aar\0018b35dc6778dec80ac4582db24fa33\AndroidManifest.xml:23:5-67
@@ -257,17 +271,17 @@ MERGED from [com.crashlytics.sdk.android:beta:1.2.8] C:\Users\Carlos Tolentino\.
 MERGED from [io.fabric.sdk.android:fabric:1.4.3] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\fabric-1.4.3.aar\4e9d2a592df4e8aafc2063fca76efa58\AndroidManifest.xml:29:5-67
 MERGED from [io.fabric.sdk.android:fabric:1.4.3] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\fabric-1.4.3.aar\4e9d2a592df4e8aafc2063fca76efa58\AndroidManifest.xml:29:5-67
 	android:name
-		ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:8:22-64
+		ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:9:22-64
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:9:5-80
+ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:10:5-80
 	android:name
-		ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:9:22-77
+		ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:10:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:10:5-81
+ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:11:5-81
 	android:name
-		ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:10:22-78
+		ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:11:22-78
 application
-ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:11:5-20:19
+ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:12:5-21:19
 MERGED from [com.android.support:cardview-v7:25.3.1] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\cardview-v7-25.3.1.aar\7985eff6de57d9b958e3ac8d61b69c3e\AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:cardview-v7:25.3.1] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\cardview-v7-25.3.1.aar\7985eff6de57d9b958e3ac8d61b69c3e\AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:design:25.3.1] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\design-25.3.1.aar\0b4d51aa7afe5619543db8e631b3da80\AndroidManifest.xml:29:5-20
@@ -357,45 +371,45 @@ MERGED from [io.fabric.sdk.android:fabric:1.4.3] C:\Users\Carlos Tolentino\.grad
 MERGED from [com.google.android.gms:play-services-measurement-base:15.0.4] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-15.0.4.aar\afa03860221c69577ec855fa0a487f2e\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-measurement-base:15.0.4] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\play-services-measurement-base-15.0.4.aar\afa03860221c69577ec855fa0a487f2e\AndroidManifest.xml:22:5-20
 	android:label
-		ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:11:122-154
+		ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:12:122-154
 	android:icon
-		ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:11:92-121
+		ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:12:92-121
 	android:allowBackup
-		ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:11:65-91
+		ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:12:65-91
 	android:theme
-		ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:11:155-186
+		ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:12:155-186
 	android:name
-		ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:11:18-64
+		ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:12:18-64
 activity#com.tns.NativeScriptActivity
-ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:12:9-18:20
+ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:13:9-19:20
 	android:label
-		ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:12:63-108
+		ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:13:63-108
 	android:configChanges
-		ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:12:109-170
+		ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:13:109-170
 	android:theme
-		ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:12:171-211
+		ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:13:171-211
 	android:name
-		ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:12:19-62
+		ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:13:19-62
 meta-data#SET_THEME_ON_LAUNCH
-ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:13:13-96
+ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:14:13-96
 	android:resource
-		ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:13:59-93
+		ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:14:59-93
 	android:name
-		ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:13:24-58
+		ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:14:24-58
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:14:13-17:29
+ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:15:13-18:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:15:17-69
+ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:16:17-69
 	android:name
-		ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:15:25-66
+		ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:16:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:16:17-77
+ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:17:17-77
 	android:name
-		ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:16:27-74
+		ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:17:27-74
 activity#com.tns.ErrorReportActivity
-ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:19:9-64
+ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:20:9-64
 	android:name
-		ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:19:19-61
+		ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:20:19-61
 meta-data#android.support.VERSION
 ADDED from [com.android.support:cardview-v7:25.3.1] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\cardview-v7-25.3.1.aar\7985eff6de57d9b958e3ac8d61b69c3e\AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:design:25.3.1] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\design-25.3.1.aar\0b4d51aa7afe5619543db8e631b3da80\AndroidManifest.xml:25:5-27:34
@@ -468,18 +482,6 @@ action#com.google.firebase.MESSAGING_EVENT
 ADDED from [com.google.firebase:firebase-messaging:17.0.0] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\firebase-messaging-17.0.0.aar\ed82a81f8d4640ede2f761245bfd4efc\AndroidManifest.xml:32:17-78
 	android:name
 		ADDED from [com.google.firebase:firebase-messaging:17.0.0] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\firebase-messaging-17.0.0.aar\ed82a81f8d4640ede2f761245bfd4efc\AndroidManifest.xml:32:25-75
-uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from [com.google.firebase:firebase-measurement-connector-impl:16.0.0] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-impl-16.0.0.aar\d47175a38d6c1013ba885891c2263871\AndroidManifest.xml:23:5-79
-MERGED from [com.google.firebase:firebase-analytics:16.0.0] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.0.0.aar\0018b35dc6778dec80ac4582db24fa33\AndroidManifest.xml:24:5-79
-MERGED from [com.google.firebase:firebase-analytics:16.0.0] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.0.0.aar\0018b35dc6778dec80ac4582db24fa33\AndroidManifest.xml:24:5-79
-MERGED from [com.google.firebase:firebase-analytics-impl:16.0.0] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-16.0.0.aar\1a0691640585eaf11a7458561964d626\AndroidManifest.xml:24:5-79
-MERGED from [com.google.firebase:firebase-analytics-impl:16.0.0] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-16.0.0.aar\1a0691640585eaf11a7458561964d626\AndroidManifest.xml:24:5-79
-MERGED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\13f2151e940cb2a1fd7fc83c32bc1797\AndroidManifest.xml:22:5-79
-MERGED from [com.google.firebase:firebase-iid:16.0.0] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\firebase-iid-16.0.0.aar\13f2151e940cb2a1fd7fc83c32bc1797\AndroidManifest.xml:22:5-79
-MERGED from [com.google.firebase:firebase-storage-common:16.0.1] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\firebase-storage-common-16.0.1.aar\13a4d6453a30a734b486c369b5df095c\AndroidManifest.xml:7:5-79
-MERGED from [com.google.firebase:firebase-storage-common:16.0.1] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\firebase-storage-common-16.0.1.aar\13a4d6453a30a734b486c369b5df095c\AndroidManifest.xml:7:5-79
-	android:name
-		ADDED from [com.google.firebase:firebase-measurement-connector-impl:16.0.0] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-impl-16.0.0.aar\d47175a38d6c1013ba885891c2263871\AndroidManifest.xml:23:22-76
 uses-permission#android.permission.WAKE_LOCK
 ADDED from [com.google.firebase:firebase-measurement-connector-impl:16.0.0] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\firebase-measurement-connector-impl-16.0.0.aar\d47175a38d6c1013ba885891c2263871\AndroidManifest.xml:24:5-68
 MERGED from [com.google.firebase:firebase-analytics:16.0.0] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\firebase-analytics-16.0.0.aar\0018b35dc6778dec80ac4582db24fa33\AndroidManifest.xml:25:5-68
