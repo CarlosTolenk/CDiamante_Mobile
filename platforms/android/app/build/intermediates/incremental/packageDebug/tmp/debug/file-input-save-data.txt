@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sat Jun 09 12:21:46 BOT 2018
+#Sat Jun 09 12:45:57 BOT 2018
 2385.set=ASSET
 3632.path=app/tns_modules/nativescript-plugin-firebase/mlkit/mlkit-cameraview.js
 5391.baseType=DIRECTORY

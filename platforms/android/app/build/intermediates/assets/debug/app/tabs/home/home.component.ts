@@ -54,57 +54,15 @@ export class HomeComponent implements OnInit, DoCheck {
     }
 
     ngOnInit(): void {
-        // Use the "ngOnInit" handler to initialize data for the view.
-        // firebase.initializeApp({
-        //     persist: false
-        //   }).then(() => {
-        //     console.log("Firebase initialized");
-        // });    
-
-        // this._planesService.getConexion(); 
-        // this.planes =  this._planesService.getAllPlanes();
-
-        // const planesCollection = firebase.firestore().collection("planes"); 
-        // this.ngZone.run(() => {
-        //     this.planes = [];
-        //     planesCollection.get().then(querySnapshot => {
-        //         querySnapshot.forEach(doc => {
-        //             // console.log(`${doc.id} => ${doc.data()}`);
-        //             this.planes.push(doc.data());  
-        //             // console.dir(this.planes);             
-        //         });
-        //     });
-        // }); 
-        
-        // this.firestoreDocumentObservable(); 
+        console.log("Que esta pasando");
+        this.planes =  this._planesService.getAllPlanes();
     }
 
-        ngDoCheck(): void{            
-            // this.firestoreDocumentObservable();         
-        }
+    ngDoCheck(): void{            
 
-    firestoreDocumentObservable(): void {    
-        // const changePlanesCollection = firebase.firestore().collection("planes");
-        // this.ngZone.run(()=>{
-        //     const unsubscribe = changePlanesCollection.onSnapshot((snapshot: firestore.QuerySnapshot) => {
-        //         this.changePlanes = [];
-        //         this.planes = [];
-        //         snapshot.forEach(change => {
-        //           // console.log(change.data());
-        //           this.changePlanes.push(change.data());
-                
-        //         });           
-      
-        //           for ( var i = 0; i<this.changePlanes.length;i++){ 
-        //               console.log(i);        
-        //               this.planes[i] = this.changePlanes[i];
-        //               console.log(this.planes[i]);
-        //           }
-              
-        //       });
-        // });       
-       
     }
+
+   
 
     itemNext(){
         console.log("Ir a item");
@@ -116,10 +74,6 @@ export class HomeComponent implements OnInit, DoCheck {
             }
         });
     }
-
- 
-
-
   
 
     like(){

@@ -5,10 +5,12 @@ import { RouterExtensions } from "nativescript-angular/router";
 import { Page } from "ui/page";
 import { Color } from "color";
 import { View } from "ui/core/view";
+import * as appSettings from 'tns-core-modules/application-settings'
+const connectivityModule = require("tns-core-modules/connectivity");
 // import { firestore } from "nativescript-plugin-firebase";
 
 //Services
-import { PlanesServices} from "../../services/planes.services";
+import { PlanesServices } from "../../services/planes.services";
 
 //Modelo
 import { Planes } from "../../models/planes";
@@ -39,9 +41,10 @@ export class HomeComponent implements OnInit, DoCheck {
     public pressShared:string;
     public planes: Array<any> = [];
     public changePlanes: Array<any> = [];
+    public prueba:string;
 
     constructor(
-        // private ngZone: NgZone,
+        private ngZone: NgZone,
         private router: RouterExtensions,
         private _planesService: PlanesServices
      ){
@@ -53,58 +56,19 @@ export class HomeComponent implements OnInit, DoCheck {
    
     }
 
-    ngOnInit(): void {
-        // Use the "ngOnInit" handler to initialize data for the view.
-        // firebase.initializeApp({
-        //     persist: false
-        //   }).then(() => {
-        //     console.log("Firebase initialized");
-        // });    
-
-        // this._planesService.getConexion(); 
-        this.planes =  this._planesService.getAllPlanes();
-
-        // const planesCollection = firebase.firestore().collection("planes"); 
-        // this.ngZone.run(() => {
-        //     this.planes = [];
-        //     planesCollection.get().then(querySnapshot => {
-        //         querySnapshot.forEach(doc => {
-        //             // console.log(`${doc.id} => ${doc.data()}`);
-        //             this.planes.push(doc.data());  
-        //             // console.dir(this.planes);             
-        //         });
-        //     });
-        // }); 
-        
-        // this.firestoreDocumentObservable(); 
+    ngOnInit(): void { 
+        this.ngZone.run(()=>{
+            this.planes =  this._planesService.getAllPlanes();
+            console.dir(this.planes);            
+        });    
+      
     }
 
-        ngDoCheck(): void{            
-            // this.firestoreDocumentObservable();         
-        }
-
-    firestoreDocumentObservable(): void {    
-        // const changePlanesCollection = firebase.firestore().collection("planes");
-        // this.ngZone.run(()=>{
-        //     const unsubscribe = changePlanesCollection.onSnapshot((snapshot: firestore.QuerySnapshot) => {
-        //         this.changePlanes = [];
-        //         this.planes = [];
-        //         snapshot.forEach(change => {
-        //           // console.log(change.data());
-        //           this.changePlanes.push(change.data());
-                
-        //         });           
-      
-        //           for ( var i = 0; i<this.changePlanes.length;i++){ 
-        //               console.log(i);        
-        //               this.planes[i] = this.changePlanes[i];
-        //               console.log(this.planes[i]);
-        //           }
-              
-        //       });
-        // });       
+    ngDoCheck(): void{            
        
     }
+
+   
 
     itemNext(){
         console.log("Ir a item");
@@ -116,10 +80,6 @@ export class HomeComponent implements OnInit, DoCheck {
             }
         });
     }
-
- 
-
-
   
 
     like(){
