@@ -1,8 +1,24 @@
 <ActionBar class="action-bar">
     <NavigationButton [nsRouterLink]="['../../home']" android.systemIcon="ic_menu_back"></NavigationButton>
-    <Label class="action-bar-title" text="item.name" style="Color: #ffffff;"></Label>
+    <Label class="action-bar-title" [text]="plan.nombre_plan" style="Color: #ffffff;"></Label>
 </ActionBar>
 
-<GridLayout>
-    <Label class="m-10 h3" verticalAlignment="top" text="item.description"></Label>
-</GridLayout>
+<StackLayout horizontalAlignment="stretch">
+	<ScrollView orientation="vertical" ios.pagingEnabled="true" >		
+			<StackLayout orientation="vertical">				
+				
+                <GridLayout rows="10,30,30,250,auto,auto,10" columns="10,40, *, 30,10">
+                    <Image src="res://icon"  class="logo-image" stretch="aspectFit" verticalAlignment="stretch" col="1" row="1" rowSpan="2"></Image>		
+                   
+                    <Label class="font-awesome text-date " horizontalAlignment="left" text="&#xf017;" row="1" col="3"></Label>
+                    <Label class="text-date-string" horizontalAlignment="left" [text]="plan.fecha_publicacion" row="1" col="4"></Label>
+                    <Image [src]="plan.imagen_url"  stretch="fill" colSpan="3" col="1" row="3" rowSpan="2"></Image>
+                    <Label horizontalAlignment="left"  class="{{toogleHeart}}" (tap)="like()" col="1" row="5" text="&#xf004;"></Label>
+                    <Label horizontalAlignment="left"  class="like_recibido"  col="2" row="5" [text]="plan.likes_recibidos"></Label>
+                    <Label horizontalAlignment="left" class="{{pressShared}}" text="&#xf1e0; Compartir"(tap)="share()" col="3" row="5" colSpan="2"></Label>
+                    <!-- <Button horizontalAlignment="left" class="btn btn-active" id="button" text="Tap me!" (tap)="share()" row="5" col="4"></Button>					 -->
+                </GridLayout>
+											
+			</StackLayout>	
+	</ScrollView>
+</StackLayout>

@@ -5,8 +5,9 @@ export interface Planes {
     duracion: string;
     días_entrega:[3],
     imagen_url:string,
-    like_recibidos:number,
+    likes_recibidos:number,
     nombre_plan:string,
     precio:number,
-    loterias:[2]    
+    loterias:[2],
+    fecha_publicacion:string
   }

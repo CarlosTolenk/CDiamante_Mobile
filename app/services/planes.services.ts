@@ -16,9 +16,10 @@ import { Planes } from "../models/planes";
   providedIn: 'root',
 })
 export class PlanesServices {
-    public allPlanes: Array<any> = [];
-    public allId: Array<any> = [];
+    public allPlanes: Array<Planes> = [];
+    public allId: Array<Planes> = [];
     public prueba:string;
+    public planesU:Planes;
 
   constructor(
         private ngZone: NgZone,
@@ -28,7 +29,7 @@ export class PlanesServices {
       }).then(() => {
         console.log("Firebase initialized");
     });    
-
+    this.allId = new Array;
    }
 
    getAllPlanes(){      
@@ -37,9 +38,9 @@ export class PlanesServices {
             planesCollection.get().then(querySnapshot => {
                 querySnapshot.forEach(doc => {
                     // console.dir(`${doc.id} => ${doc.data()}`); 
-                    this.allId.push(doc.id);
+                    this.allId.push(doc.data());
                     this.allPlanes.push(doc.data());                 
-                    console.log(this.allPlanes)          
+                    // console.log(this.allPlanes)          
                 });
             });
         }); 
@@ -57,12 +58,11 @@ export class PlanesServices {
             switch (connectionType) {
                 case connectivityModule.connectionType.none:
                     // Denotes no Internet connection.
-                    console.log("No connection");
-    
+                    // console.log("No connection");    
                     if(appSettings.getString("allPlanes")!=undefined){
                         this.allPlanes = JSON.parse(appSettings.getString("allPlanes",""));
-                        console.log("Leyendo appSetting")
-                        console.log(this.allPlanes);
+                        // console.log("Leyendo appSetting")
+                        // console.log(this.allPlanes);
                     }else{
                         console.log("No hay planes en el Storage application");
                     }        
@@ -70,10 +70,10 @@ export class PlanesServices {
     
                 case connectivityModule.connectionType.wifi:
                     // Denotes a WiFi connection.  
-                        console.log("Wifi connection");               
-                        console.log("Guadando en AppSetting");
+                        // console.log("Wifi connection");               
+                        // console.log("Guadando en AppSetting");
                         let info = JSON.stringify(this.allPlanes);
-                        console.log(info);
+                        // console.log(info);
                         appSettings.setString("allPlanes", info);
                         // appSettings.setString("allPlanes","Que estará pasando, porque lo estoy guardando");
                         this.allPlanes = JSON.parse(appSettings.getString("allPlanes",""));
@@ -84,22 +84,46 @@ export class PlanesServices {
                     break;
                 case connectivityModule.connectionType.mobile:
                     // Denotes a mobile connection, i.e. cellular network or WAN.
-                        console.log("Mobile connection");  
-                        console.log("Guadando en AppSetting");
+                        // console.log("Mobile connection");  
+                        // console.log("Guadando en AppSetting");
                         let data = JSON.stringify(this.allPlanes);
-                        console.log(data);
+                        // console.log(data);
                         appSettings.setString("allPlanes", data);
                         // appSettings.setString("allPlanes","Que estará pasando, porque lo estoy guardando");
                         this.allPlanes = JSON.parse(appSettings.getString("allPlanes",""));
                         // console.log("Leyendo appSetting")
-                        // console.log(this.prueba);
-                
+                        // console.log(this.prueba);  
                     
                     break;
                 default:
                     break;
-            }
+               
+            }          
+           
         });
-       
+        return this.allPlanes;
     }
-}
+
+    getPlan(id){
+        this.allPlanes = JSON.parse(appSettings.getString("allPlanes",""));       
+        for(let i=0;i<this.allPlanes.length;i++){
+            if(id == this.allPlanes[i].id){
+                this.planesU = this.allPlanes[i];
+            }
+        }
+
+        return this.planesU;
+
+
+        // let id = 'MhyTSeaIH3lTdgJsrnHK';
+        // const sanFranciscoDocument = firebase.firestore().collection("planes").doc(id);
+        // const unsubscribe = sanFranciscoDocument.onSnapshot(doc => {
+        // if (doc.exists) {
+        //     console.log("Document data:", JSON.stringify(doc.data()));
+        // } else {
+        //     console.log("No such document!");
+        // }
+        // });
+      
+    }
+} 

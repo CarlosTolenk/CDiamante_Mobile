@@ -59,13 +59,17 @@ export class HomeComponent implements OnInit, DoCheck {
     ngOnInit(): void { 
         this.ngZone.run(()=>{
             this.planes =  this._planesService.getAllPlanes();
-            console.dir(this.planes);            
+            // this.planes =  this._planesService.getConexion();
+            // console.dir(this.planes);            
         });    
       
     }
 
     ngDoCheck(): void{            
-       
+        this.ngZone.run(()=>{
+            this.planes =  this._planesService.getConexion();
+            // console.dir(this.planes);            
+        });  
     }
 
    
@@ -86,6 +90,7 @@ export class HomeComponent implements OnInit, DoCheck {
         if(!this.toogleLike){
             this.toogleLike = true;
             this.toogleHeart = "font-awesome ico-like"
+                        
           
         }else{
             this.toogleLike = false;
@@ -104,9 +109,9 @@ export class HomeComponent implements OnInit, DoCheck {
        
     }
 
-    share(){          
+    share(id){          
         this.pressShared = "font-awesome ico-share-press";       
-        ImageSource.fromUrl("https://controldiamante.com/wp-content/uploads/2018/05/2018-05-14.jpg").then((image) => {        
+        ImageSource.fromUrl(id).then((image) => {        
             SocialShare.shareImage(image);
             this.pressShared = "font-awesome ico-share";  
         });
