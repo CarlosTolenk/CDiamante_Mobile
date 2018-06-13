@@ -38,6 +38,7 @@ export class ProductoComponent implements OnInit {
         const id = this.route.snapshot.params.id;   
         console.log("Desde los productos");        
         this.plan = this._planesService.getPlan(id);
+        console.log(this.plan);
     }
 
 }

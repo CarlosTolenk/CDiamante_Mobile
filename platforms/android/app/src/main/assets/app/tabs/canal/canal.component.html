@@ -3,6 +3,12 @@
 </ActionBar>
 
 <GridLayout class="page page-content">
+        <PullToRefresh (refresh)="refreshList($event)">
+            <ListView >
+                    
+            </ListView>
+
+        </PullToRefresh>
     <Label class="page-icon fa" text="&#xf1ea;"></Label>
     <Label class="page-placeholder" text="<!-- Page content goes here -->"></Label>
 </GridLayout>

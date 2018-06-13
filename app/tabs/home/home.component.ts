@@ -22,6 +22,10 @@ import * as ImageSource from "image-source";
 // const firebaseWebApi = require("nativescript-plugin-firebase/app");
 import { CardView } from 'nativescript-cardview';
 
+// import { registerElement } from "nativescript-angular/element-registry";
+// import { PullToRefresh } from "nativescript-pulltorefresh"; 
+// registerElement("pullToRefresh",() => require("nativescript-pulltorefresh").PullToRefresh);
+
 
 @Component({
     selector: "Home",
@@ -39,7 +43,7 @@ export class HomeComponent implements OnInit, DoCheck {
     public toogleHeart:string;
     public toogleLike:boolean;
     public pressShared:string;
-    public planes: Array<any> = [];
+    public planes: Array<Planes> = [];
     public changePlanes: Array<any> = [];
     public prueba:string;
 
@@ -58,18 +62,18 @@ export class HomeComponent implements OnInit, DoCheck {
 
     ngOnInit(): void { 
         this.ngZone.run(()=>{
-            this.planes =  this._planesService.getAllPlanes();
-            // this.planes =  this._planesService.getConexion();
+            // this.planes =  this._planesService.getAllPlanes();
+            this.planes =  this._planesService.getConexion();
             // console.dir(this.planes);            
         });    
       
     }
 
     ngDoCheck(): void{            
-        this.ngZone.run(()=>{
-            this.planes =  this._planesService.getConexion();
-            // console.dir(this.planes);            
-        });  
+        // this.ngZone.run(()=>{
+        //     this.planes =  this._planesService.getConexion();
+        //     // console.dir(this.planes);            
+        // });  
     }
 
    
@@ -117,4 +121,18 @@ export class HomeComponent implements OnInit, DoCheck {
         });
        
     }
+
+    refreshList(args) {
+        
+        var pullRefresh = args.object;
+        setTimeout(function () {             
+           pullRefresh.refreshing = false;
+        }, 1000);
+        console.log("Entrando");
+        this.ngZone.run(()=>{
+            this.planes = [];
+            this.planes =  this._planesService.getConexion();                       
+        });  
+        //    console.log(this.planes);
+   }
 }
