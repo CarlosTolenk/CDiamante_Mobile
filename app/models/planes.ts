@@ -3,7 +3,7 @@ export interface Planes {
     cantidad_mensaje: string;
     cantidad_numero: string;
     duracion: string;
-    días_entrega:[3],
+    dias_entreg:[3],
     imagen_url:string,
     likes_recibidos:number,
     nombre_plan:string,

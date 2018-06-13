@@ -5,20 +5,31 @@
 
 <StackLayout horizontalAlignment="stretch">
 	<ScrollView orientation="vertical" ios.pagingEnabled="true" >		
-			<StackLayout orientation="vertical">				
-				
-                <GridLayout rows="10,30,30,250,auto,auto,10" columns="10,40, *, 30,10">
-                    <Image src="res://icon"  class="logo-image" stretch="aspectFit" verticalAlignment="stretch" col="1" row="1" rowSpan="2"></Image>		
-                   
-                    <Label class="font-awesome text-date " horizontalAlignment="left" text="&#xf017;" row="1" col="3"></Label>
-                    <Label class="text-date-string" horizontalAlignment="left" [text]="plan.fecha_publicacion" row="1" col="4"></Label>
-                    <Image [src]="plan.imagen_url"  stretch="fill" colSpan="3" col="1" row="3" rowSpan="2"></Image>
-                    <Label horizontalAlignment="left"  class="{{toogleHeart}}" (tap)="like()" col="1" row="5" text="&#xf004;"></Label>
-                    <Label horizontalAlignment="left"  class="like_recibido"  col="2" row="5" [text]="plan.likes_recibidos"></Label>
-                    <Label horizontalAlignment="left" class="{{pressShared}}" text="&#xf1e0; Compartir"(tap)="share()" col="3" row="5" colSpan="2"></Label>
-                    <!-- <Button horizontalAlignment="left" class="btn btn-active" id="button" text="Tap me!" (tap)="share()" row="5" col="4"></Button>					 -->
+			<StackLayout orientation="vertical">					
+                <GridLayout rows="20,50,50,50,30,30,30" columns="20,125,95,auto,auto,*,10">
+                    <Image [src]="plan.imagen_url" class="img-product"  stretch="aspectFill" verticalAlignment="stretch" colSpan="2" col="1 " row="1" rowSpan="5"></Image>
+                    <!-- <Image src="res://icon"  class="logo-image" stretch="aspectFit" verticalAlignment="stretch" col="1" row="1" rowSpan="2"></Image>                    -->
+                    <Label class="font-awesome text-fecha-publish" horizontalAlignment="left" text="Fecha de Inicio:" row="2" col="4" colSpan="2"></Label>
+                    <Label class="font-awesome text-date " horizontalAlignment="left" text="&#xf017;" row="3" col="4" ></Label>                   
+                    <Label class="text-date-string" horizontalAlignment="left" [text]="plan.fecha_publicacion" row="3" col="4" colSpan="2" ></Label> 
+
+                    <Label class="font-awesome text-precio-publish" horizontalAlignment="right" text="Precio:" row="4" col="4" colSpan="1"></Label>   
+                    <!-- <Label class="font-awesome icon-money" horizontalAlignment="left" text="&#xf155;" row="3" col="5"></Label> -->
+                    <Label class="text-money" horizontalAlignment="left" [text]="plan.precio" row="4" col="4" colSpan="3"></Label>                  
                 </GridLayout>
-											
+
+                <GridLayout rows="1,50,50,50,50,50,50,10" columns="1,50,185,20,70,*,20">	                
+                    <Label class="font-awesome cant-message" horizontalAlignment="left" text="&#xf0e0; Total de Mensajes:" row="1" col="2"></Label>
+                    <Label horizontalAlignment="left"  class="cantidad_mensaje"  col="4" row="1" [text]="plan.cantidad_mensaje" colSpan="3"></Label>
+                    <Label class="font-awesome cant-message" horizontalAlignment="left" text="&#xf292; Números a Jugar:" row="2" col="2"></Label>
+                    <Label horizontalAlignment="left"  class="cantidad_mensaje"  col="4" row="2" [text]="plan.cantidad_numero" colSpan="4"></Label>
+                    <Label class="font-awesome cant-message" horizontalAlignment="left" text="&#xf073; Duración:" row="3" col="2" colSpan="1"></Label>
+                    <Label horizontalAlignment="left"  class="cantidad_mensaje"  col="4" row="3" [text]="plan.duracion"></Label>
+                    <Label class="font-awesome cant-message" horizontalAlignment="left" text="&#xf1ad; Loterias:" row="4" col="2" ></Label>
+                    <Label horizontalAlignment="left"  class="cantidad_mensaje"  col="4" row="4" [text]="plan.loterias" colSpan="3"></Label>
+                    <Label class="font-awesome cant-message" horizontalAlignment="left" text="&#xf271; Días de Entregas:" row="5" col="2" colSpan="1"></Label>
+                    <Label horizontalAlignment="left"  class="cantidad_mensaje"  col="4" row="5" [text]="plan.dias_entreg"></Label>
+                </GridLayout>
 			</StackLayout>	
 	</ScrollView>
 </StackLayout>
