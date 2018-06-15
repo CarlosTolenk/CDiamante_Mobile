@@ -20,32 +20,37 @@
 
 .text-date{  
     font-size: 14;
-    margin-left: -30;
+    margin-left: -40;
     margin-top: 14;   
     border-bottom: 10px solid red;
 }
 
-.text-plan::after{
-    content:'';
-    border-bottom: 10px solid red;
-    position: absolute;
-    top: 10px;
-    left: 0;
+.text-date-string{
+    font-size: 14;
+    margin-left: -55;
+    margin-top: 11;      
 }
+
 
 .ico-like{
     color: red;
     margin-left: 10;
     padding-top: 10;   
-    font-size: 28px;
+    font-size: 26px;
 }
 
 .ico-dislike{
     color: #2A56C6;
     margin-left: 10;
     padding-top: 12;
-    font-size: 24px;
-  
+    font-size: 24px;    
+}
+
+.like_recibido{
+    padding-top: 8;
+    padding-left: 2;
+    font-size: 22px;
+    color: rgba(36, 52, 92, 0.692);
     
 }
 

@@ -9,5 +9,6 @@ export interface Planes {
     nombre_plan:string,
     precio:number,
     loterias:[2],
-    fecha_publicacion:string
+    fecha_publicacion:string;
+    class_likes:string;
   }

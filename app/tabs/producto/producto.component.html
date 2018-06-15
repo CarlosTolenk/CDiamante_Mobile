@@ -18,8 +18,8 @@
                     <Label class="text-money" horizontalAlignment="left" [text]="plan.precio" row="4" col="4" colSpan="3"></Label>                  
                 </GridLayout>
 
-                <GridLayout rows="1,50,50,50,50,50,50,10" columns="1,50,185,20,70,*,20">	                
-                    <Label class="font-awesome cant-message" horizontalAlignment="left" text="&#xf0e0; Total de Mensajes:" row="1" col="2"></Label>
+                <GridLayout rows="1,50,50,50,50,50,50,10" columns="10,50,185,20,70,*,20">	                
+                    <Label class="font-awesome cant-message" horizontalAlignment="left" text="&#xf0e0; Total de Mensajes:" row="1" col="2" colSpan="2"></Label>
                     <Label horizontalAlignment="left"  class="cantidad_mensaje"  col="4" row="1" [text]="plan.cantidad_mensaje" colSpan="3"></Label>
                     <Label class="font-awesome cant-message" horizontalAlignment="left" text="&#xf292; Números a Jugar:" row="2" col="2"></Label>
                     <Label horizontalAlignment="left"  class="cantidad_mensaje"  col="4" row="2" [text]="plan.cantidad_numero" colSpan="4"></Label>

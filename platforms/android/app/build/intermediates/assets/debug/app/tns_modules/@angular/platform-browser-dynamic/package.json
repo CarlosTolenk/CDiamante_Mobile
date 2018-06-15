@@ -1,32 +1,28 @@
 {
-  "_args": [
-    [
-      "@angular/platform-browser-dynamic@6.0.4",
-      "C:\\Users\\Carlos Tolentino\\Desktop\\CDiamante_Mobile\\CDiamante"
-    ]
-  ],
-  "_from": "@angular/platform-browser-dynamic@6.0.4",
-  "_id": "@angular/platform-browser-dynamic@6.0.4",
+  "_from": "@angular/platform-browser-dynamic@6.0.5",
+  "_id": "@angular/platform-browser-dynamic@6.0.5",
   "_inBundle": false,
-  "_integrity": "sha512-uh7MoQi9kyKPFHrD7HPOU5gWyhF4pPJuGltyMTOtM/f5TNL9QQI2EugijKnnSFLQ8+7UQjmFAVeRqH9jylhIyQ==",
+  "_integrity": "sha512-TTSLOMVrgRXI29xmBWsnSp8187vbWnbj0YEehuyup2FmltUl+H5Vms7poWV9/6fI3RnW3Yg9Ziv3T5iKqsiADQ==",
   "_location": "/@angular/platform-browser-dynamic",
   "_phantomChildren": {},
   "_requested": {
     "type": "version",
     "registry": true,
-    "raw": "@angular/platform-browser-dynamic@6.0.4",
+    "raw": "@angular/platform-browser-dynamic@6.0.5",
     "name": "@angular/platform-browser-dynamic",
     "escapedName": "@angular%2fplatform-browser-dynamic",
     "scope": "@angular",
-    "rawSpec": "6.0.4",
+    "rawSpec": "6.0.5",
     "saveSpec": null,
-    "fetchSpec": "6.0.4"
+    "fetchSpec": "6.0.5"
   },
   "_requiredBy": [
+    "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/@angular/platform-browser-dynamic/-/platform-browser-dynamic-6.0.4.tgz",
-  "_spec": "6.0.4",
+  "_resolved": "https://registry.npmjs.org/@angular/platform-browser-dynamic/-/platform-browser-dynamic-6.0.5.tgz",
+  "_shasum": "21c9a702fbd4a153ae8aa35fef89ca1a6dfaa658",
+  "_spec": "@angular/platform-browser-dynamic@6.0.5",
   "_where": "C:\\Users\\Carlos Tolentino\\Desktop\\CDiamante_Mobile\\CDiamante",
   "author": {
     "name": "angular"
@@ -34,9 +30,11 @@
   "bugs": {
     "url": "https://github.com/angular/angular/issues"
   },
+  "bundleDependencies": false,
   "dependencies": {
     "tslib": "^1.9.0"
   },
+  "deprecated": false,
   "description": "Angular - library for using Angular in a web browser with JIT compilation",
   "es2015": "./fesm2015/platform-browser-dynamic.js",
   "esm2015": "./esm2015/platform-browser-dynamic.js",
@@ -71,10 +69,10 @@
     ]
   },
   "peerDependencies": {
-    "@angular/core": "6.0.4",
-    "@angular/common": "6.0.4",
-    "@angular/compiler": "6.0.4",
-    "@angular/platform-browser": "6.0.4"
+    "@angular/core": "6.0.5",
+    "@angular/common": "6.0.5",
+    "@angular/compiler": "6.0.5",
+    "@angular/platform-browser": "6.0.5"
   },
   "repository": {
     "type": "git",
@@ -82,5 +80,5 @@
   },
   "sideEffects": false,
   "typings": "./platform-browser-dynamic.d.ts",
-  "version": "6.0.4"
+  "version": "6.0.5"
 }

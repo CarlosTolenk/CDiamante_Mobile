@@ -22,9 +22,12 @@ import * as ImageSource from "image-source";
 // const firebaseWebApi = require("nativescript-plugin-firebase/app");
 import { CardView } from 'nativescript-cardview';
 
-// import { registerElement } from "nativescript-angular/element-registry";
-// import { PullToRefresh } from "nativescript-pulltorefresh"; 
-// registerElement("pullToRefresh",() => require("nativescript-pulltorefresh").PullToRefresh);
+import { registerElement } from "nativescript-angular/element-registry";
+import { PullToRefresh } from "nativescript-pulltorefresh";
+ 
+registerElement("pullToRefresh",() => require("nativescript-pulltorefresh").PullToRefresh);
+
+
 
 
 @Component({
@@ -46,6 +49,7 @@ export class HomeComponent implements OnInit, DoCheck {
     public planes: Array<Planes> = [];
     public changePlanes: Array<any> = [];
     public prueba:string;
+    
 
     constructor(
         private ngZone: NgZone,
@@ -64,9 +68,9 @@ export class HomeComponent implements OnInit, DoCheck {
         this.ngZone.run(()=>{
             // this.planes =  this._planesService.getAllPlanes();
             this.planes =  this._planesService.getConexion();
-            // console.dir(this.planes);            
+            // console.log(this.planes);            
         });    
-      
+       
     }
 
     ngDoCheck(): void{            
@@ -78,30 +82,45 @@ export class HomeComponent implements OnInit, DoCheck {
 
    
 
-    itemNext(){
-        console.log("Ir a item");
-        this.router.navigate(["radio"], {
-            transition: {
-                name: "flip",
-                duration: 2000,
-                curve: "linear"
-            }
-        });
-    }
+    // itemNext(){
+    //     console.log("Ir a item");
+    //     this.router.navigate(["radio"], {
+    //         transition: {
+    //             name: "flip",
+    //             duration: 2000,
+    //             curve: "linear"
+    //         }
+    //     });
+    // }
   
 
-    like(){
+    like(id, like){
+        console.log("id:" +  id + "Total Like:"+ like);
+        // console.log("GetPlanId");        
+        
         if(!this.toogleLike){
             this.toogleLike = true;
             this.toogleHeart = "font-awesome ico-like"
+            this._planesService.putPlusLike(id, like); 
+            this.planes = JSON.parse(appSettings.getString("allPlanes",""));       
+            for(let i=0;i<this.planes.length;i++){
+                if(id == this.planes[i].id){
+                    this.planes[i].likes_recibidos++;
+                }
+            }         
                         
           
         }else{
             this.toogleLike = false;
             this.toogleHeart = "font-awesome ico-dislike"
+            this._planesService.putMinusLike(id, like);
+            this.planes = JSON.parse(appSettings.getString("allPlanes",""));       
+            for(let i=0;i<this.planes.length;i++){
+                if(id == this.planes[i].id){
+                    // this.planes[i].likes_recibidos--;
+                }
+            }
         }  
-
-        
 
 
         //Example Animation
@@ -119,6 +138,8 @@ export class HomeComponent implements OnInit, DoCheck {
             SocialShare.shareImage(image);
             this.pressShared = "font-awesome ico-share";  
         });
+
+        this._planesService.removeStorage();
        
     }
 
@@ -131,8 +152,10 @@ export class HomeComponent implements OnInit, DoCheck {
         console.log("Entrando");
         this.ngZone.run(()=>{
             this.planes = [];
-            this.planes =  this._planesService.getConexion();                       
+            this.planes =  this._planesService.getConexion();   
+                                
         });  
-        //    console.log(this.planes);
+        let cache = this._planesService.getLike();
+        console.dir(cache);
    }
 }

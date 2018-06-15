@@ -5,10 +5,12 @@ import { RouterExtensions } from "nativescript-angular/router";
 import { Page } from "ui/page";
 import { Color } from "color";
 import { View } from "ui/core/view";
+import * as appSettings from 'tns-core-modules/application-settings'
+const connectivityModule = require("tns-core-modules/connectivity");
 // import { firestore } from "nativescript-plugin-firebase";
 
 //Services
-import { PlanesServices} from "../../services/planes.services";
+import { PlanesServices } from "../../services/planes.services";
 
 //Modelo
 import { Planes } from "../../models/planes";
@@ -19,6 +21,13 @@ import * as ImageSource from "image-source";
 // const firebase = require("nativescript-plugin-firebase/app");
 // const firebaseWebApi = require("nativescript-plugin-firebase/app");
 import { CardView } from 'nativescript-cardview';
+
+import { registerElement } from "nativescript-angular/element-registry";
+import { PullToRefresh } from "nativescript-pulltorefresh";
+ 
+registerElement("pullToRefresh",() => require("nativescript-pulltorefresh").PullToRefresh);
+
+
 
 
 @Component({
@@ -37,11 +46,13 @@ export class HomeComponent implements OnInit, DoCheck {
     public toogleHeart:string;
     public toogleLike:boolean;
     public pressShared:string;
-    public planes: Array<any> = [];
+    public planes: Array<Planes> = [];
     public changePlanes: Array<any> = [];
+    public prueba:string;
+    
 
     constructor(
-        // private ngZone: NgZone,
+        private ngZone: NgZone,
         private router: RouterExtensions,
         private _planesService: PlanesServices
      ){
@@ -53,40 +64,63 @@ export class HomeComponent implements OnInit, DoCheck {
    
     }
 
-    ngOnInit(): void {
-        console.log("Que esta pasando");
-        this.planes =  this._planesService.getAllPlanes();
+    ngOnInit(): void { 
+        this.ngZone.run(()=>{
+            // this.planes =  this._planesService.getAllPlanes();
+            this.planes =  this._planesService.getConexion();
+            console.log(this.planes);            
+        });    
+      
     }
 
     ngDoCheck(): void{            
-
+        // this.ngZone.run(()=>{
+        //     this.planes =  this._planesService.getConexion();
+        //     // console.dir(this.planes);            
+        // });  
     }
 
    
 
-    itemNext(){
-        console.log("Ir a item");
-        this.router.navigate(["radio"], {
-            transition: {
-                name: "flip",
-                duration: 2000,
-                curve: "linear"
-            }
-        });
-    }
+    // itemNext(){
+    //     console.log("Ir a item");
+    //     this.router.navigate(["radio"], {
+    //         transition: {
+    //             name: "flip",
+    //             duration: 2000,
+    //             curve: "linear"
+    //         }
+    //     });
+    // }
   
 
-    like(){
+    like(id, like){
+        console.log("id:" +  id + "Total Like:"+ like);
+        // console.log("GetPlanId");        
+        
         if(!this.toogleLike){
             this.toogleLike = true;
             this.toogleHeart = "font-awesome ico-like"
+            this._planesService.putPlusLike(id, like); 
+            this.planes = JSON.parse(appSettings.getString("allPlanes",""));       
+            for(let i=0;i<this.planes.length;i++){
+                if(id == this.planes[i].id){
+                    this.planes[i].likes_recibidos++;
+                }
+            }         
+                        
           
         }else{
             this.toogleLike = false;
             this.toogleHeart = "font-awesome ico-dislike"
+            this._planesService.putMinusLike(id, like);
+            this.planes = JSON.parse(appSettings.getString("allPlanes",""));       
+            for(let i=0;i<this.planes.length;i++){
+                if(id == this.planes[i].id){
+                    // this.planes[i].likes_recibidos--;
+                }
+            }
         }  
-
-        
 
 
         //Example Animation
@@ -98,12 +132,26 @@ export class HomeComponent implements OnInit, DoCheck {
        
     }
 
-    share(){          
+    share(id){          
         this.pressShared = "font-awesome ico-share-press";       
-        ImageSource.fromUrl("https://controldiamante.com/wp-content/uploads/2018/05/2018-05-14.jpg").then((image) => {        
+        ImageSource.fromUrl(id).then((image) => {        
             SocialShare.shareImage(image);
             this.pressShared = "font-awesome ico-share";  
         });
        
     }
+
+    refreshList(args) {
+        
+        var pullRefresh = args.object;
+        setTimeout(function () {             
+           pullRefresh.refreshing = false;
+        }, 1000);
+        console.log("Entrando");
+        this.ngZone.run(()=>{
+            this.planes = [];
+            this.planes =  this._planesService.getConexion();                       
+        });  
+        //    console.log(this.planes);
+   }
 }

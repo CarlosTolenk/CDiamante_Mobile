@@ -1,32 +1,28 @@
 {
-  "_args": [
-    [
-      "@angular/platform-browser@6.0.4",
-      "C:\\Users\\Carlos Tolentino\\Desktop\\CDiamante_Mobile\\CDiamante"
-    ]
-  ],
-  "_from": "@angular/platform-browser@6.0.4",
-  "_id": "@angular/platform-browser@6.0.4",
+  "_from": "@angular/platform-browser@6.0.5",
+  "_id": "@angular/platform-browser@6.0.5",
   "_inBundle": false,
-  "_integrity": "sha512-4y6rSqOLuBs+RL0CIM+RZ5T8a5Tm1NisZcTUGvM8lVYPNkqTzNfHQXhBq8mTgRw9JopEwOj+UEqBbgrNX715yQ==",
+  "_integrity": "sha512-FSsA9C3cJa7S4SPUAhypKlTQf4uA4hiqx/h65v7frDiyRVHv22oWKX7aKmyyb9oP5FHN/TDeQiRn4m8XNqG6AQ==",
   "_location": "/@angular/platform-browser",
   "_phantomChildren": {},
   "_requested": {
     "type": "version",
     "registry": true,
-    "raw": "@angular/platform-browser@6.0.4",
+    "raw": "@angular/platform-browser@6.0.5",
     "name": "@angular/platform-browser",
     "escapedName": "@angular%2fplatform-browser",
     "scope": "@angular",
-    "rawSpec": "6.0.4",
+    "rawSpec": "6.0.5",
     "saveSpec": null,
-    "fetchSpec": "6.0.4"
+    "fetchSpec": "6.0.5"
   },
   "_requiredBy": [
+    "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-6.0.4.tgz",
-  "_spec": "6.0.4",
+  "_resolved": "https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-6.0.5.tgz",
+  "_shasum": "b6b15424a7aa9342284ce7fba6a700f7aad2fd9c",
+  "_spec": "@angular/platform-browser@6.0.5",
   "_where": "C:\\Users\\Carlos Tolentino\\Desktop\\CDiamante_Mobile\\CDiamante",
   "author": {
     "name": "angular"
@@ -34,9 +30,11 @@
   "bugs": {
     "url": "https://github.com/angular/angular/issues"
   },
+  "bundleDependencies": false,
   "dependencies": {
     "tslib": "^1.9.0"
   },
+  "deprecated": false,
   "description": "Angular - library for using Angular in a web browser",
   "es2015": "./fesm2015/platform-browser.js",
   "esm2015": "./esm2015/platform-browser.js",
@@ -71,8 +69,8 @@
     ]
   },
   "peerDependencies": {
-    "@angular/core": "6.0.4",
-    "@angular/common": "6.0.4"
+    "@angular/core": "6.0.5",
+    "@angular/common": "6.0.5"
   },
   "repository": {
     "type": "git",
@@ -80,5 +78,5 @@
   },
   "sideEffects": false,
   "typings": "./platform-browser.d.ts",
-  "version": "6.0.4"
+  "version": "6.0.5"
 }

@@ -4,41 +4,7 @@
             "outputFile": "C:\\Users\\Carlos Tolentino\\Desktop\\CDiamante_Mobile\\CDiamante\\platforms\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-lo\\values-lo.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Carlos Tolentino\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\bdc4c61903d1325b6a3131f81d262ab6\\res\\values-lo\\values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
-                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
-                        "startOffsets": "245,351,553,681,786,997,1120,1254,1395,1606,1709,1906,2033,2263,2450,2544,2639",
-                        "endColumns": "105,201,127,104,210,122,133,140,210,102,196,126,229,186,93,94,109",
-                        "endOffsets": "350,552,680,785,996,1119,1253,1394,1605,1708,1905,2032,2262,2449,2543,2638,2748"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,215,417,549,658,869,996,1134,1470,1681,1788,1985,2116,2346,2537,2635,2734",
-                        "endColumns": "109,201,131,108,210,126,137,144,210,106,196,130,229,190,97,98,113",
-                        "endOffsets": "210,412,544,653,864,991,1129,1274,1676,1783,1980,2111,2341,2532,2630,2729,2843"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Carlos Tolentino\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-15.0.1.aar\\e761a2613da2f0207e8b370aa54d0bc2\\res\\values-lo\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "247",
-                        "endColumns": "190",
-                        "endOffsets": "437"
-                    },
-                    "to": {
-                        "startLines": "10",
-                        "startColumns": "4",
-                        "startOffsets": "1279",
-                        "endColumns": "190",
-                        "endOffsets": "1465"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Carlos Tolentino\\.gradle\\caches\\transforms-1\\files-1.1\\firebase-messaging-17.0.0.aar\\ed82a81f8d4640ede2f761245bfd4efc\\res\\values-lo\\values.xml",
+                    "source": "C:\\Users\\Carlos Tolentino\\.gradle\\caches\\transforms-1\\files-1.1\\firebase-messaging-17.0.0.aar\\ebaecf062118e4a8ca9f95cbf7d4cfa3\\res\\values-lo\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -55,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Carlos Tolentino\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\d3b85cb8bcbb75e0797aa680b1ac87ad\\res\\values-lo\\values-lo.xml",
+                    "source": "C:\\Users\\Carlos Tolentino\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\8615321b51ceb36d77b070cae69eadbf\\res\\values-lo\\values-lo.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -69,6 +35,40 @@
                         "startOffsets": "2952",
                         "endColumns": "100",
                         "endOffsets": "3048"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Carlos Tolentino\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-15.0.1.aar\\8b7672ba4fe144ef50731b05f04fd7ac\\res\\values-lo\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "245,351,553,681,786,997,1120,1254,1395,1606,1709,1906,2033,2263,2450,2544,2639",
+                        "endColumns": "105,201,127,104,210,122,133,140,210,102,196,126,229,186,93,94,109",
+                        "endOffsets": "350,552,680,785,996,1119,1253,1394,1605,1708,1905,2032,2262,2449,2543,2638,2748"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,215,417,549,658,869,996,1134,1470,1681,1788,1985,2116,2346,2537,2635,2734",
+                        "endColumns": "109,201,131,108,210,126,137,144,210,106,196,130,229,190,97,98,113",
+                        "endOffsets": "210,412,544,653,864,991,1129,1274,1676,1783,1980,2111,2341,2532,2630,2729,2843"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Carlos Tolentino\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-15.0.1.aar\\7562f8ff78b61aa9f84440e474509e92\\res\\values-lo\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "190",
+                        "endOffsets": "437"
+                    },
+                    "to": {
+                        "startLines": "10",
+                        "startColumns": "4",
+                        "startOffsets": "1279",
+                        "endColumns": "190",
+                        "endOffsets": "1465"
                     }
                 }
             ]

@@ -13,6 +13,7 @@ const connectivityModule = require("tns-core-modules/connectivity");
 
 //Modelos
 import { Planes } from "../models/planes";
+import { Likes } from "../models/likes";
 
 @Injectable({
   providedIn: 'root',
@@ -20,6 +21,7 @@ import { Planes } from "../models/planes";
 export class PlanesServices {
     public allPlanes: Array<Planes> = [];
     public captureInfo: Array<Planes> = [];
+    public likesPlan: Array<Likes> = [];
     public allId: Array<Planes> = [];
     public prueba:string;
     public planesU:Planes;
@@ -43,8 +45,7 @@ export class PlanesServices {
         this.ngZone.run(() => {           
             planesCollection.get().then(querySnapshot => {
                 querySnapshot.forEach(doc => {
-                    // console.dir(`${doc.id} => ${doc.data()}`); 
-                    this.allId.push(doc.data());
+                    // console.dir(`${doc.id} => ${doc.data()}`);                   
                     this.allPlanes.push(doc.data());                 
                     // console.log(this.allPlanes)     
                     appSettings.setString("allPlanes", JSON.stringify(this.allPlanes));       
@@ -52,6 +53,23 @@ export class PlanesServices {
             });           
            
         });  
+
+        // if(appSettings.getString("allLikes")!=undefined){
+        //     let likes_recibidos =  this.getLike();
+        //     for(let i=0;i<this.allPlanes.length;i++){
+        //         if(likes_recibidos.id == this.allPlanes[i].id){
+        //             this.allPlanes[i].class_likes = "font-awesome ico-like";
+        //         }
+        //         else{
+        //             this.allPlanes[i].class_likes = "font-awesome ico-dislike";
+        //         }
+        //     }
+        // }else{
+        //     for(let i=0;i<this.allPlanes.length;i++){
+        //         this.allPlanes[i].class_likes = "font-awesome ico-dislike";
+        //     }
+        // }
+     
                
         return this.allPlanes;
 
@@ -95,7 +113,7 @@ export class PlanesServices {
                         console.log("Mobile connection");  
                         // console.log("Guadando en AppSetting");
                         this.captureInfo = this.getAllPlanes();
-                        console.dir(this.captureInfo);
+                        // console.dir(this.captureInfo);
                         let data = JSON.stringify(this.captureInfo);
                         // console.log(data);
                         appSettings.setString("allPlanes", data);
@@ -111,8 +129,8 @@ export class PlanesServices {
             }          
            
         });      
-        console.log("Este no trae nada");
-        console.log(this.allPlanes);
+        // console.log("Este no trae nada");
+        // console.log(this.allPlanes);
         return this.allPlanes;
     }
 
@@ -139,4 +157,87 @@ export class PlanesServices {
         // });
       
     }
+
+    putPlusLike(id, like){
+        like++;
+        const LikePlan = firebase.firestore().collection("planes").doc(id);
+        LikePlan.update({
+        likes_recibidos: like,
+        updateTimestamp: firebase.firestore().FieldValue().serverTimestamp()
+        }).then(() => {
+        console.log("Like Activo");
+        this.addLike(id);
+        });        
+    }
+
+    putMinusLike(id, like){
+        like--;
+        const LikePlan = firebase.firestore().collection("planes").doc(id);
+        LikePlan.update({
+        likes_recibidos: like,
+        updateTimestamp: firebase.firestore().FieldValue().serverTimestamp()
+        }).then(() => {
+        console.log("Dislike Activo");
+        this.removeLike(id);
+        });
+    }
+
+    addLike(id){   
+
+        if(appSettings.getString("allLikes")!=undefined){
+        let confirmed = false;    
+        this.likesPlan = JSON.parse(appSettings.getString("allLikes",""));
+
+            for(let i=0;i<this.likesPlan.length;i++){
+                if(this.likesPlan[i].id == id){ 
+                    this.likesPlan[i].class_likes = true;
+                    appSettings.setString("allLikes", JSON.stringify(this.likesPlan));
+                    confirmed = true;
+                }
+            }
+            if(!confirmed){
+                let opt = {
+                    id: id,
+                    class_likes: true
+                };
+        
+                this.likesPlan.push(opt);
+                appSettings.setString("allLikes", JSON.stringify(this.likesPlan));
+            }
+        }else{
+            let opt = {
+                id: id,
+                class_likes: true
+            };
+    
+            this.likesPlan.push(opt);
+            appSettings.setString("allLikes", JSON.stringify(this.likesPlan));
+        }
+        
+        // console.log(JSON.parse(appSettings.getString("allPlanes")));
+       
+    }
+
+    removeLike(id){
+        this.likesPlan = JSON.parse(appSettings.getString("allLikes",""));
+
+        for(let i=0;i<this.likesPlan.length;i++){
+            if(this.likesPlan[i].id == id){
+               this.likesPlan[i].class_likes = false;
+            }
+        }
+        console.log(this.likesPlan);
+        appSettings.setString("allLikes", JSON.stringify(this.likesPlan));
+    }
+
+    getLike(){
+        let cache = JSON.parse(appSettings.getString("allLikes",""));
+        return cache;
+    }
+
+    removeStorage(){
+        appSettings.remove("allLikes");
+    }
+
+
 } 

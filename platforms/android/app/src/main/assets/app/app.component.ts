@@ -11,10 +11,10 @@ firebase.init({
     // see their respective docs.
   }).then(
     instance => {
-      console.log("firebase.init done app.module.ts");
+      console.log("firebase.init done app.component.ts");
     },
     error => {
-      console.log(`firebase.init error app.module.ts: ${error}`);
+      console.log(`firebase.init error app.component.ts: ${error}`);
     }
   );  
 

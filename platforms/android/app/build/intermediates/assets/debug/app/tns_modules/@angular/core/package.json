@@ -1,32 +1,28 @@
 {
-  "_args": [
-    [
-      "@angular/core@6.0.4",
-      "C:\\Users\\Carlos Tolentino\\Desktop\\CDiamante_Mobile\\CDiamante"
-    ]
-  ],
-  "_from": "@angular/core@6.0.4",
-  "_id": "@angular/core@6.0.4",
+  "_from": "@angular/core@6.0.5",
+  "_id": "@angular/core@6.0.5",
   "_inBundle": false,
-  "_integrity": "sha512-WCW8wyRoIKkjGjOjVLFpUyhQw/K0//s3W0qo1/vH6m9njC63jP/VP+2Xnt8bdtgeET2NYUeyl+w/0vUXqYlnEA==",
+  "_integrity": "sha512-yG4Qz5wHWgFYOCtX62F8MmJ1wZwZA1ALbyQC+WAZfi7Y8Asx8TShJ+3QKUDYwO1jj530pqNbfauDTCmPzzPvaQ==",
   "_location": "/@angular/core",
   "_phantomChildren": {},
   "_requested": {
     "type": "version",
     "registry": true,
-    "raw": "@angular/core@6.0.4",
+    "raw": "@angular/core@6.0.5",
     "name": "@angular/core",
     "escapedName": "@angular%2fcore",
     "scope": "@angular",
-    "rawSpec": "6.0.4",
+    "rawSpec": "6.0.5",
     "saveSpec": null,
-    "fetchSpec": "6.0.4"
+    "fetchSpec": "6.0.5"
   },
   "_requiredBy": [
+    "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/@angular/core/-/core-6.0.4.tgz",
-  "_spec": "6.0.4",
+  "_resolved": "https://registry.npmjs.org/@angular/core/-/core-6.0.5.tgz",
+  "_shasum": "5846f1b3143f43657dc704fe4bcf9e75b94ec325",
+  "_spec": "@angular/core@6.0.5",
   "_where": "C:\\Users\\Carlos Tolentino\\Desktop\\CDiamante_Mobile\\CDiamante",
   "author": {
     "name": "angular"
@@ -34,9 +30,11 @@
   "bugs": {
     "url": "https://github.com/angular/angular/issues"
   },
+  "bundleDependencies": false,
   "dependencies": {
     "tslib": "^1.9.0"
   },
+  "deprecated": false,
   "description": "Angular - the core framework",
   "es2015": "./fesm2015/core.js",
   "esm2015": "./esm2015/core.js",
@@ -80,5 +78,5 @@
   },
   "sideEffects": false,
   "typings": "./core.d.ts",
-  "version": "6.0.4"
+  "version": "6.0.5"
 }

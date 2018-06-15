@@ -1,32 +1,28 @@
 {
-  "_args": [
-    [
-      "@angular/forms@6.0.4",
-      "C:\\Users\\Carlos Tolentino\\Desktop\\CDiamante_Mobile\\CDiamante"
-    ]
-  ],
-  "_from": "@angular/forms@6.0.4",
-  "_id": "@angular/forms@6.0.4",
+  "_from": "@angular/forms@6.0.5",
+  "_id": "@angular/forms@6.0.5",
   "_inBundle": false,
-  "_integrity": "sha512-JcKyCCkAwF3NlWuwPxtpRhFX/8QbFUkA4W0N62L+Odm8G0/P4QhMw/99o5kRs5xrsQRVyFlGvdYOrkgDyyZkGg==",
+  "_integrity": "sha512-d1SdhAQ/W1n3vtm1lp5y16EaUylcZ2wftLUj6MSne3bH/2MJ6JsxJKwX+MfPcQCo+DCfG5bF0UMCa1KAwUQthQ==",
   "_location": "/@angular/forms",
   "_phantomChildren": {},
   "_requested": {
     "type": "version",
     "registry": true,
-    "raw": "@angular/forms@6.0.4",
+    "raw": "@angular/forms@6.0.5",
     "name": "@angular/forms",
     "escapedName": "@angular%2fforms",
     "scope": "@angular",
-    "rawSpec": "6.0.4",
+    "rawSpec": "6.0.5",
     "saveSpec": null,
-    "fetchSpec": "6.0.4"
+    "fetchSpec": "6.0.5"
   },
   "_requiredBy": [
+    "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/@angular/forms/-/forms-6.0.4.tgz",
-  "_spec": "6.0.4",
+  "_resolved": "https://registry.npmjs.org/@angular/forms/-/forms-6.0.5.tgz",
+  "_shasum": "d3ec7886d8b61a97b2c0b7501b304b449a2dcae6",
+  "_spec": "@angular/forms@6.0.5",
   "_where": "C:\\Users\\Carlos Tolentino\\Desktop\\CDiamante_Mobile\\CDiamante",
   "author": {
     "name": "angular"
@@ -34,9 +30,11 @@
   "bugs": {
     "url": "https://github.com/angular/angular/issues"
   },
+  "bundleDependencies": false,
   "dependencies": {
     "tslib": "^1.9.0"
   },
+  "deprecated": false,
   "description": "Angular - directives and services for creating forms",
   "es2015": "./fesm2015/forms.js",
   "esm2015": "./esm2015/forms.js",
@@ -72,9 +70,9 @@
   },
   "peerDependencies": {
     "rxjs": "^6.0.0",
-    "@angular/core": "6.0.4",
-    "@angular/common": "6.0.4",
-    "@angular/platform-browser": "6.0.4"
+    "@angular/core": "6.0.5",
+    "@angular/common": "6.0.5",
+    "@angular/platform-browser": "6.0.5"
   },
   "repository": {
     "type": "git",
@@ -82,5 +80,5 @@
   },
   "sideEffects": false,
   "typings": "./forms.d.ts",
-  "version": "6.0.4"
+  "version": "6.0.5"
 }
