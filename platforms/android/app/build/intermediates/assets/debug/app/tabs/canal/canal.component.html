@@ -2,9 +2,17 @@
     <Label class="action-bar-title" text="Canal" style="Color: #ffffff;"></Label>
 </ActionBar>
 
-<GridLayout class="page page-content">     
+<!-- <GridLayout class="page page-content">     
     <Label class="page-icon fa" text="&#xf1ea;"></Label>
-    <Label class="page-placeholder" text="Ingresa al Canal" (tap)="openURL()"></Label>
-</GridLayout>
+    <Label class="page-placeholder" text="Ingresa al Canal" ></Label>
+</GridLayout> -->
+
+<Page loaded="pageLoaded">
+    <StackLayout>
+        <Button text="Launch URL" (tap)="openURL()"></Button>
+    </StackLayout>
+</Page>
+<!-- 
+<AdvanceWebview id="webview" src="https://google.com"></AdvanceWebview> -->
 
   

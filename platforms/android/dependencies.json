@@ -1,9 +1,5 @@
 [
     {
-        "name": "nativescript-android-advanced-webview",
-        "directory": "..\\..\\node_modules\\nativescript-android-advanced-webview"
-    },
-    {
         "name": "nativescript-angular",
         "directory": "..\\..\\node_modules\\nativescript-angular"
     },

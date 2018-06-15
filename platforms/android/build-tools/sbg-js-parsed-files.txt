@@ -5,6 +5,7 @@ C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\a
 C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\assets\app\main.js
 C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\assets\app\models\likes.js
 C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\assets\app\models\planes.js
+C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\assets\app\newFile.js
 C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\assets\app\services\planes.services.js
 C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\assets\app\tabs\canal\browse.component.js
 C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\assets\app\tabs\canal\canal.component.js
@@ -15,8 +16,6 @@ C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\a
 C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\assets\app\tabs\tabs-routing.module.js
 C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\assets\app\tabs\tabs.component.js
 C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\assets\app\tabs\tabs.module.js
-C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\assets\app\tns_modules\nativescript-android-advanced-webview\android-advanced-webview.common.js
-C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\assets\app\tns_modules\nativescript-android-advanced-webview\android-advanced-webview.js
 C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\assets\app\tns_modules\nativescript-angular\animations\animation-driver.js
 C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\assets\app\tns_modules\nativescript-angular\animations\animation-player.js
 C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\assets\app\tns_modules\nativescript-angular\animations\animations.module.js

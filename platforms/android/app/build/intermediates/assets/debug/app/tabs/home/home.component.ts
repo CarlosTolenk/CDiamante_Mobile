@@ -68,9 +68,9 @@ export class HomeComponent implements OnInit, DoCheck {
         this.ngZone.run(()=>{
             // this.planes =  this._planesService.getAllPlanes();
             this.planes =  this._planesService.getConexion();
-            console.log(this.planes);            
+            // console.log(this.planes);            
         });    
-      
+       
     }
 
     ngDoCheck(): void{            
@@ -138,6 +138,8 @@ export class HomeComponent implements OnInit, DoCheck {
             SocialShare.shareImage(image);
             this.pressShared = "font-awesome ico-share";  
         });
+
+        this._planesService.removeStorage();
        
     }
 
@@ -150,8 +152,10 @@ export class HomeComponent implements OnInit, DoCheck {
         console.log("Entrando");
         this.ngZone.run(()=>{
             this.planes = [];
-            this.planes =  this._planesService.getConexion();                       
+            this.planes =  this._planesService.getConexion();   
+                                
         });  
-        //    console.log(this.planes);
+        let cache = this._planesService.getLike();
+        console.dir(cache);
    }
 }
