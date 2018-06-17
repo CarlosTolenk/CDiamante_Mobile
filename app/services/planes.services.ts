@@ -185,12 +185,24 @@ export class PlanesServices {
         like--;
         const LikePlan = firebase.firestore().collection("planes").doc(id);
         LikePlan.update({
-        likes_recibidos: like,
-        updateTimestamp: firebase.firestore().FieldValue().serverTimestamp()
-        }).then(() => {
-        console.log("Dislike Activo");
-        this.removeLike(id);
+            likes_recibidos: like,
+            updateTimestamp: firebase.firestore().FieldValue().serverTimestamp()
+            }).then(() => {
+            console.log("Dislike Activo");
+            this.removeLike(id);
         });
+    }
+
+    putPlusShare(id, share){
+        share++;
+        const SharePlan = firebase.firestore().collection("planes").doc(id);
+        SharePlan.update({
+            total_shared: share,
+            updateTimestamp: firebase.firestore().FieldValue().serverTimestamp()
+            }).then(() => {
+            console.log("Compartir Activo");       
+            });
+
     }
 
     addLike(id){   

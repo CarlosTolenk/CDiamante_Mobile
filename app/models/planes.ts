@@ -11,4 +11,5 @@ export interface Planes {
     loterias:[2],
     fecha_publicacion:string;
     class_likes:string;
+    total_shared:number;
   }

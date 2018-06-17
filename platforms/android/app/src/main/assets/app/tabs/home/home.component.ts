@@ -137,15 +137,17 @@ export class HomeComponent implements OnInit {
        
     }
 
-    share(id){          
+    share(image,id,t_shared){          
+        console.log("ID:" + id + "Total:"+ t_shared);
         this.pressShared = "font-awesome ico-share-press";       
-        ImageSource.fromUrl(id).then((image) => {        
+        ImageSource.fromUrl(image).then((image) => {        
             SocialShare.shareImage(image);
-            this.pressShared = "font-awesome ico-share";  
+            this.pressShared = "font-awesome ico-share";    
+           
+               
         });
 
-        this._planesService.removeStorage();
-       
+        this._planesService.putPlusShare(id,t_shared);
     }
 
     refreshList(args) {
