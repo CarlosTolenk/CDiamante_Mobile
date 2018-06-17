@@ -45,34 +45,45 @@ export class PlanesServices {
         this.ngZone.run(() => {           
             planesCollection.get().then(querySnapshot => {
                 querySnapshot.forEach(doc => {
-                    // console.dir(`${doc.id} => ${doc.data()}`);                   
+                    // console.dir(`${doc.id} => ${doc.data()}`);  
+                    // console.log("De aqui sale la informacion");                 
                     this.allPlanes.push(doc.data());                 
-                    // console.log(this.allPlanes)     
+                    // console.log(this.allPlanes);
+                     if(appSettings.getString("allLikes")!=undefined){
+                        // console.log("Existe likes en LocalStorage");
+                         let likes_recibidos = this.getLike();       
+                        //  console.log(likes_recibidos);                  
+                        for(let i=0;i<likes_recibidos.length;i++){   
+                            for(let j=0;j<this.allPlanes.length;j++){
+                                if(likes_recibidos[i].id == this.allPlanes[j].id){
+                                    console.log("Existe un LIKE");                                
+                                    if(likes_recibidos[i].class_likes){
+                                        this.allPlanes[j].class_likes = "font-awesome ico-like";
+                                        console.log("Esta activo el true");
+                                    }else{                                    
+                                        this.allPlanes[j].class_likes = "font-awesome ico-dislike";
+                                        console.log("Esta activo el falsee");
+                                        // this.allPlanes[i].id;
+                                    }                               
+                                }  
+                            }                     
+                        }
+                    }else{
+                        for(let i=0;i<this.allPlanes.length;i++){
+                            this.allPlanes[i].class_likes = "font-awesome ico-dislike";
+                           
+                        }
+                    }     
                     appSettings.setString("allPlanes", JSON.stringify(this.allPlanes));       
                 });
             });           
            
         });  
 
-        // if(appSettings.getString("allLikes")!=undefined){
-        //     let likes_recibidos =  this.getLike();
-        //     for(let i=0;i<this.allPlanes.length;i++){
-        //         if(likes_recibidos.id == this.allPlanes[i].id){
-        //             this.allPlanes[i].class_likes = "font-awesome ico-like";
-        //         }
-        //         else{
-        //             this.allPlanes[i].class_likes = "font-awesome ico-dislike";
-        //         }
-        //     }
-        // }else{
-        //     for(let i=0;i<this.allPlanes.length;i++){
-        //         this.allPlanes[i].class_likes = "font-awesome ico-dislike";
-        //     }
-        // }
+       
      
                
         return this.allPlanes;
-
     }
 
     getConexion(){
@@ -113,9 +124,9 @@ export class PlanesServices {
                         console.log("Mobile connection");  
                         // console.log("Guadando en AppSetting");
                         this.captureInfo = this.getAllPlanes();
-                        // console.dir(this.captureInfo);
+                        console.dir(this.captureInfo);
                         let data = JSON.stringify(this.captureInfo);
-                        // console.log(data);
+                        console.log(data);
                         appSettings.setString("allPlanes", data);
                         // appSettings.setString("allPlanes","Que estará pasando, porque lo estoy guardando");
                         this.allPlanes = JSON.parse(appSettings.getString("allPlanes",""));   
@@ -231,8 +242,15 @@ export class PlanesServices {
     }
 
     getLike(){
-        let cache = JSON.parse(appSettings.getString("allLikes",""));
-        return cache;
+        if(appSettings.getString("allLikes")!=undefined){
+            let cache = JSON.parse(appSettings.getString("allLikes",""));
+            return cache;
+        }else{
+            let cache = "No hay likes";
+            return cache;
+        }
+        
+        
     }
 
     removeStorage(){

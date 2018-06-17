@@ -24,8 +24,8 @@
 									<Label class="font-awesome text-date " horizontalAlignment="left" text="&#xf017;" row="1" col="3"></Label>
 									<Label class="text-date-string" horizontalAlignment="left" [text]="plan.fecha_publicacion" row="1" col="4"></Label>
 									<Image [src]="plan.imagen_url" [nsRouterLink]="['../item', plan.id]"  stretch="fill" colSpan="3" col="1" row="3" rowSpan="2"></Image>
-									<Label horizontalAlignment="left"  class="{{toogleHeart}}" (tap)="like(plan.id, plan.likes_recibidos)" col="1" row="5" text="&#xf004;"></Label>
-									<!-- <Label horizontalAlignment="left"  [class]="plan.class_likes" (tap)="like(plan.id, plan.likes_recibidos)" col="1" row="5" text="&#xf004;"></Label> -->
+									<!-- <Label horizontalAlignment="left"  class="{{toogleHeart}}" (tap)="like(plan.id, plan.likes_recibidos)" col="1" row="5" text="&#xf004;"></Label> -->
+									<Label horizontalAlignment="left"  [class]="plan.class_likes" (tap)="like(plan.id, plan.likes_recibidos)" col="1" row="5" text="&#xf004;"></Label>
 									<Label horizontalAlignment="left"  class="like_recibido"  col="2" row="5" [text]="plan.likes_recibidos"></Label>
 									<Label horizontalAlignment="left" class="{{pressShared}}" text="&#xf1e0; Compartir"(tap)="share(plan.imagen_url)" col="3" row="5" colSpan="2"></Label>
 									<!-- <Button horizontalAlignment="left" class="btn btn-active" id="button" text="Tap me!" (tap)="share()" row="5" col="4"></Button>					 -->

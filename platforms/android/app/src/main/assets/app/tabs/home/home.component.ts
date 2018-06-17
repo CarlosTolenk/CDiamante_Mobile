@@ -65,18 +65,20 @@ export class HomeComponent implements OnInit, DoCheck {
     }
 
     ngOnInit(): void { 
+        let getInfo:Array<any> = [];
         this.ngZone.run(()=>{
             // this.planes =  this._planesService.getAllPlanes();
-            this.planes =  this._planesService.getConexion();
-            // console.log(this.planes);            
+            // getInfo = this._planesService.getConexion();
+            this.planes =  this._planesService.getConexion();    
+
         });    
        
     }
 
     ngDoCheck(): void{            
         // this.ngZone.run(()=>{
-        //     this.planes =  this._planesService.getConexion();
-        //     // console.dir(this.planes);            
+        //     this.planes =  this._planesService.getAllPlanes();
+        //     console.log(this.planes);            
         // });  
     }
 
@@ -153,9 +155,10 @@ export class HomeComponent implements OnInit, DoCheck {
         this.ngZone.run(()=>{
             this.planes = [];
             this.planes =  this._planesService.getConexion();   
+            let cache = this._planesService.getLike();
+            console.log(cache);
                                 
         });  
-        let cache = this._planesService.getLike();
-        console.dir(cache);
+       
    }
 }
