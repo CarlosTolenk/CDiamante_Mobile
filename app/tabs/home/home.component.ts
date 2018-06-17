@@ -1,5 +1,5 @@
 //Component and Modules
-import { Component, ElementRef, OnInit, ViewChild, NgZone, DoCheck} from "@angular/core";
+import { Component, ElementRef, OnInit, ViewChild, NgZone} from "@angular/core";
 import { Observable } from 'rxjs';
 import { RouterExtensions } from "nativescript-angular/router";
 import { Page } from "ui/page";
@@ -38,7 +38,7 @@ registerElement("pullToRefresh",() => require("nativescript-pulltorefresh").Pull
     styleUrls: ['./home.component.css'],
     
 })
-export class HomeComponent implements OnInit, DoCheck {
+export class HomeComponent implements OnInit {
 
     public items:any;
     public image:string;
@@ -73,14 +73,7 @@ export class HomeComponent implements OnInit, DoCheck {
 
         });    
        
-    }
-
-    ngDoCheck(): void{            
-        // this.ngZone.run(()=>{
-        //     this.planes =  this._planesService.getAllPlanes();
-        //     console.log(this.planes);            
-        // });  
-    }
+    } 
 
    
 
@@ -96,11 +89,11 @@ export class HomeComponent implements OnInit, DoCheck {
     // }
   
 
-    like(id, like){
+    like(id, like, status){
         console.log("id:" +  id + "Total Like:"+ like);
         // console.log("GetPlanId");        
         
-        if(!this.toogleLike){
+        if(status == 'font-awesome ico-dislike'){
             this.toogleLike = true;
             this.toogleHeart = "font-awesome ico-like"
             this._planesService.putPlusLike(id, like); 
@@ -108,6 +101,7 @@ export class HomeComponent implements OnInit, DoCheck {
             for(let i=0;i<this.planes.length;i++){
                 if(id == this.planes[i].id){
                     this.planes[i].likes_recibidos++;
+                    this.planes[i].class_likes = "font-awesome ico-like";
                 }
             }         
                         
@@ -117,11 +111,20 @@ export class HomeComponent implements OnInit, DoCheck {
             this.toogleHeart = "font-awesome ico-dislike"
             this._planesService.putMinusLike(id, like);
             this.planes = JSON.parse(appSettings.getString("allPlanes",""));       
-            for(let i=0;i<this.planes.length;i++){
-                if(id == this.planes[i].id){
-                    // this.planes[i].likes_recibidos--;
+            for(let i=0;i<this.planes.length;i++){                
+                if(id == this.planes[i].id){        
+                        if(like == this.planes[i].likes_recibidos){
+                            this.planes[i].likes_recibidos--;
+                            this.planes[i].class_likes = "font-awesome ico-dislike";
+                        } else{
+                            this.planes[i].likes_recibidos;
+                           this.planes[i].class_likes = "font-awesome ico-dislike";
+                        }           
+                        
+                    }
+                    
                 }
-            }
+            
         }  
 
 
