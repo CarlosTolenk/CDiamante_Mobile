@@ -88,51 +88,44 @@ export class HomeComponent implements OnInit {
   
 
     like(id, like, status){
-        console.log("id:" +  id + "Total Like:"+ like);
-        // console.log("GetPlanId");        
-        
+        console.log("id:" +  id + "Total Like:"+ like + "class" + status);     
+      
         if(status == 'font-awesome ico-dislike'){
-            this.toogleLike = true;
-            this.toogleHeart = "font-awesome ico-like"
+            // this.toogleLike = true;
+            // this.toogleHeart = "font-awesome ico-like"
             this._planesService.putPlusLike(id, like); 
-            this.planes = JSON.parse(appSettings.getString("allPlanes",""));       
-            for(let i=0;i<this.planes.length;i++){
+            // this.planes = JSON.parse(appSettings.getString("allPlanes",""));       
+            for(let i=0;i<=this.planes.length;i++){
                 if(id == this.planes[i].id){
+                    console.log(i);
                     this.planes[i].likes_recibidos++;
                     this.planes[i].class_likes = "font-awesome ico-like";
+                    // console.log(this.planes[id].id);
                 }
-            }         
-                        
+            }                                 
           
-        }else{
-            this.toogleLike = false;
-            this.toogleHeart = "font-awesome ico-dislike"
+        }else{ 
+            // this.toogleLike = false;
+            // this.toogleHeart = "font-awesome ico-dislike"
             this._planesService.putMinusLike(id, like);
-            this.planes = JSON.parse(appSettings.getString("allPlanes",""));       
-            for(let i=0;i<this.planes.length;i++){                
-                if(id == this.planes[i].id){        
+            // this.planes = JSON.parse(appSettings.getString("allPlanes",""));       
+            for(let i=0;i<=this.planes.length;i++){                
+                if(id == this.planes[i].id){    
+                    console.log(i);
                         if(like == this.planes[i].likes_recibidos){
                             this.planes[i].likes_recibidos--;
                             this.planes[i].class_likes = "font-awesome ico-dislike";
                         } else{
                             this.planes[i].likes_recibidos;
-                           this.planes[i].class_likes = "font-awesome ico-dislike";
+                            this.planes[i].class_likes = "font-awesome ico-dislike";
                         }           
                         
                     }
                     
                 }
             
-        }  
+            }  
 
-
-        //Example Animation
-        // let likes = <View>this.container.nativeElement;
-        // likes.animate({
-        //     backgroundColor: new Color('yellow'),
-        //     duration: 200
-        // });
-       
     }
 
     share(image,id,t_shared){          
@@ -140,9 +133,7 @@ export class HomeComponent implements OnInit {
         this.pressShared = "font-awesome ico-share-press";       
         ImageSource.fromUrl(image).then((image) => {        
             SocialShare.shareImage(image);
-            this.pressShared = "font-awesome ico-share";    
-           
-               
+            this.pressShared = "font-awesome ico-share";                   
         });
 
         this._planesService.putPlusShare(id,t_shared);

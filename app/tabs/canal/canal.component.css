@@ -31,3 +31,12 @@
     margin-right: 3%;  
     /* text-align: center; */
 }
+
+.btn-canal{
+    font-size: 18px;
+    padding-bottom: 5px;
+}
+
+.btn{
+    padding: 5px;
+}
