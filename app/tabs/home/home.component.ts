@@ -28,8 +28,6 @@ import { PullToRefresh } from "nativescript-pulltorefresh";
 registerElement("pullToRefresh",() => require("nativescript-pulltorefresh").PullToRefresh);
 
 
-
-
 @Component({
     selector: "Home",
     moduleId: module.id,

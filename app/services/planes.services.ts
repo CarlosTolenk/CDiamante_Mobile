@@ -39,7 +39,7 @@ export class PlanesServices {
    }
 
    getAllPlanes(){      
-       console.log("getAllPlanes");
+    //    console.log("getAllPlanes");
        this.allPlanes = [];
         const planesCollection = firebase.firestore().collection("planes"); 
         this.ngZone.run(() => {           
@@ -56,13 +56,13 @@ export class PlanesServices {
                         for(let i=0;i<likes_recibidos.length;i++){   
                             for(let j=0;j<this.allPlanes.length;j++){
                                 if(likes_recibidos[i].id == this.allPlanes[j].id){
-                                    console.log("Existe un LIKE");                                
+                                    // console.log("Existe un LIKE");                                
                                     if(likes_recibidos[i].class_likes){
                                         this.allPlanes[j].class_likes = "font-awesome ico-like";
-                                        console.log("Esta activo el true");
+                                        // console.log("Esta activo el true");
                                     }else{                                    
                                         this.allPlanes[j].class_likes = "font-awesome ico-dislike";
-                                        console.log("Esta activo el falsee");
+                                        // console.log("Esta activo el falsee");
                                         // this.allPlanes[i].id;
                                     }                               
                                 }  
@@ -108,7 +108,7 @@ export class PlanesServices {
                         console.log("Wifi connection");               
                         // console.log("Guadando en AppSetting");
                         this.captureInfo = this.getAllPlanes();
-                        console.log(this.captureInfo);
+                        // console.log(this.captureInfo);
                         let info = JSON.stringify(this.captureInfo);
                         // console.log(info);
                         appSettings.setString("allPlanes", info);
@@ -124,9 +124,9 @@ export class PlanesServices {
                         console.log("Mobile connection");  
                         // console.log("Guadando en AppSetting");
                         this.captureInfo = this.getAllPlanes();
-                        console.dir(this.captureInfo);
+                        // console.dir(this.captureInfo);
                         let data = JSON.stringify(this.captureInfo);
-                        console.log(data);
+                        // console.log(data);
                         appSettings.setString("allPlanes", data);
                         // appSettings.setString("allPlanes","Que estará pasando, porque lo estoy guardando");
                         this.allPlanes = JSON.parse(appSettings.getString("allPlanes",""));   
@@ -176,7 +176,7 @@ export class PlanesServices {
         likes_recibidos: like,
         updateTimestamp: firebase.firestore().FieldValue().serverTimestamp()
         }).then(() => {
-        console.log("Like Activo");
+        // console.log("Like Activo");
         this.addLike(id);
         });        
     }
@@ -188,7 +188,7 @@ export class PlanesServices {
             likes_recibidos: like,
             updateTimestamp: firebase.firestore().FieldValue().serverTimestamp()
             }).then(() => {
-            console.log("Dislike Activo");
+            // console.log("Dislike Activo");
             this.removeLike(id);
         });
     }
@@ -200,7 +200,7 @@ export class PlanesServices {
             total_shared: share,
             updateTimestamp: firebase.firestore().FieldValue().serverTimestamp()
             }).then(() => {
-            console.log("Compartir Activo");       
+            // console.log("Compartir Activo");       
             });
 
     }

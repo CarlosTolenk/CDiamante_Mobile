@@ -9,10 +9,13 @@
 
 <Page loaded="pageLoaded">
     <StackLayout>
-        <Button text="Launch URL" (tap)="openURL()"></Button>
+        <GridLayout columns="10,70,50,*,50,70,10" rows="10,150, 50, *, 150,10">
+                <Image src="res://logo_tv" stretch="aspectFit" col="2" row="1" colSpan="2" rowSpan="2"></Image>
+                <Button col="0" row="3" colSpan="6" class="btn btn-primary" text="Visualizar Canal" (tap)="openURL()"></Button>
+        </GridLayout>       
     </StackLayout>
 </Page>
-<!-- 
-<AdvanceWebview id="webview" src="https://google.com"></AdvanceWebview> -->
+
+
 
   

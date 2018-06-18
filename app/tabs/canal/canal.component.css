@@ -1,0 +1,33 @@
+.logo-tv{
+    /* margin-left: 6%; */
+    max-width: 50%;
+    margin-top: 5%;
+}
+
+.horario-tv{
+    font-size: 20px;
+    /* margin-left: 5%;    */
+    margin-top: 5%;   
+    font-weight: bold;
+    text-align: center;
+}
+
+.contenido-tv{
+    font-size: 20px;
+    margin-right: 5%;   
+    margin-top: 5%;   
+    font-weight: bold;
+    text-align: center;
+}
+
+.program-tv{
+    font-size: 18px;   
+    margin-left: 2%;   
+    text-align: center
+}
+
+.shedule-tv{
+    font-size: 18px;   
+    margin-right: 3%;  
+    /* text-align: center; */
+}
