@@ -1,13 +1,11 @@
 <!-- <page-router-outlet></page-router-outlet> -->
-<!-- <ActionBar class="action-bar">
-    <Label class="action-bar-title" text="CDiamanteGold"></Label>
-</ActionBar> -->
 
-<TabView class="tab-view" androidTabsPosition="bottom" tabTextColor="#DFE2E8" selectedTabTextColor="#FFFFFF" androidSelectedTabHighlightColor="#FFFFFF">
+
+<TabView class="tab-view" androidTabsPosition="bottom" tabTextColor="#DFE2E8" selectedTabTextColor="#FFFFFF" androidSelectedTabHighlightColor="#FFFFFF" style="font-size: 10px; text-decoration: capitalize;">
 
     <page-router-outlet
-        *tabItem="{title: Planes, iconSource: getIconSource('whitehome')}"
-        name="homeTab">
+        *tabItem="{iconSource: getIconSource('whitehome')}"
+        name="homeTab" >
     </page-router-outlet>
 
     <page-router-outlet

@@ -12,7 +12,8 @@ import { Page } from "ui/page";
 @Component({
     selector: "Canal",
     moduleId: module.id,
-    templateUrl: "./canal.component.html"
+    templateUrl: "./canal.component.html",
+    styleUrls: ['./canal.component.css']
 })
 export class CanalComponent implements OnInit {
 

@@ -18,16 +18,18 @@
 		<ScrollView orientation="vertical" ios.pagingEnabled="true">					
 				<StackLayout orientation="vertical">				
 						<CardView class="cardStyle" margin="10" elevation="40" radius="1" *ngFor="let plan of planes">						
-								<GridLayout rows="10,30,30,250,auto,auto,10" columns="10,40, *, 30,10">										
-									<Image src="res://icon"  class="logo-image" stretch="aspectFit" verticalAlignment="stretch" col="1" row="1" rowSpan="2"></Image>		
+								<GridLayout rows="10,35,10,250,auto,auto,10" columns="10,40, *, 30,10">										
+									<Image src="res://icon"  class="logo-image" stretch="aspectFit" verticalAlignment="stretch" col="1" row="1" rowSpan="1"></Image>		
 									<Label class="text-plan" [nsRouterLink]="['../item', plan.id]"  horizontalAlignment="left" textWrap="true" [text]="plan.nombre_plan" row="1" col="2"></Label>
 									<Label class="font-awesome text-date " horizontalAlignment="left" text="&#xf017;" row="1" col="3"></Label>
-									<Label class="text-date-string" horizontalAlignment="left" [text]="plan.fecha_publicacion" row="1" col="4"></Label>
+									<Label class="text-date-string" horizontalAlignment="left" [text]="plan.fecha_publicacion" row="1" col="3" colSpan="1"></Label>
+									<Label class="inline-style" row="1" col="1" colSpan="3"></Label>
 									<Image [src]="plan.imagen_url" [nsRouterLink]="['../item', plan.id]"  stretch="fill" colSpan="3" col="1" row="3" rowSpan="2"></Image>
 									<!-- <Label horizontalAlignment="left"  class="{{toogleHeart}}" (tap)="like(plan.id, plan.likes_recibidos)" col="1" row="5" text="&#xf004;"></Label> -->
+									<Label class="inline-style" row="4" col="1" colSpan="3"></Label>
 									<Label horizontalAlignment="left"  [class]="plan.class_likes" (tap)="like(plan.id, plan.likes_recibidos, plan.class_likes)" col="1" row="5" text="&#xf004;"></Label>
-									<Label horizontalAlignment="left"  class="like_recibido"  col="2" row="5" [text]="plan.likes_recibidos"></Label>
-									<Label horizontalAlignment="left" class="{{pressShared}}" text="&#xf1e0; Compartir"(tap)="share(plan.imagen_url, plan.id, plan.total_shared)" col="3" row="5" colSpan="2"></Label>
+									<Label horizontalAlignment="left"  class="like_recibido" (tap)="like(plan.id, plan.likes_recibidos, plan.class_likes)" col="2" row="5" [text]="plan.likes_recibidos"></Label>
+									<Label horizontalAlignment="left" class="{{pressShared}}" text="&#xf1e0; Compartir"(tap)="share(plan.imagen_url, plan.id, plan.total_shared)" col="3" row="5" colSpan="1"></Label>
 									<!-- <Button horizontalAlignment="left" class="btn btn-active" id="button" text="Tap me!" (tap)="share()" row="5" col="4"></Button>					 -->
 								</GridLayout>					
 							</CardView>							

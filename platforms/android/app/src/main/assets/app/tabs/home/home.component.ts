@@ -130,9 +130,9 @@ export class HomeComponent implements OnInit {
 
     share(image,id,t_shared){          
         console.log("ID:" + id + "Total:"+ t_shared);
-        this.pressShared = "font-awesome ico-share-press";       
+        this.pressShared = "font-awesome ico-share-press";           
         ImageSource.fromUrl(image).then((image) => {        
-            SocialShare.shareImage(image);
+            SocialShare.shareImage(image);           
             this.pressShared = "font-awesome ico-share";                   
         });
 

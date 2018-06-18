@@ -7,28 +7,44 @@
 }
 
 .logo-image{
-    margin-top: -20;
+    margin-top: -2px;
     border-bottom: 10px solid red;
 }
 
 .text-plan{
-    margin-left: 10;
-    margin-top: 5;
-    position: relative;  
-    font-size: 19;
+    margin-left: 10px;
+    margin-top: 5px;   
+    font-size: 19px;
+   
+}
+.inline-style{
+    width: 100%;  
+    border-width: 0 0 1 0;
+    border-bottom-color: rgba(209, 211, 214, 0.719);  
+   
 }
 
+/* .text-plan::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    top: 50px;
+    border-width: 0 0 1 0;
+    border-bottom-color: #ECEEF1;  
+
+} */
+
 .text-date{  
-    font-size: 14;
+    font-size: 14px;
     margin-left: -40;
-    margin-top: 14;   
+    margin-top: 20px;   
     border-bottom: 10px solid red;
 }
 
 .text-date-string{
-    font-size: 14;
-    margin-left: -55;
-    margin-top: 11;      
+    font-size: 14px;
+    margin-left: -25rem;
+    margin-top: 13px;      
 }
 
 
@@ -36,7 +52,7 @@
     color: red;
     margin-left: 10;
     padding-top: 10;   
-    font-size: 26px;
+    font-size: 26px;  
 }
 
 .ico-dislike{
@@ -47,9 +63,9 @@
 }
 
 .like_recibido{
-    padding-top: 8;
-    padding-left: 2;
-    font-size: 22px;
+    padding-top: 13%;
+    /* padding-left: 2%; */
+    font-size: 18px;
     color: rgba(36, 52, 92, 0.692);
     
 }
@@ -58,8 +74,8 @@
     padding-top: 15;
     font-size: 18px;
     color: #2A56C6;
-    margin-left: -80;
-    padding-bottom: 10;
+    margin-left: -90rem;
+    padding-bottom: 10; 
    
 }
 
@@ -68,7 +84,7 @@
     border-style: ridge;  
     padding-top: 15;
     font-size: 20px;    
-    margin-left: -85;
+    margin-left: -85rem;
     padding-bottom: 10;
 
 }
