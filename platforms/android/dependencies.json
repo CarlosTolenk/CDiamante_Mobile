@@ -4,8 +4,16 @@
         "directory": "..\\..\\node_modules\\nativescript-angular"
     },
     {
+        "name": "nativescript-audio",
+        "directory": "..\\..\\node_modules\\nativescript-audio"
+    },
+    {
         "name": "nativescript-cardview",
         "directory": "..\\..\\node_modules\\nativescript-cardview"
+    },
+    {
+        "name": "nativescript-ng-shadow",
+        "directory": "..\\..\\node_modules\\nativescript-ng-shadow"
     },
     {
         "name": "nativescript-phone",
@@ -18,6 +26,10 @@
     {
         "name": "nativescript-pulltorefresh",
         "directory": "..\\..\\node_modules\\nativescript-pulltorefresh"
+    },
+    {
+        "name": "nativescript-slider",
+        "directory": "..\\..\\node_modules\\nativescript-slider"
     },
     {
         "name": "nativescript-social-share",

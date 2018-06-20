@@ -758,10 +758,11 @@ int drawable notify_panel_notification_icon_bg 0x7f07008a
 int drawable office 0x7f07008b
 int drawable profile 0x7f07008c
 int drawable radio 0x7f07008d
-int drawable search 0x7f07008e
-int drawable splash_screen 0x7f07008f
-int drawable television 0x7f070090
-int drawable whitehome 0x7f070091
+int drawable sabrosafm 0x7f07008e
+int drawable search 0x7f07008f
+int drawable splash_screen 0x7f070090
+int drawable television 0x7f070091
+int drawable whitehome 0x7f070092
 int id action0 0x7f080000
 int id action_bar 0x7f080001
 int id action_bar_activity_content 0x7f080002

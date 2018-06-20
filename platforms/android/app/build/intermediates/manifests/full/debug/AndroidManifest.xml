@@ -34,6 +34,7 @@
         android:protectionLevel="signature" />
 
     <uses-permission android:name="cdiamante.controldiamante.com.permission.C2D_MESSAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application
         android:name="com.tns.NativeScriptApplication"

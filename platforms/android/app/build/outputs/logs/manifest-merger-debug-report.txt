@@ -50,6 +50,8 @@ MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Carlos Tolentin
 MERGED from [com.crashlytics.sdk.android:crashlytics:2.9.3] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\crashlytics-2.9.3.aar\9899edcd40bfc92f827ace2dc98f1908\AndroidManifest.xml:2:1-19:12
 MERGED from [com.android.support:multidex:1.0.2] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\048ac03340b9bb18545af48529d2baae\AndroidManifest.xml:17:1-22:12
 MERGED from [:nativescript-optimized-with-inspector:] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\nativescript-optimized-with-inspector.aar\a6a06ad0309a6ebc9a871e8dae4de19f\AndroidManifest.xml:2:1-11:12
+MERGED from [:nativescript_audio:] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\nativescript_audio.aar\74aa994046a676c91cc2394363bede5f\AndroidManifest.xml:2:1-11:12
+MERGED from [:nativescript_ng_shadow:] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\nativescript_ng_shadow.aar\40c75a6388ca0c1aaa67bd2511bf6d13\AndroidManifest.xml:2:1-9:12
 MERGED from [:nativescript_phone:] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\nativescript_phone.aar\336753889ae99aa458ac273c67607468\AndroidManifest.xml:2:1-11:12
 MERGED from [:firebase-release:] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\firebase-release.aar\ac64434a02977d80bbb4fe83d9fa0091\AndroidManifest.xml:2:1-25:12
 MERGED from [:nativescript_social_share:] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\nativescript_social_share.aar\a00d49b67176adfe3164bc37d7a91ca1\AndroidManifest.xml:2:1-21:12
@@ -184,6 +186,10 @@ MERGED from [com.android.support:multidex:1.0.2] C:\Users\Carlos Tolentino\.grad
 MERGED from [com.android.support:multidex:1.0.2] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\multidex-1.0.2.aar\048ac03340b9bb18545af48529d2baae\AndroidManifest.xml:20:5-43
 MERGED from [:nativescript-optimized-with-inspector:] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\nativescript-optimized-with-inspector.aar\a6a06ad0309a6ebc9a871e8dae4de19f\AndroidManifest.xml:7:5-9:41
 MERGED from [:nativescript-optimized-with-inspector:] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\nativescript-optimized-with-inspector.aar\a6a06ad0309a6ebc9a871e8dae4de19f\AndroidManifest.xml:7:5-9:41
+MERGED from [:nativescript_audio:] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\nativescript_audio.aar\74aa994046a676c91cc2394363bede5f\AndroidManifest.xml:7:5-47
+MERGED from [:nativescript_audio:] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\nativescript_audio.aar\74aa994046a676c91cc2394363bede5f\AndroidManifest.xml:7:5-47
+MERGED from [:nativescript_ng_shadow:] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\nativescript_ng_shadow.aar\40c75a6388ca0c1aaa67bd2511bf6d13\AndroidManifest.xml:7:5-47
+MERGED from [:nativescript_ng_shadow:] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\nativescript_ng_shadow.aar\40c75a6388ca0c1aaa67bd2511bf6d13\AndroidManifest.xml:7:5-47
 MERGED from [:nativescript_phone:] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\nativescript_phone.aar\336753889ae99aa458ac273c67607468\AndroidManifest.xml:7:5-47
 MERGED from [:nativescript_phone:] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\nativescript_phone.aar\336753889ae99aa458ac273c67607468\AndroidManifest.xml:7:5-47
 MERGED from [:firebase-release:] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\firebase-release.aar\ac64434a02977d80bbb4fe83d9fa0091\AndroidManifest.xml:7:5-9:41
@@ -217,6 +223,8 @@ INJECTED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platf
 	android:minSdkVersion
 		ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:5:15-41
 		INJECTED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml
+		MERGED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:5:15-41
+		MERGED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:5:15-41
 		MERGED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:5:15-41
 		MERGED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:5:15-41
 		INJECTED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml
@@ -670,6 +678,10 @@ ADDED from [com.crashlytics.sdk.android:crashlytics:2.9.3] C:\Users\Carlos Tolen
 		ADDED from [com.crashlytics.sdk.android:crashlytics:2.9.3] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\crashlytics-2.9.3.aar\9899edcd40bfc92f827ace2dc98f1908\AndroidManifest.xml:16:13-36
 	android:name
 		ADDED from [com.crashlytics.sdk.android:crashlytics:2.9.3] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\crashlytics-2.9.3.aar\9899edcd40bfc92f827ace2dc98f1908\AndroidManifest.xml:13:13-75
+uses-permission#android.permission.RECORD_AUDIO
+ADDED from [:nativescript_audio:] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\nativescript_audio.aar\74aa994046a676c91cc2394363bede5f\AndroidManifest.xml:9:5-71
+	android:name
+		ADDED from [:nativescript_audio:] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\nativescript_audio.aar\74aa994046a676c91cc2394363bede5f\AndroidManifest.xml:9:22-68
 service#org.nativescript.plugins.firebase.MyFirebaseMessagingService
 ADDED from [:firebase-release:] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\firebase-release.aar\ac64434a02977d80bbb4fe83d9fa0091\AndroidManifest.xml:13:9-17:19
 	android:name

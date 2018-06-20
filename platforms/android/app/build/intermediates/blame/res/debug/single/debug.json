@@ -104,6 +104,10 @@
         "source": "C:\\Users\\Carlos Tolentino\\.gradle\\caches\\transforms-1\\files-1.1\\design-25.3.1.aar\\4a82846612b40d679fe8e5819033fb66\\res\\anim\\design_bottom_sheet_slide_in.xml"
     },
     {
+        "merged": "C:\\Users\\Carlos Tolentino\\Desktop\\CDiamante_Mobile\\CDiamante\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_sabrosafm.png.flat",
+        "source": "C:\\Users\\Carlos Tolentino\\Desktop\\CDiamante_Mobile\\CDiamante\\platforms\\android\\app\\src\\main\\res\\drawable-xxhdpi\\sabrosafm.png"
+    },
+    {
         "merged": "C:\\Users\\Carlos Tolentino\\Desktop\\CDiamante_Mobile\\CDiamante\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_star_half_black_36dp.png.flat",
         "source": "C:\\Users\\Carlos Tolentino\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\c0703eeea001dbcfaa799654e78026fc\\res\\drawable-hdpi-v4\\abc_ic_star_half_black_36dp.png"
     },
@@ -684,6 +688,10 @@
         "source": "C:\\Users\\Carlos Tolentino\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\c0703eeea001dbcfaa799654e78026fc\\res\\drawable-mdpi-v4\\abc_popup_background_mtrl_mult.9.png"
     },
     {
+        "merged": "C:\\Users\\Carlos Tolentino\\Desktop\\CDiamante_Mobile\\CDiamante\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_sabrosafm.png.flat",
+        "source": "C:\\Users\\Carlos Tolentino\\Desktop\\CDiamante_Mobile\\CDiamante\\platforms\\android\\app\\src\\main\\res\\drawable-xxxhdpi\\sabrosafm.png"
+    },
+    {
         "merged": "C:\\Users\\Carlos Tolentino\\Desktop\\CDiamante_Mobile\\CDiamante\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_notification_bg_low_normal.9.png.flat",
         "source": "C:\\Users\\Carlos Tolentino\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\c0703eeea001dbcfaa799654e78026fc\\res\\drawable-hdpi-v4\\notification_bg_low_normal.9.png"
     },
@@ -846,6 +854,10 @@
     {
         "merged": "C:\\Users\\Carlos Tolentino\\Desktop\\CDiamante_Mobile\\CDiamante\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_layout_snackbar_include.xml.flat",
         "source": "C:\\Users\\Carlos Tolentino\\.gradle\\caches\\transforms-1\\files-1.1\\design-25.3.1.aar\\4a82846612b40d679fe8e5819033fb66\\res\\layout\\design_layout_snackbar_include.xml"
+    },
+    {
+        "merged": "C:\\Users\\Carlos Tolentino\\Desktop\\CDiamante_Mobile\\CDiamante\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_sabrosafm.png.flat",
+        "source": "C:\\Users\\Carlos Tolentino\\Desktop\\CDiamante_Mobile\\CDiamante\\platforms\\android\\app\\src\\main\\res\\drawable-mdpi\\sabrosafm.png"
     },
     {
         "merged": "C:\\Users\\Carlos Tolentino\\Desktop\\CDiamante_Mobile\\CDiamante\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_text_select_handle_right_mtrl_dark.png.flat",
@@ -1440,6 +1452,10 @@
         "source": "C:\\Users\\Carlos Tolentino\\Desktop\\CDiamante_Mobile\\CDiamante\\platforms\\android\\app\\src\\main\\res\\drawable-mdpi\\office.png"
     },
     {
+        "merged": "C:\\Users\\Carlos Tolentino\\Desktop\\CDiamante_Mobile\\CDiamante\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_sabrosafm.png.flat",
+        "source": "C:\\Users\\Carlos Tolentino\\Desktop\\CDiamante_Mobile\\CDiamante\\platforms\\android\\app\\src\\main\\res\\drawable-ldpi\\sabrosafm.png"
+    },
+    {
         "merged": "C:\\Users\\Carlos Tolentino\\Desktop\\CDiamante_Mobile\\CDiamante\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_chat.png.flat",
         "source": "C:\\Users\\Carlos Tolentino\\Desktop\\CDiamante_Mobile\\CDiamante\\platforms\\android\\app\\src\\main\\res\\drawable-hdpi\\chat.png"
     },
@@ -1716,6 +1732,10 @@
         "source": "C:\\Users\\Carlos Tolentino\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\c0703eeea001dbcfaa799654e78026fc\\res\\anim\\abc_fade_out.xml"
     },
     {
+        "merged": "C:\\Users\\Carlos Tolentino\\Desktop\\CDiamante_Mobile\\CDiamante\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_sabrosafm.png.flat",
+        "source": "C:\\Users\\Carlos Tolentino\\Desktop\\CDiamante_Mobile\\CDiamante\\platforms\\android\\app\\src\\main\\res\\drawable-hdpi\\sabrosafm.png"
+    },
+    {
         "merged": "C:\\Users\\Carlos Tolentino\\Desktop\\CDiamante_Mobile\\CDiamante\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_office.png.flat",
         "source": "C:\\Users\\Carlos Tolentino\\Desktop\\CDiamante_Mobile\\CDiamante\\platforms\\android\\app\\src\\main\\res\\drawable-hdpi\\office.png"
     },
@@ -1818,6 +1838,10 @@
     {
         "merged": "C:\\Users\\Carlos Tolentino\\Desktop\\CDiamante_Mobile\\CDiamante\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_abc_ic_star_black_16dp.png.flat",
         "source": "C:\\Users\\Carlos Tolentino\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.3.1.aar\\c0703eeea001dbcfaa799654e78026fc\\res\\drawable-xxhdpi-v4\\abc_ic_star_black_16dp.png"
+    },
+    {
+        "merged": "C:\\Users\\Carlos Tolentino\\Desktop\\CDiamante_Mobile\\CDiamante\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_sabrosafm.png.flat",
+        "source": "C:\\Users\\Carlos Tolentino\\Desktop\\CDiamante_Mobile\\CDiamante\\platforms\\android\\app\\src\\main\\res\\drawable-xhdpi\\sabrosafm.png"
     },
     {
         "merged": "C:\\Users\\Carlos Tolentino\\Desktop\\CDiamante_Mobile\\CDiamante\\platforms\\android\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_common_google_signin_btn_icon_light_normal_background.9.png.flat",

@@ -2,8 +2,10 @@
 import { NgModule, NgModuleFactoryLoader, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 
+
 //Plugin
-// import { TNSFontIconModule } from 'nativescript-ng2-fonticon';  
+// import { TNSFontIconModule } from 'nativescript-ng2-fonticon'; 
+import { NgShadowModule } from 'nativescript-ng-shadow'; 
 
 // Rutas
 import { AppRoutingModule } from "./app-routing.module";
@@ -22,6 +24,7 @@ import { ProductoComponent } from "./tabs/producto/producto.component"
     ],
     imports: [
         NativeScriptModule,
+        NgShadowModule,
         AppRoutingModule
        
   

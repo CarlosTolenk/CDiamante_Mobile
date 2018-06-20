@@ -3026,10 +3026,11 @@ public final class R {
     public static final int office=0x7f07008b;
     public static final int profile=0x7f07008c;
     public static final int radio=0x7f07008d;
-    public static final int search=0x7f07008e;
-    public static final int splash_screen=0x7f07008f;
-    public static final int television=0x7f070090;
-    public static final int whitehome=0x7f070091;
+    public static final int sabrosafm=0x7f07008e;
+    public static final int search=0x7f07008f;
+    public static final int splash_screen=0x7f070090;
+    public static final int television=0x7f070091;
+    public static final int whitehome=0x7f070092;
   }
   public static final class id {
     public static final int action0=0x7f080000;
