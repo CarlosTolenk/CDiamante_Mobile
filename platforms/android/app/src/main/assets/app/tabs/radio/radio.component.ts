@@ -30,15 +30,16 @@ export class RadioComponent implements OnInit {
     public seconds:string;
     public minutes:string;
     public clockDisplay : string; 
-    public interval: number;
+    public interval: any;
 
     constructor() {
         // Use the constructor to inject services.
-        this.duration = 1;
+        this.duration = 0;
+        this.timeString = "--:--"; 
         this.second = -5;   
         this.seconds = "--";
         this.minutes = "--";  
-        this.clockDisplay = this.minutes + " : " +this.seconds;
+        this.clockDisplay = this.minutes + ":" +this.seconds;
         this.data = this.second.toString();
         this.live = 'Sin Conexión';
         this._player = new TNSPlayer();
@@ -56,10 +57,10 @@ export class RadioComponent implements OnInit {
             this._player.getAudioTrackDuration().then(duration => {
             // iOS: duration is in seconds
             // Android: duration is in milliseconds         
-            console.log(`song duration:`, duration);
+            console.log(`song duration:`, duration);            
             this.accion = String.fromCharCode(0xf04b);
             this.volumen = this._player.volume;
-                if(duration == '-1' ){
+                if(duration == '-1' || duration == '0'){
                     this.live = "Live Broadcast";
                 }
             });
@@ -74,7 +75,7 @@ export class RadioComponent implements OnInit {
         
         console.log("Init RADIO");
         // this.data = 0.8;
-
+        this._player.pause();
       
     }
 
@@ -83,16 +84,15 @@ export class RadioComponent implements OnInit {
     public togglePlay() {
         if (this._player.isAudioPlaying()) {
           this._player.pause();
-          this.accion = String.fromCharCode(0xf04b);   
-          this._stopTrackingTime();
-          
-          
+          this.accion = String.fromCharCode(0xf04b);         
+          this.stopTick();          
           
         } else {
           this._player.play();
           this.accion = String.fromCharCode(0xf04c);          
         //   this._startVolumeTracking();         
           console.log("Inicio del timer");
+          this.timeString = "00:00"; 
             this.tickTick();
          
         }
@@ -113,20 +113,16 @@ export class RadioComponent implements OnInit {
 
   
 
-      private _stopTrackingTime(){
-          console.log("Parando");
-          timer.clearInterval(0);
-      }
+     
 
-      private tickTick(){
-
-        
+      private tickTick(){      
           
-        if(this.duration > 0){
-         setInterval( () => {this.duration = this.duration - 1;
-        if(this.duration <=0 ){
+        // if(this.duration >= 0){
+        let myVar =  setInterval(() => {this.duration = this.duration + 1;
+        if(this.duration <=0 ){            
             clearInterval(this.interval)	
             }
+            this.interval = myVar;
             this.volumen = this._player.volume;
 
         if(Math.abs(this.duration % 60) < 10){
@@ -142,8 +138,16 @@ export class RadioComponent implements OnInit {
             this.minutes = ""+parseInt(Math.abs((this.duration / 60)).toString(),10);
         }
 
-        this.clockDisplay = this.minutes + " : " +this.seconds; },1000); 
-        }
+        this.clockDisplay = this.minutes + ":" +this.seconds; },1000); 
+        // }
+
+        
+    }
+
+    private stopTick(){
+        console.log("Parando");
+        console.log(Math.abs(this.duration));
+        clearInterval(this.interval);	
     }
 
      

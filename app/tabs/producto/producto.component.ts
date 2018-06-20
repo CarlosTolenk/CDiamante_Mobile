@@ -41,4 +41,8 @@ export class ProductoComponent implements OnInit {
         console.log(this.plan);
     }
 
+    backPage(){
+        this.router.backToPreviousPage();
+    }
+
 }

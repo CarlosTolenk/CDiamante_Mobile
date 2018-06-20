@@ -97,7 +97,7 @@ export class HomeComponent implements OnInit {
             // this.planes = JSON.parse(appSettings.getString("allPlanes",""));       
             for(let i=0;i<=this.planes.length;i++){
                 if(id == this.planes[i].id){
-                    console.log(i);
+                  
                     this.planes[i].likes_recibidos++;
                     this.planes[i].class_likes = "font-awesome ico-like";
                     // console.log(this.planes[id].id);
@@ -111,7 +111,7 @@ export class HomeComponent implements OnInit {
             // this.planes = JSON.parse(appSettings.getString("allPlanes",""));       
             for(let i=0;i<=this.planes.length;i++){                
                 if(id == this.planes[i].id){    
-                    console.log(i);
+                   
                         if(like == this.planes[i].likes_recibidos){
                             this.planes[i].likes_recibidos--;
                             this.planes[i].class_likes = "font-awesome ico-dislike";

@@ -1,5 +1,6 @@
 <ActionBar class="action-bar">
-    <NavigationButton [nsRouterLink]="['../../home']" android.systemIcon="ic_menu_back"></NavigationButton>
+    <!-- <NavigationButton [nsRouterLink]="['../../home']" android.systemIcon="ic_menu_back"></NavigationButton> -->
+    <NavigationButton (tap)="backPage()" android.systemIcon="ic_menu_back"></NavigationButton>
     <Label class="action-bar-title" [text]="plan.nombre_plan" style="Color: #ffffff;"></Label>
 </ActionBar>
 
