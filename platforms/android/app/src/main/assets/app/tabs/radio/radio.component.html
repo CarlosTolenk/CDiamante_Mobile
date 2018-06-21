@@ -3,6 +3,7 @@
 </ActionBar>
 
 <Page loaded="pageLoaded">
+        <PullToRefresh (refresh)="refreshList($event)">		
     <StackLayout class="reproductor">
         <CardView class="cardStyle" margin="10" elevation="40" radius="1">					
             <GridLayout columns="20,80,60,*,60,80,20" rows="45,95,50,70,15,50,50,30,50,30,10" >
@@ -36,4 +37,5 @@
             </GridLayout>   
         </CardView>    
     </StackLayout>
+</PullToRefresh>
 </Page>

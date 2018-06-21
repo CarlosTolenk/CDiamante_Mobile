@@ -6,23 +6,31 @@
     <StackLayout class="reproductor">
         <CardView class="cardStyle" margin="10" elevation="40" radius="1">					
             <GridLayout columns="20,80,60,*,60,80,20" rows="45,95,50,70,15,50,50,30,50,30,10" >
-                <FlexboxLayout row="0" col="0" colSpan="8" class="header-top" shadow=5 bgcolor="#2A56C6">     
+                <FlexboxLayout row="0" col="0" colSpan="8" class="header-top" shadow=5 bgcolor="#122454">     
                     <Label class="title-radio" text="Control Diamante"></Label>                 
                 </FlexboxLayout>
                 <Image class="logo-radio" src="res://sabrosafm" stretch="fill" col="1" row="1" colSpan="5" rowSpan="3" ></Image>
                 <AbsoluteLayout row="6" col="0" colSpan="8" rowSpan="5"> 
                                     
-                    <Button left="150" class="btn-toggle" (tap)="togglePlay()"   >
+                    <Button left="150" class="btn-toggle" (tap)="togglePlay()"  >
                         <FormattedString>
                             <Span class="font-awesome icon-playlist" [text]="accion"></Span>                          
                         </FormattedString>
                     </Button>                
-                    <AbsoluteLayout left="0" top="50" height="180"  width="700" class="footer-top" shadow=5 bgcolor="#2A56C6">
-                        <Label top="20" left="15" text="00:00" class="live-broad"></Label>
-                        <Label top="70" left="15" text="Live Broadcast" class="live-broad"></Label>
-                        <Label top="20" left="300" [text]="volumen" class="live-broad"></Label>
+                    <AbsoluteLayout left="0" top="50" height="180"  width="700" class="footer-top" shadow=5 bgcolor="#122454">
+                        <Label top="20" left="15" [text]="timeString" width="70"  class="live-broad"></Label>
+                        <Label top="70" left="15" width="150" [text]="live" class="live-broad"></Label>
+                        <!-- <Label top="20" left="300" [text]="volumen" class="live-broad"></Label> -->
+                        <Label top="20" left="325" class="live-broad" width="80" [text]="clockDisplay">
+                                <!-- <FormattedString>
+                                    <Span [text]="minutes"></Span>
+                                    <Span text=":"></Span>
+                                    <Span [text]="seconds"></Span>
+                                </FormattedString> -->
+                            </Label>
                         <!-- <Slider top="5" left="225"  [value]="volumen" (valueChange)="onSliderValueChange($event)" minValue="0" maxValue="100"  width="150"></Slider> -->
-                        <!-- <Slider [(ngModel)]="volumen" [value]="volumen" (valueChange)="volumen"  top="75" left="225"  width="150" minValue="0" maxValue="15" class="slider-volumen"></Slider> -->
+                        <Slider [(ngModel)]="volumen" [value]="volumen"  top="75" left="230"  width="150" minValue="0" maxValue="15" class="slider-volumen"></Slider>
+
                     </AbsoluteLayout>
                 </AbsoluteLayout>                   
             </GridLayout>   

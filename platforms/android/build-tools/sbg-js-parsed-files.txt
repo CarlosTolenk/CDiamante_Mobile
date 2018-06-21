@@ -147,6 +147,7 @@ C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\a
 C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\assets\app\tns_modules\nativescript-slider\slider-common.js
 C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\assets\app\tns_modules\nativescript-slider\slider.js
 C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\assets\app\tns_modules\nativescript-social-share\social-share.js
+C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\assets\app\tns_modules\nativescript-toast\toast.js
 C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\assets\app\tns_modules\tns-core-modules\application\application-common.js
 C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\assets\app\tns_modules\tns-core-modules\application\application.js
 C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\assets\app\tns_modules\tns-core-modules\application-settings\application-settings-common.js

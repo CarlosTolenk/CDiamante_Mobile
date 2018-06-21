@@ -3,27 +3,30 @@
     <Label class="action-bar-title" text="Contactos" style="Color: #ffffff;"></Label>
 </ActionBar>
 
+<StackLayout horizontalAlignment="stretch">
+    <ScrollView orientation="vertical" ios.pagingEnabled="true" >
+        <StackLayout orientation="vertical">
 
-
-
-  
-
-   
-    <StackLayout horizontalAlignment="stretch">
-        <ScrollView orientation="vertical" ios.pagingEnabled="true" >
-            <StackLayout orientation="vertical">
-
-                
-                <CardView class="cardStyle" margin="10" elevation="40" radius="1" >
+            
+            <CardView class="cardStyle" marginTop="10" margin="10" elevation="20" radius="1" >
+                <GridLayout rows="15,25,10,20,30,40,10" columns="80,80,20,40,auto,10">
+                    <Image src="res://office" stretch="aspectFill" col="0" row="0" colSpan="2" rowSpan="8"></Image>
+                    <Label class="office text-left" horizontalAlignment="left" text="Oficina Principal" row="1" col="3" colSpan="2"></Label>	
+                    <Label class="default-card-view primary" horizontalAlignment="left" text="Av.Estrella Sahalada no.75" textWrap="true" col="3" row="3" colSpan="4"></Label>      
+                    <Label class="default-card-view secondary" horizontalAlignment="left" text="Esq. Imbert edificio Amarrillo" textWrap="true" col="3" row="4" colSpan="4"></Label>   	
+                    <Button class="font-awesome btn btn-primary" horizontalAlignment="left" text="&#xf098; Llamar ahora"  row="5" textWrap="true" col="4" (tap)="callHome()" colSpan="2" width="140"></Button>
+                </GridLayout>
+            </CardView>
+            <CardView class="cardStyle" margin="10" elevation="20" radius="1" >
                     <GridLayout rows="15,25,10,20,30,40,10" columns="80,80,20,40,auto,10">
                         <Image src="res://office" stretch="aspectFill" col="0" row="0" colSpan="2" rowSpan="8"></Image>
                         <Label class="office text-left" horizontalAlignment="left" text="Oficina Principal" row="1" col="3" colSpan="2"></Label>	
                         <Label class="default-card-view primary" horizontalAlignment="left" text="Av.Estrella Sahalada no.75" textWrap="true" col="3" row="3" colSpan="4"></Label>      
                         <Label class="default-card-view secondary" horizontalAlignment="left" text="Esq. Imbert edificio Amarrillo" textWrap="true" col="3" row="4" colSpan="4"></Label>   	
-                        <Button class="font-awesome btn btn-primary" horizontalAlignment="left" text="&#xf098; Llamar ahora"  row="5" textWrap="true" col="4" (tap)="callHome()" ></Button>
+                        <Button class="font-awesome btn btn-primary" horizontalAlignment="left" text="&#xf098; Llamar ahora"  row="5" textWrap="true" col="4" (tap)="callHome()"></Button>
                     </GridLayout>
                 </CardView>
-                <CardView class="cardStyle" margin="10" elevation="40" radius="1" >
+                <CardView class="cardStyle" margin="10" marginBottom="10" elevation="20" radius="1" >
                         <GridLayout rows="15,25,10,20,30,40,10" columns="80,80,20,40,auto,10">
                             <Image src="res://office" stretch="aspectFill" col="0" row="0" colSpan="2" rowSpan="8"></Image>
                             <Label class="office text-left" horizontalAlignment="left" text="Oficina Principal" row="1" col="3" colSpan="2"></Label>	
@@ -32,23 +35,14 @@
                             <Button class="font-awesome btn btn-primary" horizontalAlignment="left" text="&#xf098; Llamar ahora"  row="5" textWrap="true" col="4" (tap)="callHome()"></Button>
                         </GridLayout>
                     </CardView>
-                    <CardView class="cardStyle" margin="10" elevation="40" radius="1" >
-                            <GridLayout rows="15,25,10,20,30,40,10" columns="80,80,20,40,auto,10">
-                                <Image src="res://office" stretch="aspectFill" col="0" row="0" colSpan="2" rowSpan="8"></Image>
-                                <Label class="office text-left" horizontalAlignment="left" text="Oficina Principal" row="1" col="3" colSpan="2"></Label>	
-                                <Label class="default-card-view primary" horizontalAlignment="left" text="Av.Estrella Sahalada no.75" textWrap="true" col="3" row="3" colSpan="4"></Label>      
-                                <Label class="default-card-view secondary" horizontalAlignment="left" text="Esq. Imbert edificio Amarrillo" textWrap="true" col="3" row="4" colSpan="4"></Label>   	
-                                <Button class="font-awesome btn btn-primary" horizontalAlignment="left" text="&#xf098; Llamar ahora"  row="5" textWrap="true" col="4" (tap)="callHome()"></Button>
-                            </GridLayout>
-                        </CardView>
 
-         
+        
 
 
-            
-            </StackLayout>
-        </ScrollView>
-    </StackLayout> 
+        
+        </StackLayout>
+    </ScrollView>
+</StackLayout> 
 
 
 

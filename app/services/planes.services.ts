@@ -260,8 +260,7 @@ export class PlanesServices {
         }else{
             let cache = "No hay likes";
             return cache;
-        }
-        
+        }        
         
     }
 
@@ -269,5 +268,45 @@ export class PlanesServices {
         appSettings.remove("allLikes");
     }
 
+    getConection(){
+        let result = '';
+        //  result is ConnectionType enumeration (none, wifi or mobile)
+        const connectionType = connectivityModule.getConnectionType();
+       
+            switch (connectionType) {
+                case connectivityModule.connectionType.none:
+                    // Denotes no Internet connection.
+                    console.log("No connection");    
+                    result = "No connection";
+                       
+                break;
+    
+                case connectivityModule.connectionType.wifi:
+                    // Denotes a WiFi connection.  
+                        console.log("Wifi connection");  
+                        result = "Wifi connection";             
+                                      
+    
+                break;
+
+                case connectivityModule.connectionType.mobile:
+                        // Denotes a mobile connection, i.e. cellular network or WAN.
+                        console.log("Mobile connection");  
+                        result = "Mobile connection";
+                                   
+                break;
+                
+                default:
+                    break;               
+            
+            }
+
+            return result;
+    }   
+        
+            
+    
+
 
 } 
+

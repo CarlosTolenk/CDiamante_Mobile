@@ -18,6 +18,7 @@
     "nativescript-slider": true,
     "nativescript-social-share": true,
     "nativescript-theme-core": true,
+    "nativescript-toast": true,
     "reflect-metadata": true,
     "rxjs": true,
     "tns-core-modules": true,
