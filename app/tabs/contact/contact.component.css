@@ -6,19 +6,22 @@
 .office{
     color: red;
     text-align: center;
-    margin-left: 27;    
+    margin-left: 20rem;    
+    font-size: 20rem;
 }
 
 .default-card-view{
-  font-size: 12;
-  text-align: left;
+  font-size: 14rem;   
+  margin-left: 5rem;
 }
 
 .font-awesome {
     font-family: "FontAwesome";
-    font-size: 12;
+    /* font-size: 20rem; */
 }
 
-Button label{
-    font-size: 12;
+.btn{
+    font-size: 15rem;
+    margin-left: 40rem;
+    /* background-color: red; */
 }

@@ -12,6 +12,10 @@
         "directory": "..\\..\\node_modules\\nativescript-cardview"
     },
     {
+        "name": "nativescript-image-zoom",
+        "directory": "..\\..\\node_modules\\nativescript-image-zoom"
+    },
+    {
         "name": "nativescript-ng-shadow",
         "directory": "..\\..\\node_modules\\nativescript-ng-shadow"
     },

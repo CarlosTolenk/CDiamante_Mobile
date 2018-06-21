@@ -28,8 +28,10 @@ android/support/annotation/IntegerRes.class
 android/support/annotation/InterpolatorRes.class
 android/support/annotation/Keep.class
 android/support/annotation/LayoutRes.class
+android/support/annotation/LongDef.class
 android/support/annotation/MainThread.class
 android/support/annotation/MenuRes.class
+android/support/annotation/NavigationRes.class
 android/support/annotation/NonNull.class
 android/support/annotation/Nullable.class
 android/support/annotation/PluralsRes.class
@@ -61,6 +63,7 @@ android/support/design/widget/CoordinatorLayout$DispatchChangeEvent.class
 android/support/design/widget/FloatingActionButton$Size.class
 android/support/design/widget/TabLayout$Mode.class
 android/support/design/widget/TabLayout$TabGravity.class
+android/support/media/ExifInterface$IfdType.class
 android/support/multidex/MultiDex$V14.class
 android/support/multidex/MultiDex$V19.class
 android/support/multidex/MultiDex$V4.class

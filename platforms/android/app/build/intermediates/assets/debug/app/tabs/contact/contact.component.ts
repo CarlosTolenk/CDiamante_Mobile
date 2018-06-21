@@ -1,8 +1,11 @@
 import { Component, OnInit } from "@angular/core";
 import * as phone from 'nativescript-phone';
+import * as utils from "utils/utils";
+import { registerElement } from 'nativescript-angular/element-registry';
+registerElement('ImageZoom', () => require('nativescript-image-zoom').ImageZoom);
 
 //Register Component NativeScript
-import { registerElement } from 'nativescript-angular/element-registry';
+// import { registerElement } from 'nativescript-angular/element-registry';
 import { CardView } from 'nativescript-cardview';
 registerElement('CardView', () => CardView);
 // registerElement("Accordion", () => require("nativescript-accordion").Accordion);
@@ -18,15 +21,7 @@ export class ContactComponent implements OnInit {
     public image:string;
        constructor() {
         // Use the component constructor to inject providers.
-        this.items = [
-            {
-              title: "1", footer: "10", headerText: "First", footerText: "4",
-              items: [  
-                { image: "~/images/a9ff17db85f8136619feb0d5a200c0e4.png", text: "Stop" },
-                { text: "Drop", image: "http://static.srcdn.com/wp-content/uploads/Superman-fighting-Goku.jpg" }
-              ]
-            }
-          ]
+   
 
         
     }
@@ -37,8 +32,12 @@ export class ContactComponent implements OnInit {
     }
 
         /// Dial a phone number.
-    public callHome() {
+    public callHome(call) {
         console.log("Llamando");
-        phone.dial('809-724-0272', true);
+        phone.dial(call, true);
+    }
+
+    public openSocial(url){
+        utils.openUrl(url);
     }
 }  

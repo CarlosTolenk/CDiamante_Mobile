@@ -98,6 +98,8 @@ C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\a
 C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\assets\app\tns_modules\nativescript-audio\options.js
 C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\assets\app\tns_modules\nativescript-cardview\cardview-common.js
 C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\assets\app\tns_modules\nativescript-cardview\cardview.js
+C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\assets\app\tns_modules\nativescript-image-zoom\image-zoom.common.js
+C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\assets\app\tns_modules\nativescript-image-zoom\image-zoom.js
 C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\assets\app\tns_modules\nativescript-intl\index.js
 C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\assets\app\tns_modules\nativescript-intl\nativescript-intl-common.js
 C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\assets\app\tns_modules\nativescript-intl\nativescript-intl.js

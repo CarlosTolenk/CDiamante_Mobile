@@ -59,6 +59,12 @@
             </intent-filter>
         </activity>
         <activity android:name="com.tns.ErrorReportActivity" />
+
+        <provider
+            android:name="com.squareup.picasso.provider.PicassoContentProvider"
+            android:authorities="cdiamante.controldiamante.com.com.squareup.picasso"
+            android:exported="false" />
+
         <activity
             android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
             android:excludeFromRecents="true"

@@ -44,12 +44,7 @@ export class RadioComponent implements OnInit {
         this.clockDisplay = this.minutes + ":" +this.seconds;
         this.data = this.second.toString();
         this.live = 'Sin Conexión';
-        this._player = new TNSPlayer();
-      
-    
-
-
-  
+        this._player = new TNSPlayer(); 
      
     }
 

@@ -7,34 +7,45 @@
     <ScrollView orientation="vertical" ios.pagingEnabled="true" >
         <StackLayout orientation="vertical">
 
-            
+            <!-- Santiago -->
             <CardView class="cardStyle" marginTop="10" margin="10" elevation="20" radius="1" >
-                <GridLayout rows="15,25,10,20,30,40,10" columns="80,80,20,40,auto,10">
-                    <Image src="res://office" stretch="aspectFill" col="0" row="0" colSpan="2" rowSpan="8"></Image>
-                    <Label class="office text-left" horizontalAlignment="left" text="Oficina Principal" row="1" col="3" colSpan="2"></Label>	
-                    <Label class="default-card-view primary" horizontalAlignment="left" text="Av.Estrella Sahalada no.75" textWrap="true" col="3" row="3" colSpan="4"></Label>      
-                    <Label class="default-card-view secondary" horizontalAlignment="left" text="Esq. Imbert edificio Amarrillo" textWrap="true" col="3" row="4" colSpan="4"></Label>   	
-                    <Button class="font-awesome btn btn-primary" horizontalAlignment="left" text="&#xf098; Llamar ahora"  row="5" textWrap="true" col="4" (tap)="callHome()" colSpan="2" width="140"></Button>
+                    
+                <GridLayout rows="15,40,20,30,30,50,5" columns="80,100,10,75,*,80,80,40,10">
+                    <CardView class="cardStyle" col="0" row="0" colSpan="2" rowSpan="8" margin="10" elevation="10" radius="1"><ImageZoom src="res://oficinasantiago" maxZoom="3" minZoom="1" stretch="fill"></ImageZoom></CardView>
+                    <!-- <CardView class="cardStyle" col="0" row="0" colSpan="2" rowSpan="8" margin="10" elevation="10" radius="1"><Image src="res://oficinasantiago" stretch="aspectFill" shadow="5"></Image></CardView> -->
+                    <Label class="office text-left" horizontalAlignment="left" text="Oficina Santiago" row="1" col="3" colSpan="4"></Label>	
+                    <Label class="default-card-view   font-awesome" horizontalAlignment="left" text="&#xf041; Av. Las Carreras, Edif. A-15" textWrap="true" col="2" row="2" colSpan="5"></Label>      
+                    <Label class="default-card-view  font-awesome" horizontalAlignment="left" text="Apart 2E. Santiago, RD" textWrap="true" col="2" row="3" colSpan="4"></Label>   
+                    <Label class="default-card-view  font-awesome" horizontalAlignment="left" text="&#xf017; 8:00am - 6:00pm" textWrap="true" col="2" row="4" colSpan="4"></Label>
+                    <Button class="font-awesome btn btn-primary" horizontalAlignment="left" text="&#xf098; Llamar ahora"  row="5" textWrap="true" col="3" (tap)="callHome('809-724-0272')" colSpan="3" width="150" ></Button>
                 </GridLayout>
             </CardView>
-            <CardView class="cardStyle" margin="10" elevation="20" radius="1" >
-                    <GridLayout rows="15,25,10,20,30,40,10" columns="80,80,20,40,auto,10">
-                        <Image src="res://office" stretch="aspectFill" col="0" row="0" colSpan="2" rowSpan="8"></Image>
-                        <Label class="office text-left" horizontalAlignment="left" text="Oficina Principal" row="1" col="3" colSpan="2"></Label>	
-                        <Label class="default-card-view primary" horizontalAlignment="left" text="Av.Estrella Sahalada no.75" textWrap="true" col="3" row="3" colSpan="4"></Label>      
-                        <Label class="default-card-view secondary" horizontalAlignment="left" text="Esq. Imbert edificio Amarrillo" textWrap="true" col="3" row="4" colSpan="4"></Label>   	
-                        <Button class="font-awesome btn btn-primary" horizontalAlignment="left" text="&#xf098; Llamar ahora"  row="5" textWrap="true" col="4" (tap)="callHome()"></Button>
+
+            <!-- Santo Domingo -->
+            <CardView class="cardStyle"  margin="10" elevation="20" radius="1" >
+                    <GridLayout rows="15,40,20,20,40,30,50,5" columns="80,100,10,75,*,80,80,40,10">
+                        <!-- <CardView class="cardStyle" col="0" row="0" colSpan="2" rowSpan="8" margin="10" elevation="10" radius="1"><Image src="res://locationsantod" stretch="aspectFit" shadow="5"></Image></CardView> -->
+                        <CardView class="cardStyle" col="0" row="0" colSpan="2" rowSpan="8" margin="10" elevation="10" radius="1"><ImageZoom src="res://locationsantod" maxZoom="3" minZoom="1"></ImageZoom></CardView>
+                        <Label class="office text-left" horizontalAlignment="left" text="Oficina Sto Dom" row="1" col="3" colSpan="4"></Label>	
+                        <Label class="default-card-view   font-awesome" horizontalAlignment="left" text="&#xf041; Emilio a Morel #35 Edificio" textWrap="true" col="2" row="2" colSpan="5"></Label>      
+                        <Label class="default-card-view  font-awesome" horizontalAlignment="left" text="Profesional, 2da Planta" textWrap="true" col="2" row="3" colSpan="4"></Label>   
+                        <Label class="default-card-view  font-awesome" horizontalAlignment="left" text="Ensanche la fe, Santo Domingo, RD" textWrap="true" col="2" row="4" colSpan="4"></Label> 
+                        <Label class="default-card-view  font-awesome" horizontalAlignment="left" text="&#xf017; 8:00am - 6:00pm" textWrap="true" col="2" row="5" colSpan="4"></Label>
+                        <Button class="font-awesome btn btn-primary" horizontalAlignment="left" text="&#xf098; Llamar ahora"  textWrap="true" col="3" row="6"  (tap)="callHome('809-626-7885')" colSpan="3" width="150"></Button>
                     </GridLayout>
                 </CardView>
-                <CardView class="cardStyle" margin="10" marginBottom="10" elevation="20" radius="1" >
-                        <GridLayout rows="15,25,10,20,30,40,10" columns="80,80,20,40,auto,10">
-                            <Image src="res://office" stretch="aspectFill" col="0" row="0" colSpan="2" rowSpan="8"></Image>
-                            <Label class="office text-left" horizontalAlignment="left" text="Oficina Principal" row="1" col="3" colSpan="2"></Label>	
-                            <Label class="default-card-view primary" horizontalAlignment="left" text="Av.Estrella Sahalada no.75" textWrap="true" col="3" row="3" colSpan="4"></Label>      
-                            <Label class="default-card-view secondary" horizontalAlignment="left" text="Esq. Imbert edificio Amarrillo" textWrap="true" col="3" row="4" colSpan="4"></Label>   	
-                            <Button class="font-awesome btn btn-primary" horizontalAlignment="left" text="&#xf098; Llamar ahora"  row="5" textWrap="true" col="4" (tap)="callHome()"></Button>
+
+                <!-- Redes Sociales <Siguenoos> -->
+                <CardView class="cardStyle" margin="10" marginBottom="10" elevation="10" radius="1" >
+                        <GridLayout rows="5,30,10,35,15" columns="15,*,*,*,*,15">
+                            <Label class="office text-left" horizontalAlignment="center" text="Siguenos" row="1" col="1" colSpan="4"></Label>	
+                            <Image src="res://facebook" stretch="aspectFit" col="1" row="3" (tap)="openSocial('https://www.facebook.com/joseph.tavarez.359')"></Image>
+                            <Image src="res://youtube" stretch="aspectFit" col="2" row="3" (tap)="openSocial('https://www.youtube.com/channel/UCuZhMYqg3hnsT-2MXTQG')"></Image>
+                            <Image src="res://instagram" stretch="aspectFit" col="3" row="3" (tap)="openSocial('https://www.instagram.com/control_diamante/')"></Image>
+                            <Image src="res://world" stretch="aspectFit" col="4" row="3" (tap)="openSocial('http://controldiamante.com/')"></Image>
+                            
                         </GridLayout>
-                    </CardView>
+                </CardView>
 
         
 

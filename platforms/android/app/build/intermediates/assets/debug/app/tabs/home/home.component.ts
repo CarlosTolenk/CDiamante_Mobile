@@ -7,6 +7,7 @@ import { Color } from "color";
 import { View } from "ui/core/view";
 import * as appSettings from 'tns-core-modules/application-settings'
 const connectivityModule = require("tns-core-modules/connectivity");
+import * as Toast from 'nativescript-toast';
 // import { firestore } from "nativescript-plugin-firebase";
 
 //Services
@@ -93,23 +94,31 @@ export class HomeComponent implements OnInit {
         if(status == 'font-awesome ico-dislike'){
             // this.toogleLike = true;
             // this.toogleHeart = "font-awesome ico-like"
-            this._planesService.putPlusLike(id, like); 
+            // Toast.makeText("Like", "long").show();
+           
             // this.planes = JSON.parse(appSettings.getString("allPlanes",""));       
-            for(let i=0;i<=this.planes.length;i++){
+            for(let i=0;i<this.planes.length;i++){
                 if(id == this.planes[i].id){
                   
                     this.planes[i].likes_recibidos++;
                     this.planes[i].class_likes = "font-awesome ico-like";
                     // console.log(this.planes[id].id);
                 }
-            }                                 
+            
+            }
+            
+            this._planesService.putPlusLike(id, like); 
+
+            
+           
           
         }else{ 
             // this.toogleLike = false;
             // this.toogleHeart = "font-awesome ico-dislike"
-            this._planesService.putMinusLike(id, like);
+            // Toast.makeText("Dislike", "long").show();
+            
             // this.planes = JSON.parse(appSettings.getString("allPlanes",""));       
-            for(let i=0;i<=this.planes.length;i++){                
+            for(let i=0;i<this.planes.length;i++){                
                 if(id == this.planes[i].id){    
                    
                         if(like == this.planes[i].likes_recibidos){
@@ -123,20 +132,37 @@ export class HomeComponent implements OnInit {
                     }
                     
                 }
-            
+                
+                this._planesService.putMinusLike(id, like);
+              
             }  
 
     }
 
-    share(image,id,t_shared){          
-        console.log("ID:" + id + "Total:"+ t_shared);
-        this.pressShared = "font-awesome ico-share-press";           
-        ImageSource.fromUrl(image).then((image) => {        
-            SocialShare.shareImage(image);           
-            this.pressShared = "font-awesome ico-share";                   
-        });
+    share(image,id,t_shared){   
 
-        this._planesService.putPlusShare(id,t_shared);
+        // console.log("ID:" + id + "Total:"+ t_shared);
+        console.log(this._planesService.getConection());
+        let connection = this._planesService.getConection();
+
+        if(connection == "No connection"){
+            SocialShare.shareUrl(image, "Nuevo Plan de Control Diamante", "Nuevo Plan de Control Diamante");       
+        }else{
+            this.pressShared = "font-awesome ico-share-press";      
+            
+            let imagen_local = ImageSource.fromFile("res://locationsantod");
+            SocialShare.shareImage(imagen_local);
+            
+            // Descargar Imagen directamente de la url y pasarla
+            // ImageSource.fromUrl(image).then((image) => {                    
+            //     SocialShare.shareImage(image, "Nuevo plan de Control Diamante");    
+               
+            //     this.pressShared = "font-awesome ico-share";                   
+            // });
+    
+            this._planesService.putPlusShare(id,t_shared);
+        }       
+  
     }
 
     refreshList(args) {

@@ -5,6 +5,7 @@ import { Slider } from 'tns-core-modules/ui/slider';
 import { Page } from 'tns-core-modules/ui/page';
 import * as timer from 'tns-core-modules/timer';
 import * as Toast from 'nativescript-toast';
+import { PullToRefresh } from "nativescript-pulltorefresh";
 
 import {registerElement} from "nativescript-angular/element-registry";
 registerElement("TNSSlider", () => require("nativescript-slider").Slider);
@@ -43,20 +44,15 @@ export class RadioComponent implements OnInit {
         this.clockDisplay = this.minutes + ":" +this.seconds;
         this.data = this.second.toString();
         this.live = 'Sin Conexión';
-        this._player = new TNSPlayer();
-      
-    
-
-
-  
+        this._player = new TNSPlayer(); 
      
     }
 
     ngOnInit(): void {
         // Use the "ngOnInit" handler to initialize data for the view.
         
-        console.log("Init RADIO");
-        this._player.debug = false; // set true to enable TNSPlayer console logs for debugging.
+      
+        this._player.debug = true; // set true to enable TNSPlayer console logs for debugging.
         this._player
         .initFromFile({
             audioFile: 'http://radio7.domint.net:8194/;stream.mp3', // ~ = radio
@@ -156,6 +152,38 @@ export class RadioComponent implements OnInit {
         console.log(Math.abs(this.duration));
         clearInterval(this.interval);	
     }
+
+    refreshList(args) {
+        
+        var pullRefresh = args.object;
+        setTimeout(function () {             
+           pullRefresh.refreshing = false;
+        }, 1000);
+        
+        this._player.debug = true; // set true to enable TNSPlayer console logs for debugging.
+        this._player
+        .initFromFile({
+            audioFile: 'http://radio7.domint.net:8194/;stream.mp3', // ~ = radio
+            loop: false,
+            completeCallback: this._trackComplete.bind(this),
+            errorCallback: this._trackError.bind(this)
+        })
+        .then(() => {
+            this._player.getAudioTrackDuration().then(duration => {
+            // iOS: duration is in seconds
+            // Android: duration is in milliseconds    
+            this._player.pause();     
+            console.log(`song duration:`, duration);            
+            this.accion = String.fromCharCode(0xf04b);
+            this.volumen = this._player.volume;
+                if(duration == '-1' || duration == '0'){
+                    this.live = "Live Broadcast";
+                }
+            });
+        });
+      
+    }
+       
 
      
     

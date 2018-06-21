@@ -95,16 +95,20 @@ export class HomeComponent implements OnInit {
             // this.toogleLike = true;
             // this.toogleHeart = "font-awesome ico-like"
             // Toast.makeText("Like", "long").show();
-            this._planesService.putPlusLike(id, like); 
+           
             // this.planes = JSON.parse(appSettings.getString("allPlanes",""));       
-            for(let i=0;i<=this.planes.length;i++){
+            for(let i=0;i<this.planes.length;i++){
                 if(id == this.planes[i].id){
                   
                     this.planes[i].likes_recibidos++;
                     this.planes[i].class_likes = "font-awesome ico-like";
                     // console.log(this.planes[id].id);
                 }
-            }   
+            
+            }
+            
+            this._planesService.putPlusLike(id, like); 
+
             
            
           
@@ -112,9 +116,9 @@ export class HomeComponent implements OnInit {
             // this.toogleLike = false;
             // this.toogleHeart = "font-awesome ico-dislike"
             // Toast.makeText("Dislike", "long").show();
-            this._planesService.putMinusLike(id, like);
+            
             // this.planes = JSON.parse(appSettings.getString("allPlanes",""));       
-            for(let i=0;i<=this.planes.length;i++){                
+            for(let i=0;i<this.planes.length;i++){                
                 if(id == this.planes[i].id){    
                    
                         if(like == this.planes[i].likes_recibidos){
@@ -128,7 +132,8 @@ export class HomeComponent implements OnInit {
                     }
                     
                 }
-            
+                
+                this._planesService.putMinusLike(id, like);
               
             }  
 
@@ -143,16 +148,22 @@ export class HomeComponent implements OnInit {
         if(connection == "No connection"){
             SocialShare.shareUrl(image, "Nuevo Plan de Control Diamante", "Nuevo Plan de Control Diamante");       
         }else{
-            this.pressShared = "font-awesome ico-share-press";           
-            ImageSource.fromUrl(image).then((image) => {                    
-                SocialShare.shareImage(image, "Nuevo plan de Control Diamante");    
+            this.pressShared = "font-awesome ico-share-press";      
+            
+            let imagen_local = ImageSource.fromFile("~/images/send.jpg");
+            SocialShare.shareImage(imagen_local);
+            // console.log(imagen_local, "Nuevo Plan ASTIVOO");
+            
+            // Descargar Imagen directamente de la url y pasarla
+            // ImageSource.fromUrl(image).then((image) => {                    
+            //     SocialShare.shareImage(image, "Nuevo plan de Control Diamante");    
                
-                this.pressShared = "font-awesome ico-share";                   
-            });
+            //     this.pressShared = "font-awesome ico-share";                   
+            // });
     
             this._planesService.putPlusShare(id,t_shared);
         }       
-  
+        this.pressShared = "font-awesome ico-share";  
     }
 
     refreshList(args) {

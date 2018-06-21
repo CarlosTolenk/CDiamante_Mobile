@@ -3,16 +3,17 @@
 </ActionBar>
 
 <Page loaded="pageLoaded">
+        <PullToRefresh (refresh)="refreshList($event)">		
     <StackLayout class="reproductor">
         <CardView class="cardStyle" margin="10" elevation="40" radius="1">					
             <GridLayout columns="20,80,60,*,60,80,20" rows="45,95,50,70,15,50,50,30,50,30,10" >
-                <FlexboxLayout row="0" col="0" colSpan="8" class="header-top" shadow=5 bgcolor="#122454">     
-                    <Label class="title-radio" text="Control Diamante"></Label>                 
+                <FlexboxLayout row="0" col="1" colSpan="8" class="header-top" shadow=5 bgcolor="#122454">     
+                    <Label horizontalAlignment="center" class="title-radio" text="12pm - 1pm"></Label>                 
                 </FlexboxLayout>
                 <Image class="logo-radio" src="res://sabrosafm" stretch="fill" col="1" row="1" colSpan="5" rowSpan="3" ></Image>
                 <AbsoluteLayout row="6" col="0" colSpan="8" rowSpan="5"> 
                                     
-                    <Button left="150" class="btn-toggle" (tap)="togglePlay()"  >
+                    <Button left="150" class="btn-toggle" (tap)="togglePlay()"  elevation="40">
                         <FormattedString>
                             <Span class="font-awesome icon-playlist" [text]="accion"></Span>                          
                         </FormattedString>
@@ -36,4 +37,5 @@
             </GridLayout>   
         </CardView>    
     </StackLayout>
+</PullToRefresh>
 </Page>

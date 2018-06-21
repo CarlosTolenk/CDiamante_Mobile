@@ -11,6 +11,7 @@
     "nativescript-angular": true,
     "nativescript-audio": true,
     "nativescript-cardview": true,
+    "nativescript-image-zoom": true,
     "nativescript-ng-shadow": true,
     "nativescript-phone": true,
     "nativescript-plugin-firebase": true,
