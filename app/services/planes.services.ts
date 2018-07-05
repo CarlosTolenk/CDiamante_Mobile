@@ -2,6 +2,10 @@ import { Injectable, NgZone } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { firestore } from "nativescript-plugin-firebase";
 import * as appSettings from 'tns-core-modules/application-settings'
+const Cache = require("tns-core-modules/ui/image-cache").Cache;
+const fromNativeSource = require("image-source").fromNativeSource;
+const fromFile = require("image-source").fromFile;
+const imageSource = require("tns-core-modules/image-source");
 const firebase = require("nativescript-plugin-firebase/app");
 const firebaseWebApi = require("nativescript-plugin-firebase/app");
 const connectivityModule = require("tns-core-modules/connectivity");
@@ -39,7 +43,7 @@ export class PlanesServices {
    }
 
    getAllPlanes(){      
-    //    console.log("getAllPlanes");
+    //    console.log("getAllPlanes");    
        this.allPlanes = [];
         const planesCollection = firebase.firestore().collection("planes"); 
         this.ngZone.run(() => {           
@@ -78,10 +82,7 @@ export class PlanesServices {
                 });
             });           
            
-        });  
-
-       
-     
+        });        
                
         return this.allPlanes;
     }
@@ -302,7 +303,53 @@ export class PlanesServices {
             }
 
             return result;
-    }   
+    } 
+    
+    imageCache(id_imagen, viewModel, url_imagen){
+         // >> image-cache-code
+        
+        const cache = new Cache();
+        // let holder = "~/images/" + id_imagen + ".jpg";
+        let holder = "~/images/carlos.jpg";
+        console.log(holder);
+        cache.placeholder = fromFile(holder);
+        cache.maxRequests = 5;
+
+         // set the placeholder while the desired image is donwloaded
+        viewModel.set("imageSource", cache.placeholder);
+
+        // Enable download while not scrolling
+        cache.enableDownload();
+
+        let cachedImageSource;
+        const url = url_imagen;
+        // Try to read the image from the cache
+        const image = cache.get(url);
+
+        if (image) {
+            // If present -- use it.
+            cachedImageSource = imageSource.fromNativeSource(image);
+            viewModel.set("imageSource", cachedImageSource);
+        } else {
+            // If not present -- request its download + put it in the cache.
+            cache.push({
+                key: url,
+                url: url,
+                completed: (image, key) => {
+                    if (url === key) {
+                        cachedImageSource = fromNativeSource(image);
+                        viewModel.set("imageSource", cachedImageSource); // set the downloaded iamge
+                    }
+                }
+            });
+        }
+
+        // Disable download while scrolling
+        cache.disableDownload();
+        // << image-cache-codes
+
+
+    }
         
             
     

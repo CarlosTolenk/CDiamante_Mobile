@@ -19,9 +19,21 @@ registerElement('CardView', () => CardView);
 export class ContactComponent implements OnInit {
     public items:any
     public image:string;
+    public xColumnas:string;
        constructor() {
         // Use the component constructor to inject providers.
-   
+        var platform = require("tns-core-modules/platform");
+        var maxwidth = platform.screen.mainScreen.widthDIPs;
+        console.log('Densidad de pixeles'+maxwidth);
+        this.xColumnas = 
+        `            
+            ${maxwidth*0.45},   
+            
+            ${maxwidth*0.45},
+            ${maxwidth*0.10}
+            
+        
+        `
 
         
     }

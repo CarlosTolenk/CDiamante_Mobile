@@ -16,23 +16,25 @@
 }
 
 .text-fecha-publish{
-    font-size: 18;
-    margin-left: 4%;    
+    font-size: 18rem;
+    /* margin-left: 22rem;      */
+    /* margin-left: 2%;  */
     font-weight: bold;  
     color: rgba(36, 52, 92, 0.692);
 }
 
 .text-date{  
-    font-size: 18px;
-    margin-left: 15%;
-    margin-top: -80px;     
+    font-size: 18rem;
+    /* margin-left: 65rem; */
+    margin-left: 5%;
+    margin-top: -25rem;     
     color: rgba(36, 52, 92, 0.692);
 }
 
 .text-date-string{
-    font-size: 18;
-    margin-left: 20%;
-    margin-top: -88px;     
+    font-size: 18rem;
+    margin-left: 10%;
+    margin-top: -28rem;     
     color: rgba(36, 52, 92, 0.692); 
 }
 
@@ -71,48 +73,51 @@
 .ico-share-press{
     color: rgba(47, 94, 214, 0.651);
     border-style: ridge;  
-    padding-top: 15;
-    font-size: 20px;    
-    margin-left: -85;
+    padding-top: 2rem;
+    font-size: 15rem;    
+    margin-left: -20rem;
     padding-bottom: 10;
 
 }
 
 .cant-message{
-    font-size: 20px;
-    margin-left: -60px;      
+    font-size: 17rem;
+    /* margin-left: -40rem;       */
     color: rgba(36, 52, 92, 0.692);
 }
 
 .description{
-    font-size: 20px;
+    font-size: 15rem;
 }
 .cantidad_mensaje{
-    font-size: 18px;
+    font-size: 17rem;
+    margin-left: 40rem;
     margin-top: -2px;
     color: rgba(36, 52, 92, 0.692);
 }
 
 .text-precio-publish{
     font-weight: bold;
-    font-size: 18px;    
-    margin-left: 20%;
+    font-size: 18rem;    
+    /* margin-left: 75rem; */
+    /* margin-left: 10%; */
     margin-top: -40rem;
     color: rgba(36, 52, 92, 0.692);
 }
 
 .icon-money{
-    font-size: 18px;
-    margin-left: -5%;
-    margin-top: -40px;   
+    font-size: 15rem;
+    /* margin-left: -10rem; */
+    margin-top: -5rem;   
     color: rgba(36, 52, 92, 0.692);
 }
 
 .text-money{
-    font-size: 18px;
-    margin-left: 10%;
-    margin-top: -20px;   
-    color: rgba(36, 52, 92, 0.692);
+    font-size: 18rem;
+    /* margin-left: 40rem; */
+    margin-left: 5%;
+    margin-top: -20rem;   
+    color:rgba(255, 0, 0, 0.568);
 }
 
 .loteria-title{

@@ -9,20 +9,23 @@
 
 <Page loaded="pageLoaded">
     <StackLayout>
-        <GridLayout columns="20,80,60,*,60,80,20" rows="60,95,50,70,30,30,30,50,50,10">
+        <!-- <GridLayout columns="20,80,60,*,60,80,20" rows="60,95,50,70,30,30,30,50,50,10">
                 <Image class="logo-tv" src="res://logo_tv" stretch="aspectFit" col="2" row="1" colSpan="3" rowSpan="2"></Image>
-                <!-- Horarios -->
-                <Label class="horario-tv" col="1" row="3" text="Horarios:" colSpan="2"></Label>
-                <Label class="program-tv" col="1" row="4" text="12pm-2pm" colSpan="2"></Label>
-                <Label class="program-tv" col="1" row="5" text="2pm-3pm" colSpan="2"></Label>
-                <Label class="program-tv" col="1" row="6" text="3pm-5pm" colSpan="2"></Label>
-                <!-- Programacion -->
-                <Label class="contenido-tv" col="4" row="3" text="Contenido:" colSpan="2"></Label>
-                <Label class="shedule-tv" col="4" row="4" text="Pelicula Infantil" colSpan="2"></Label>
-                <Label class="shedule-tv" col="4" row="5" text="Tv Diamante" colSpan="2"></Label>
-                <Label class="shedule-tv" col="4" row="6" text="Peliculas Varias" colSpan="2"></Label>
-                <Button  col="0" row="8" colSpan="8" class="btn btn-primary btn-canal" text="Visualizar Canal" (tap)="openURL()"></Button>
-        </GridLayout>       
+             
+                <Label class="horario-tv" col="1" row="3" text="Horarios:" colSpan="2"></Label>               
+                <Label class="program-tv" col="0" row="4" text="2:30pm a 3:30pm" colSpan="3"></Label>                
+               
+                <Label class="contenido-tv" col="4" row="3" text="Contenido:" colSpan="2"></Label>             
+                <Label class="shedule-tv" col="4" row="4" text="Tv Diamante" colSpan="2"></Label>           
+                <Button  col="0" row="6" colSpan="8" rowSpan="2" class="btn btn-primary btn-canal" text="Visualizar Canal" (tap)="openURL()"></Button>
+        </GridLayout> -->
+        <VideoPlayer
+            src="http://ss1.domint.net:2140/luna_str/lunatv/playlist.m3u8"
+            controls="true"
+            autoplay="true" 
+            fill="true"       
+            height="300">
+        </VideoPlayer>       
     </StackLayout>
 </Page>
 

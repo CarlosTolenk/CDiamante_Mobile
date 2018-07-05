@@ -42,13 +42,14 @@
 }
 
 .reproductor{
-    margin-top: 20rem!important;
+    margin-top: 140rem;
 }
 
 
 .header-top{
     background-color: #2A56C6;
     box-shadow: #000000;
+    /* margin-left: 20rem; */
     
 }
 
@@ -60,8 +61,8 @@
     
 }
 
-.btn-toggle{
-   z-index: 200;
+.btn-toggle{  
+    z-index: 100;
     position: absolute;
     top: 10px;
     width: 90rem;
@@ -82,8 +83,7 @@
 .title-radio{
     color:white;
     font-size: 20rem;
-    text-align: center;
-    margin-left: 120rem;
+    margin-left: 35%;
     margin-top: 5rem;
 }
 

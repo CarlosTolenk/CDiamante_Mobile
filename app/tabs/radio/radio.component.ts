@@ -33,11 +33,15 @@ export class RadioComponent implements OnInit {
     public minutes:string;
     public clockDisplay : string; 
     public interval: any;
+    public menu_button:number;
+    public time_reproductor:number;
+    public volume_reproductor:number;
+
 
     constructor() {
         // Use the constructor to inject services.
         this.duration = 0;
-        this.timeString = "--:--"; 
+        this.timeString = " --:-- "; 
         this.second = -5;   
         this.seconds = "--";
         this.minutes = "--";  
@@ -45,6 +49,17 @@ export class RadioComponent implements OnInit {
         this.data = this.second.toString();
         this.live = 'Sin Conexión';
         this._player = new TNSPlayer(); 
+
+        var platform = require("tns-core-modules/platform");
+        var maxwidth = platform.screen.mainScreen.widthDIPs;
+        console.log('Densidad de pixeles'+maxwidth);
+
+        this.menu_button = (maxwidth)/2 - 55;
+        console.log(this.menu_button);
+
+        this.time_reproductor = maxwidth-85;
+        this.volume_reproductor = maxwidth-175;
+
      
     }
 
@@ -73,6 +88,8 @@ export class RadioComponent implements OnInit {
                 }
             });
         });
+
+        this._player.pause(); 
       
     }
 

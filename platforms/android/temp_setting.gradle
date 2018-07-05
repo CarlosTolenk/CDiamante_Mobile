@@ -2,12 +2,12 @@ android {
             defaultConfig {
                 applicationId = "cdiamante.controldiamante.com"
 
-                if (false) {
-                    minSdkVersion = false
+                if (20) {
+                    minSdkVersion = 20
                 }
 
-                if (false) {
-                    targetSdkVersion = false
+                if (23) {
+                    targetSdkVersion = 23
                 }
             }
         }

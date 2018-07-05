@@ -48,6 +48,7 @@ export class HomeComponent implements OnInit {
     public planes: Array<Planes> = [];
     public changePlanes: Array<any> = [];
     public prueba:string;
+   
     
 
     constructor(
@@ -58,7 +59,8 @@ export class HomeComponent implements OnInit {
         // Use the constructor to inject services.
         this.toogleHeart = "font-awesome ico-dislike";
         this.toogleLike = false;
-        this.pressShared = "font-awesome ico-share";         
+        this.pressShared = "font-awesome ico-share";
+              
 
    
     }
@@ -69,11 +71,16 @@ export class HomeComponent implements OnInit {
             // this.planes =  this._planesService.getAllPlanes();
             // getInfo = this._planesService.getConexion();
             this.planes =  this._planesService.getConexion();    
+            // console.log("Alex ees un locooo");
+               //  imageCache(id_imagen, viewModel, url_imagen)
 
         });    
        
     } 
 
+ 
+
+  
    
 
     // itemNext(){
@@ -144,26 +151,37 @@ export class HomeComponent implements OnInit {
         // console.log("ID:" + id + "Total:"+ t_shared);
         console.log(this._planesService.getConection());
         let connection = this._planesService.getConection();
+   
 
         if(connection == "No connection"){
             SocialShare.shareUrl(image, "Nuevo Plan de Control Diamante", "Nuevo Plan de Control Diamante");       
-        }else{
-            this.pressShared = "font-awesome ico-share-press";      
-            
-            let imagen_local = ImageSource.fromFile("~/images/send.jpg");
-            SocialShare.shareImage(imagen_local);
-            // console.log(imagen_local, "Nuevo Plan ASTIVOO");
+        }else{              
+            // Imagen Local
+            // let imagen_local = ImageSource.fromFile("~/images/send.jpg");
+            // SocialShare.shareImage(imagen_local);
+       
             
             // Descargar Imagen directamente de la url y pasarla
-            // ImageSource.fromUrl(image).then((image) => {                    
-            //     SocialShare.shareImage(image, "Nuevo plan de Control Diamante");    
-               
-            //     this.pressShared = "font-awesome ico-share";                   
-            // });
-    
+            ImageSource.fromUrl(image).then((image) => {                    
+                SocialShare.shareImage(image, "Nuevo plan de Control Diamante");    
+                this.pressShared = "font-awesome ico-share-press";  
+                console.log("Presionado");
+                setTimeout(()=>{
+                    this.pressShared = "font-awesome ico-share"; 
+                    console.log("Soltando");
+                },800);  
+                         
+                                
+            });
+         
             this._planesService.putPlusShare(id,t_shared);
-        }       
-        this.pressShared = "font-awesome ico-share";  
+       
+            
+        }         
+        this.pressShared = "font-awesome ico-share"; 
+        // const vm = new Observable();       
+        // this._planesService.imageCache(id, vm, image);
+        
     }
 
     refreshList(args) {
@@ -178,6 +196,7 @@ export class HomeComponent implements OnInit {
             this.planes =  this._planesService.getConexion();   
             let cache = this._planesService.getLike();
             console.log(cache);
+            this.pressShared = "font-awesome ico-share"; 
                                 
         });  
        

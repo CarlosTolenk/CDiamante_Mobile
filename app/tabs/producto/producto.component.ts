@@ -22,6 +22,7 @@ export class ProductoComponent implements OnInit {
     public toogleHeart:string;
     public toogleLike:boolean;
     public pressShared:string;
+    public xColumnas:string;
 
     constructor(
         private route: ActivatedRoute,
@@ -31,7 +32,24 @@ export class ProductoComponent implements OnInit {
     ){
         this.toogleHeart = "font-awesome ico-dislike";
         this.toogleLike = false;
-        this.pressShared = "font-awesome ico-share";   
+        this.pressShared = "font-awesome ico-share"; 
+        this.xColumnas="10,50,90,*,auto,10";
+
+        var platform = require("tns-core-modules/platform");
+        var maxwidth = platform.screen.mainScreen.widthDIPs;
+        console.log('Densidad de pixeles'+maxwidth);
+        this.xColumnas = 
+        `
+            ${maxwidth*0.03},
+            ${maxwidth*0.35},
+            ${maxwidth*0.15},
+            ${maxwidth*0.05},
+            ${maxwidth*0.35},
+            ${maxwidth*0.15}
+            
+        
+        `
+        console.log(this.xColumnas);
     }
 
     ngOnInit(){
@@ -39,6 +57,7 @@ export class ProductoComponent implements OnInit {
         console.log("Desde los productos");        
         this.plan = this._planesService.getPlan(id);
         console.log(this.plan);
+
     }
 
     backPage(){

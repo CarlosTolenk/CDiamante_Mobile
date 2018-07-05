@@ -20,6 +20,7 @@
     "nativescript-social-share": true,
     "nativescript-theme-core": true,
     "nativescript-toast": true,
+    "nativescript-videoplayer": true,
     "reflect-metadata": true,
     "rxjs": true,
     "tns-core-modules": true,

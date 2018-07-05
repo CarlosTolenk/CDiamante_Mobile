@@ -2,11 +2,9 @@ import { Component, OnInit, AfterViewInit } from "@angular/core";
 import * as utils from "utils/utils";
 import { Page } from "ui/page";
 
-
-// import { registerElement } from "nativescript-angular";
-// import { registerElement } from "nativescript-angular";
-// registerElement("AdvanceWebview", () => require("nativescript-android-advanced-webview").AndroidAdvancedWebview);
-// import { AndroidAdvancedWebview, AndroidAdvanceWebviewOptions } from "nativescript-android-advanced-webview";
+import { registerElement } from "nativescript-angular/element-registry";
+import { Video } from 'nativescript-videoplayer';
+registerElement("VideoPlayer", () => Video);
 
 
 @Component({

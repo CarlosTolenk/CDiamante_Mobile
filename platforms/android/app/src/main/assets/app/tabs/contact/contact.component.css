@@ -6,8 +6,21 @@
 .office{
     color: red;
     text-align: center;
-    margin-left: 20rem;    
-    font-size: 20rem;
+    margin-left: 7%;    
+    font-size: 17rem;
+    /* display: block;    */
+}
+
+.text-followed{
+    color: red;
+    text-align: center;
+    font-size: 17rem;
+}
+
+.name-social-followed{
+    color:rgb(35, 77, 160);
+    font-size: 11rem;
+    font-weight: 400;
 }
 
 .default-card-view{
@@ -17,11 +30,11 @@
 
 .font-awesome {
     font-family: "FontAwesome";
-    /* font-size: 20rem; */
+    font-size: 13rem;
 }
 
 .btn{
-    font-size: 15rem;
-    margin-left: 40rem;
+    font-size: 14rem;
+    margin-left: 7%; 
     /* background-color: red; */
 }

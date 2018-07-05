@@ -22,19 +22,19 @@
 
 .program-tv{
     font-size: 18px;   
-    margin-left: 2%;   
+    margin-left: 5%;   
     text-align: center
 }
 
 .shedule-tv{
     font-size: 18px;   
-    margin-right: 3%;  
+    margin-right: 5%;  
     /* text-align: center; */
 }
 
 .btn-canal{
     font-size: 18px;
-    padding-bottom: 5px;
+    padding-bottom: 15px;
 }
 
 .btn{

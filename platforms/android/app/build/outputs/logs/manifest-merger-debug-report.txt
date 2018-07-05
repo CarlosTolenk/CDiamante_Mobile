@@ -76,13 +76,13 @@ INJECTED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platf
 		INJECTED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml
 	android:versionName
-		ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:3:132-157
+		ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:3:128-153
 		INJECTED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:3:5-63
 	android:versionCode
-		ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:3:104-131
+		ADDED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:3:104-127
 		INJECTED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml
 supports-screens

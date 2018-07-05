@@ -1,1 +1,6 @@
-{"appId":"cdiamante.controldiamante.com","minSdkVersion":null,"targetSdkVersion":null}
+
+
+
+{"appId":"cdiamante.controldiamante.com","minSdkVersion":20,"targetSdkVersion":23}
+
+// {"appId":"cdiamante.controldiamante.com","minSdkVersion":null,"targetSdkVersion":null}
