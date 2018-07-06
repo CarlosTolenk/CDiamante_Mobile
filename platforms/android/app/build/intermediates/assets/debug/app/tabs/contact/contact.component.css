@@ -18,8 +18,9 @@
 }
 
 .name-social-followed{
-    color:aquamarine;
-    font-size: 9rem;
+    color:rgb(35, 77, 160);
+    font-size: 11rem;
+    font-weight: 400;
 }
 
 .default-card-view{

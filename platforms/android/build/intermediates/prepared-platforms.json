@@ -16,6 +16,7 @@
     "nativescript-phone": true,
     "nativescript-plugin-firebase": true,
     "nativescript-pulltorefresh": true,
+    "nativescript-screen-orientation": true,
     "nativescript-slider": true,
     "nativescript-social-share": true,
     "nativescript-theme-core": true,

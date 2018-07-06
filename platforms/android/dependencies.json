@@ -32,6 +32,10 @@
         "directory": "..\\..\\node_modules\\nativescript-pulltorefresh"
     },
     {
+        "name": "nativescript-screen-orientation",
+        "directory": "..\\..\\node_modules\\nativescript-screen-orientation"
+    },
+    {
         "name": "nativescript-slider",
         "directory": "..\\..\\node_modules\\nativescript-slider"
     },

@@ -69,7 +69,7 @@ export class RadioComponent implements OnInit {
       
         this._player.debug = true; // set true to enable TNSPlayer console logs for debugging.
         this._player
-        .initFromFile({
+        .initFromUrl({
             audioFile: 'http://radio7.domint.net:8194/;stream.mp3', // ~ = radio
             loop: false,
             completeCallback: this._trackComplete.bind(this),
@@ -160,7 +160,6 @@ export class RadioComponent implements OnInit {
 
         this.clockDisplay = this.minutes + ":" +this.seconds; },1000); 
         // }
-
         
     }
 

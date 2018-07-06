@@ -3,6 +3,7 @@ import { Component, ElementRef, OnInit, ViewChild, NgZone} from "@angular/core";
 import { Observable } from 'rxjs';
 import { RouterExtensions } from "nativescript-angular/router";
 import { Page } from "ui/page";
+import {setCurrentOrientation , orientationCleanup} from 'nativescript-screen-orientation';
 import { Color } from "color";
 import { View } from "ui/core/view";
 import * as appSettings from 'tns-core-modules/application-settings'
@@ -25,7 +26,7 @@ import { CardView } from 'nativescript-cardview';
 
 import { registerElement } from "nativescript-angular/element-registry";
 import { PullToRefresh } from "nativescript-pulltorefresh";
- 
+
 registerElement("pullToRefresh",() => require("nativescript-pulltorefresh").PullToRefresh);
 
 
@@ -54,8 +55,9 @@ export class HomeComponent implements OnInit {
     constructor(
         private ngZone: NgZone,
         private router: RouterExtensions,
-        private _planesService: PlanesServices
-     ){
+        private _planesService: PlanesServices,
+       
+     ){  
         // Use the constructor to inject services.
         this.toogleHeart = "font-awesome ico-dislike";
         this.toogleLike = false;

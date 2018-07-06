@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import * as phone from 'nativescript-phone';
 import * as utils from "utils/utils";
+import { Page } from "ui/page";
+import {setCurrentOrientation , orientationCleanup} from 'nativescript-screen-orientation';
 import { registerElement } from 'nativescript-angular/element-registry';
 registerElement('ImageZoom', () => require('nativescript-image-zoom').ImageZoom);
 
@@ -21,7 +23,8 @@ export class ContactComponent implements OnInit {
     public image:string;
     public xColumnas:string;
        constructor() {
-        // Use the component constructor to inject providers.
+        // Use the component constructor to inject providers.       
+
         var platform = require("tns-core-modules/platform");
         var maxwidth = platform.screen.mainScreen.widthDIPs;
         console.log('Densidad de pixeles'+maxwidth);

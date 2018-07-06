@@ -37,14 +37,20 @@
 
                 <!-- Redes Sociales <Siguenoos> -->
                 <CardView class="cardStyle" margin="10" marginBottom="10" elevation="10" radius="1" >
-                        <GridLayout rows="5,30,10,35,15" columns="15,*,*,*,*,15">
+                        <GridLayout rows="5,30,10,35,15,5" columns="15,*,*,*,*,15">
                             <Label class="text-followed" horizontalAlignment="center" text="Siguenos" row="1" col="1" colSpan="4"></Label>	
-                            <Image src="res://facebook" stretch="aspectFit" col="1" row="3" (tap)="openSocial('https://www.facebook.com/joseph.tavarez.359')">
-                                <Label class="name-social-followed"  text="Facebook" ></Label>
-                            </Image>
+                            <!-- Facebook -->
+                            <Image src="res://facebook" stretch="aspectFit" col="1" row="3" (tap)="openSocial('https://www.facebook.com/joseph.tavarez.359')"></Image>
+                            <Label class="name-social-followed" horizontalAlignment="center" text="Facebook" col="1" row="4"></Label>
+                            <!-- YouTube -->
                             <Image src="res://youtube" stretch="aspectFit" col="2" row="3" (tap)="openSocial('https://www.youtube.com/channel/UCuZhMYqg3hnsT-2MXTQGbFw')"></Image>
+                            <Label class="name-social-followed" horizontalAlignment="center" text="YouTube" col="2" row="4"></Label>
+                            <!-- Instagram -->
                             <Image src="res://instagram" stretch="aspectFit" col="3" row="3" (tap)="openSocial('https://www.instagram.com/control_diamante/')"></Image>
+                            <Label class="name-social-followed" horizontalAlignment="center" text="Instagram" col="3" row="4"></Label>
+                            <!-- Web -->
                             <Image src="res://world" stretch="aspectFit" col="4" row="3" (tap)="openSocial('http://controldiamante.com/')"></Image>
+                            <Label class="name-social-followed" horizontalAlignment="center" text="Web" col="4" row="4"></Label>
                             
                         </GridLayout>
                 </CardView>        
