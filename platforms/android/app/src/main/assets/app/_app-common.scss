@@ -246,6 +246,7 @@ ActionBar .action-bar-title {
     }
 
     TabView {
+        // visibility: collapsed;
         tab-text-color: rgba(151, 172, 224, 0.589);
         selected-tab-text-color: rgb(255, 255, 255);  
         tab-background-color:#2A56C6;

@@ -20,6 +20,7 @@ import { RadioComponent } from "./tabs/radio/radio.component";
 import { ContactComponent } from "./tabs/contact/contact.component";
 import { ProductoComponent } from "./tabs/producto/producto.component";
 import { ActividadComponent } from "./tabs/actividad/actividad.component";
+import { PlayComponent } from "./tabs/play/play.component";
 import { ReproductorComponent } from "./tabs/reproductor/reproductor.modal";
 
 
@@ -40,7 +41,8 @@ import { ReproductorComponent } from "./tabs/reproductor/reproductor.modal";
         ContactComponent,
         ProductoComponent,
         ActividadComponent,
-        ReproductorComponent
+        ReproductorComponent,
+        PlayComponent
     ],
     entryComponents: [
         CanalComponent,

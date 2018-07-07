@@ -1,11 +1,25 @@
+<!-- <ActivityIndicator  #activityIndicator [busy]="isBusy" class="activity-indicator"></ActivityIndicator> -->
 
-     <StackLayout backgroundColor="black">          
-        <VideoPlayer class="reproductor"       
-            src="http://ss1.domint.net:2140/luna_str/lunatv/playlist.m3u8"
-            controls="true"      
-            fill="true"
-            height="500">
-        </VideoPlayer>
-    </StackLayout>
+
+ <!-- <StackLayout backgroudColor="black" class="stack">
+    <VideoPlayer class="reproductor"
+        src="http://ss1.domint.net:2140/luna_str/lunatv/playlist.m3u8"
+        controls="true"
+        loop="true"
+        autoplay="true"           
+        fill="true">
+    </VideoPlayer>
+</StackLayout> -->
+
+<!-- <ActivityIndicator  #activityIndicator busy="true" (busyChange)="onBusyChanged($event)" width="100" height="100" class="activity-indicator"></ActivityIndicator> -->
+
+<StackLayout backgroudColor="black" class="stack">
+    <exoplayer
+        src="https://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4"
+        autoplay="true" 
+        fill="true">
+    </exoplayer>
+</StackLayout>
+
 
     

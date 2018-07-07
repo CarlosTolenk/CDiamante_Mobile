@@ -30,7 +30,7 @@ export class CanalComponent {
 
     public openReproductor() {    
 
-        console.log("Abriendo el MOdal");
+        console.log("Abriendo el Modal");
         let options = {
             context: {},
             fullscreen: true,

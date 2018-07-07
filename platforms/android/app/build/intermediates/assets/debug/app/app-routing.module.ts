@@ -13,6 +13,7 @@ import { RadioComponent } from "./tabs/radio/radio.component";
 import { ContactComponent } from "./tabs/contact/contact.component";
 import { ProductoComponent } from "./tabs/producto/producto.component"
 import { ActividadComponent } from "./tabs/actividad/actividad.component";
+import { PlayComponent } from "./tabs/play/play.component";
 
 
 const routes: Routes = [
@@ -26,7 +27,7 @@ const routes: Routes = [
     { path: "radio", component: RadioComponent, outlet: "radioTab" },
     { path: "contact", component: ContactComponent, outlet: "contactTab" },
   
-
+    { path: "playlist", component: PlayComponent, outlet: "canalTab" },
     { path: "item/:id", component: ProductoComponent, outlet: "homeTab" },
     { path: "activi/:id", component: ActividadComponent, outlet: "homeTab" }
 ];

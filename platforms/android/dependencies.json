@@ -12,12 +12,20 @@
         "directory": "..\\..\\node_modules\\nativescript-cardview"
     },
     {
+        "name": "nativescript-exoplayer",
+        "directory": "..\\..\\node_modules\\nativescript-exoplayer"
+    },
+    {
         "name": "nativescript-image-zoom",
         "directory": "..\\..\\node_modules\\nativescript-image-zoom"
     },
     {
         "name": "nativescript-ng-shadow",
         "directory": "..\\..\\node_modules\\nativescript-ng-shadow"
+    },
+    {
+        "name": "nativescript-orientation",
+        "directory": "..\\..\\node_modules\\nativescript-orientation"
     },
     {
         "name": "nativescript-phone",
@@ -66,6 +74,14 @@
     {
         "name": "nativescript-permissions",
         "directory": "..\\..\\node_modules\\nativescript-permissions"
+    },
+    {
+        "name": "nativescript-dom",
+        "directory": "..\\..\\node_modules\\nativescript-dom"
+    },
+    {
+        "name": "nativescript-globalevents",
+        "directory": "..\\..\\node_modules\\nativescript-globalevents"
     },
     {
         "name": "tns-core-modules-widgets",

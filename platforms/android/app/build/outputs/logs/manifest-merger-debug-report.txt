@@ -5,6 +5,7 @@ INJECTED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platf
 INJECTED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:2:1-22:12
 INJECTED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:2:1-22:12
 MERGED from [com.android.support:cardview-v7:25.3.1] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\cardview-v7-25.3.1.aar\75be526e9cc7efa44d6ac96aff07f730\AndroidManifest.xml:17:1-28:12
+MERGED from [com.google.android.exoplayer:exoplayer:2.6.1] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\exoplayer-2.6.1.aar\412419982f7ff47a3ee9b31154183450\AndroidManifest.xml:17:1-25:12
 MERGED from [com.github.chrisbanes:PhotoView:2.1.3] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\PhotoView-2.1.3.aar\c8fc0d27798c3c9ad62d2ddd96682da4\AndroidManifest.xml:2:1-12:12
 MERGED from [com.squareup.picasso:picasso-provider:3.0.0-SNAPSHOT] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\picasso-provider-3.0.0-SNAPSHOT.aar\bb86c4dd6ca576dd84a1625d776895e1\AndroidManifest.xml:2:1-14:12
 MERGED from [jp.wasabeef:picasso-transformations:2.1.2] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\picasso-transformations-2.1.2.aar\288a31ca23d31f0daf82613126270017\AndroidManifest.xml:2:1-12:12
@@ -60,6 +61,11 @@ MERGED from [:nativescript_phone:] C:\Users\Carlos Tolentino\.gradle\caches\tran
 MERGED from [:firebase-release:] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\firebase-release.aar\ac64434a02977d80bbb4fe83d9fa0091\AndroidManifest.xml:2:1-25:12
 MERGED from [:nativescript_social_share:] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\nativescript_social_share.aar\a00d49b67176adfe3164bc37d7a91ca1\AndroidManifest.xml:2:1-21:12
 MERGED from [:widgets-release:] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\widgets-release.aar\5e28cdf319e0ee2cbf4e7b5c7e6fe769\AndroidManifest.xml:2:1-14:12
+MERGED from [com.google.android.exoplayer:exoplayer-dash:2.6.1] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\exoplayer-dash-2.6.1.aar\bd05ab7d31d1dd80a022e353a05b8208\AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.android.exoplayer:exoplayer-hls:2.6.1] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\exoplayer-hls-2.6.1.aar\f0bd38f744bcb1f8e86f361ff4ac4fb0\AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.6.1] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\exoplayer-smoothstreaming-2.6.1.aar\c973e4e7d94f879666ae0eca09fb1a42\AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.android.exoplayer:exoplayer-ui:2.6.1] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\exoplayer-ui-2.6.1.aar\8fcefe4500d9ea20828e6b988ab1eaed\AndroidManifest.xml:17:1-25:12
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.6.1] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\exoplayer-core-2.6.1.aar\053f0997d2496e38ec7e8ec767c9771c\AndroidManifest.xml:17:1-25:12
 MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\f749c6e93c38f475632ed56ca5a51438\AndroidManifest.xml:17:1-30:12
 MERGED from [com.android.support:exifinterface:27.1.0] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\exifinterface-27.1.0.aar\8838ae2a4851d7465266dd596b9392c1\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.firebase:protolite-well-known-types:15.0.0] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\protolite-well-known-types-15.0.0.aar\29458d3e404f8ded1056b245c90e6b7e\AndroidManifest.xml:2:1-11:12
@@ -101,6 +107,8 @@ INJECTED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platf
 INJECTED from C:\Users\Carlos Tolentino\Desktop\CDiamante_Mobile\CDiamante\platforms\android\app\src\main\AndroidManifest.xml:5:5-74
 MERGED from [com.android.support:cardview-v7:25.3.1] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\cardview-v7-25.3.1.aar\75be526e9cc7efa44d6ac96aff07f730\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:cardview-v7:25.3.1] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\cardview-v7-25.3.1.aar\75be526e9cc7efa44d6ac96aff07f730\AndroidManifest.xml:20:5-43
+MERGED from [com.google.android.exoplayer:exoplayer:2.6.1] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\exoplayer-2.6.1.aar\412419982f7ff47a3ee9b31154183450\AndroidManifest.xml:21:5-23:41
+MERGED from [com.google.android.exoplayer:exoplayer:2.6.1] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\exoplayer-2.6.1.aar\412419982f7ff47a3ee9b31154183450\AndroidManifest.xml:21:5-23:41
 MERGED from [com.github.chrisbanes:PhotoView:2.1.3] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\PhotoView-2.1.3.aar\c8fc0d27798c3c9ad62d2ddd96682da4\AndroidManifest.xml:8:5-10:41
 MERGED from [com.github.chrisbanes:PhotoView:2.1.3] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\PhotoView-2.1.3.aar\c8fc0d27798c3c9ad62d2ddd96682da4\AndroidManifest.xml:8:5-10:41
 MERGED from [com.squareup.picasso:picasso-provider:3.0.0-SNAPSHOT] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\picasso-provider-3.0.0-SNAPSHOT.aar\bb86c4dd6ca576dd84a1625d776895e1\AndroidManifest.xml:5:5-44
@@ -211,6 +219,16 @@ MERGED from [:nativescript_social_share:] C:\Users\Carlos Tolentino\.gradle\cach
 MERGED from [:nativescript_social_share:] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\nativescript_social_share.aar\a00d49b67176adfe3164bc37d7a91ca1\AndroidManifest.xml:7:5-47
 MERGED from [:widgets-release:] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\widgets-release.aar\5e28cdf319e0ee2cbf4e7b5c7e6fe769\AndroidManifest.xml:7:5-9:41
 MERGED from [:widgets-release:] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\widgets-release.aar\5e28cdf319e0ee2cbf4e7b5c7e6fe769\AndroidManifest.xml:7:5-9:41
+MERGED from [com.google.android.exoplayer:exoplayer-dash:2.6.1] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\exoplayer-dash-2.6.1.aar\bd05ab7d31d1dd80a022e353a05b8208\AndroidManifest.xml:21:5-23:41
+MERGED from [com.google.android.exoplayer:exoplayer-dash:2.6.1] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\exoplayer-dash-2.6.1.aar\bd05ab7d31d1dd80a022e353a05b8208\AndroidManifest.xml:21:5-23:41
+MERGED from [com.google.android.exoplayer:exoplayer-hls:2.6.1] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\exoplayer-hls-2.6.1.aar\f0bd38f744bcb1f8e86f361ff4ac4fb0\AndroidManifest.xml:21:5-23:41
+MERGED from [com.google.android.exoplayer:exoplayer-hls:2.6.1] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\exoplayer-hls-2.6.1.aar\f0bd38f744bcb1f8e86f361ff4ac4fb0\AndroidManifest.xml:21:5-23:41
+MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.6.1] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\exoplayer-smoothstreaming-2.6.1.aar\c973e4e7d94f879666ae0eca09fb1a42\AndroidManifest.xml:21:5-23:41
+MERGED from [com.google.android.exoplayer:exoplayer-smoothstreaming:2.6.1] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\exoplayer-smoothstreaming-2.6.1.aar\c973e4e7d94f879666ae0eca09fb1a42\AndroidManifest.xml:21:5-23:41
+MERGED from [com.google.android.exoplayer:exoplayer-ui:2.6.1] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\exoplayer-ui-2.6.1.aar\8fcefe4500d9ea20828e6b988ab1eaed\AndroidManifest.xml:21:5-23:41
+MERGED from [com.google.android.exoplayer:exoplayer-ui:2.6.1] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\exoplayer-ui-2.6.1.aar\8fcefe4500d9ea20828e6b988ab1eaed\AndroidManifest.xml:21:5-23:41
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.6.1] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\exoplayer-core-2.6.1.aar\053f0997d2496e38ec7e8ec767c9771c\AndroidManifest.xml:21:5-23:41
+MERGED from [com.google.android.exoplayer:exoplayer-core:2.6.1] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\exoplayer-core-2.6.1.aar\053f0997d2496e38ec7e8ec767c9771c\AndroidManifest.xml:21:5-23:41
 MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\f749c6e93c38f475632ed56ca5a51438\AndroidManifest.xml:20:5-22:41
 MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\f749c6e93c38f475632ed56ca5a51438\AndroidManifest.xml:20:5-22:41
 MERGED from [com.android.support:exifinterface:27.1.0] C:\Users\Carlos Tolentino\.gradle\caches\transforms-1\files-1.1\exifinterface-27.1.0.aar\8838ae2a4851d7465266dd596b9392c1\AndroidManifest.xml:20:5-44
