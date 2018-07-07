@@ -1,27 +1,24 @@
-<ActionBar class="action-bar">
-    <Label class="action-bar-title" text="CDiamanteTab"></Label>
-</ActionBar>
+<TabView (selectedIndexChanged)="onSelectedIndexChanged($event)"  class="tab-view" androidTabsPosition="bottom" tabTextColor="#DFE2E8" selectedTabTextColor="#FFFFFF" androidSelectedTabHighlightColor="#FFFFFF">
 
-<!--
-The TabView component provides a simple way to navigate between different views by
-tapping on some of the tabs or by swiping between the views.
-Learn more about the TabView component in this documentation article:
-http://docs.nativescript.org/angular/code-samples/ui/tab-view
--->
-<TabView  class="tab-view" (selectedIndexChanged)="onSelectedIndexChanged($event)" androidTabsPosition="bottom" tabTextColor="#DFE2E8" selectedTabTextColor="#FFFFFF" androidSelectedTabHighlightColor="#FFFFFF">
-    <StackLayout  *tabItem="{iconSource: getIconSource('whitehome')}">
-       <Home></Home>
-    </StackLayout>  
+    <page-router-outlet
+        *tabItem="{iconSource: getIconSource('whitehome')}"
+        name="homeTab" >
+    </page-router-outlet>
 
-    <StackLayout *tabItem="{iconSource: getIconSource('television')}">
-        <Canal></Canal>
-    </StackLayout>
+    <page-router-outlet
+        *tabItem="{iconSource: getIconSource('television')}"
+        name="canalTab">
+    </page-router-outlet>
 
-    <StackLayout *tabItem="{iconSource: getIconSource('radio')}">
-        <Radio></Radio>
-    </StackLayout>
+    <page-router-outlet
+        *tabItem="{iconSource: getIconSource('radio')}"
+        name="radioTab">
+    </page-router-outlet>
 
-    <StackLayout *tabItem="{iconSource: getIconSource('chat')}">
-        <Contact></Contact>
-    </StackLayout>
+    <page-router-outlet
+        *tabItem="{iconSource: getIconSource('chat')}"
+        name="contactTab">
+    </page-router-outlet>
+    
+
 </TabView>

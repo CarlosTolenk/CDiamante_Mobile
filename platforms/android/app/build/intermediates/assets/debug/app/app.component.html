@@ -1,7 +1,5 @@
-<!-- <page-router-outlet></page-router-outlet> -->
 
-
-<TabView class="tab-view" androidTabsPosition="bottom" tabTextColor="#DFE2E8" selectedTabTextColor="#FFFFFF" androidSelectedTabHighlightColor="#FFFFFF">
+<TabView (selectedIndexChanged)="onSelectedIndexChanged($event)"  class="tab-view" androidTabsPosition="bottom" tabTextColor="#DFE2E8" selectedTabTextColor="#FFFFFF" androidSelectedTabHighlightColor="#FFFFFF">
 
     <page-router-outlet
         *tabItem="{iconSource: getIconSource('whitehome')}"
@@ -21,6 +19,8 @@
     <page-router-outlet
         *tabItem="{iconSource: getIconSource('chat')}"
         name="contactTab">
-    </page-router-outlet>
+    </page-router-outlet>    
 
 </TabView>
+
+

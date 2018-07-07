@@ -9,7 +9,7 @@
 
 
 
-        <!-- <GridLayout columns="20,80,60,*,60,80,20" rows="60,95,50,70,30,30,30,50,50,10">
+        <GridLayout columns="20,80,60,*,60,80,20" rows="60,95,50,70,30,30,30,50,50,10">
                 <Image class="logo-tv" src="res://logo_tv" stretch="aspectFit" col="2" row="1" colSpan="3" rowSpan="2"></Image>
              
                 <Label class="horario-tv" col="1" row="3" text="Horarios:" colSpan="2"></Label>               
@@ -17,15 +17,18 @@
                
                 <Label class="contenido-tv" col="4" row="3" text="Contenido:" colSpan="2"></Label>             
                 <Label class="shedule-tv" col="4" row="4" text="Tv Diamante" colSpan="2"></Label>           
-                <Button  col="0" row="6" colSpan="8" rowSpan="2" class="btn btn-primary btn-canal" text="Visualizar Canal" (tap)="openURL()"></Button>
-        </GridLayout> -->
-        <VideoPlayer
-            src="http://ss1.domint.net:2140/luna_str/lunatv/playlist.m3u8"
-            controls="true"
-            autoplay="true" 
-            fill="true"       
-            height="300">
-        </VideoPlayer>       
+                <Button  col="0" row="6" colSpan="8" rowSpan="2" class="btn btn-primary btn-canal" text="Visualizar Canal" (tap)="openReproductor()" ></Button>
+              
+        </GridLayout>
+
+        <!-- <VideoPlayer backgroundColor="black"       
+        src="http://ss1.domint.net:2140/luna_str/lunatv/playlist.m3u8"
+        controls="true"
+        autoplay="true" 
+        fill="true"       
+        height="300">
+    </VideoPlayer> -->
+       
 
 
 

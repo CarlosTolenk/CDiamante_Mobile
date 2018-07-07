@@ -12,9 +12,64 @@
     <Label class="action-bar-title" text="Servicios" style="Color: #ffffff;"></Label>
 </ActionBar>
 
+<TabView selectedIndex="0"  sdkExampleTitle sdkToggleNavButton>
+    <StackLayout *tabItem="{title: 'Planes'}">       
+			<PullToRefresh (refresh)="refreshList($event)">		
+				<ScrollView orientation="vertical" ios.pagingEnabled="true">					
+						<StackLayout orientation="vertical">				
+								<CardView class="cardStyle" margin="10" elevation="20" radius="1" *ngFor="let plan of planes">						
+										<GridLayout rows="10,35,10,350,5,45,10" columns="10,40, *, 30,10">										
+											<Image src="res://diamanteicon"  class="logo-image" stretch="aspectFit" verticalAlignment="stretch" col="1" row="1" rowSpan="1"></Image>		
+											<Label class="text-plan" [nsRouterLink]="['../item', plan.id]"  horizontalAlignment="left" textWrap="true" [text]="plan.nombre_plan" row="1" col="2"></Label>
+											<Label class="font-awesome text-date " horizontalAlignment="left" text="&#xf017;" row="1" col="3"></Label>
+											<Label class="text-date-string" horizontalAlignment="left" [text]="plan.fecha_publicacion" row="1" col="3" colSpan="1"></Label>
+											<Label class="inline-style" row="1" col="1" colSpan="3"></Label>
+											<Image [src]="plan.imagen_url" [nsRouterLink]="['../item', plan.id]"  stretch="fill" colSpan="3" col="1" row="3" rowSpan="1"></Image>
+											
+											<Label horizontalAlignment="left" [(ngModel)]="plan.class_likes" [class]="plan.class_likes" (tap)="like(plan.id, plan.likes_recibidos, plan.class_likes)" col="1" row="5" text="&#xf004;"></Label>
+											<Label horizontalAlignment="left"  class="like_recibido" (tap)="like(plan.id, plan.likes_recibidos, plan.class_likes)" col="2" row="5" [text]="plan.likes_recibidos"></Label>
+											<Label horizontalAlignment="left" class="{{pressShared}}" text="&#xf1e0; Compartir"(tap)="share(plan.imagen_url, plan.id, plan.total_shared)" col="3" row="5" colSpan="1"></Label>
+										
+										</GridLayout>					
+									</CardView>							
+						</StackLayout>			
+				</ScrollView>
+			</PullToRefresh>
+    </StackLayout>
+    <StackLayout *tabItem="{title: 'Eventos'}">
+		<PullToRefresh (refresh)="refreshList($event)">		
+        <GridLayout class="page page-content" rows="50,150,30,30" *ngIf="!actividad.id">
+			<Label class="page-icon fa" text="&#xf1ea;" row="0" rowSpan="2"></Label>
+			<Label class="page-placeholder" text="<!-- No hay Eventos Registrados -->" row="2"></Label>
+			<Label class="page-placeholder" text="<!-- En Planificación... -->" row="3"></Label>		
+		</GridLayout>
+		
+			<ScrollView orientation="vertical" ios.pagingEnabled="true" *ngIf="actividad" >					
+					<StackLayout orientation="vertical">				
+							<CardView class="cardStyle" margin="10" elevation="20" radius="1" *ngFor="let plan of actividad">						
+									<GridLayout rows="10,35,10,350,5,45,10" columns="10,40, *, 30,10">										
+										<Image src="res://diamanteicon"  class="logo-image" stretch="aspectFit" verticalAlignment="stretch" col="1" row="1" rowSpan="1"></Image>		
+										<Label class="text-plan" [nsRouterLink]="['../activi', plan.id]"  horizontalAlignment="left" textWrap="true" [text]="plan.nombre_actividad" row="1" col="2"></Label>
+										<Label class="font-awesome text-date " horizontalAlignment="left" text="&#xf017;" row="1" col="3"></Label>
+										<Label class="text-date-string" horizontalAlignment="left" [text]="plan.fecha" row="1" col="3" colSpan="1"></Label>
+										<Label class="inline-style" row="1" col="1" colSpan="3"></Label>
+										<Image [src]="plan.imagen_url" [nsRouterLink]="['../activi', plan.id]"  stretch="fill" colSpan="3" col="1" row="3" rowSpan="1"></Image>										
+										<Label horizontalAlignment="left" class="font-awesome location-icon" text="&#xf041;" col="1" row="5" ></Label>
+										<Label horizontalAlignment="left" class="location-text" [text]="plan.lugar" col="2" row="5" ></Label>
+										
+										<Label horizontalAlignment="left" class="{{pressShared}}" text="&#xf1e0; Compartir"(tap)="share(plan.imagen_url, plan.id, plan.total_shared)" col="3" row="5" colSpan="1"></Label>
+									
+									</GridLayout>					
+								</CardView>							
+					</StackLayout>			
+			</ScrollView>
+		</PullToRefresh>
+    </StackLayout>
+</TabView>
 
 
-<StackLayout horizontalAlignment="stretch">
+
+<!-- <StackLayout horizontalAlignment="stretch">
 	<PullToRefresh (refresh)="refreshList($event)">		
 		<ScrollView orientation="vertical" ios.pagingEnabled="true">					
 				<StackLayout orientation="vertical">				
@@ -26,17 +81,16 @@
 									<Label class="text-date-string" horizontalAlignment="left" [text]="plan.fecha_publicacion" row="1" col="3" colSpan="1"></Label>
 									<Label class="inline-style" row="1" col="1" colSpan="3"></Label>
 									<Image [src]="plan.imagen_url" [nsRouterLink]="['../item', plan.id]"  stretch="fill" colSpan="3" col="1" row="3" rowSpan="1"></Image>
-									<!-- <Label horizontalAlignment="left"  class="{{toogleHeart}}" (tap)="like(plan.id, plan.likes_recibidos)" col="1" row="5" text="&#xf004;"></Label> -->
-									<Label class="inline-style-button" row="4" col="1" colSpan="3"></Label>
+									
 									<Label horizontalAlignment="left" [(ngModel)]="plan.class_likes" [class]="plan.class_likes" (tap)="like(plan.id, plan.likes_recibidos, plan.class_likes)" col="1" row="5" text="&#xf004;"></Label>
 									<Label horizontalAlignment="left"  class="like_recibido" (tap)="like(plan.id, plan.likes_recibidos, plan.class_likes)" col="2" row="5" [text]="plan.likes_recibidos"></Label>
 									<Label horizontalAlignment="left" class="{{pressShared}}" text="&#xf1e0; Compartir"(tap)="share(plan.imagen_url, plan.id, plan.total_shared)" col="3" row="5" colSpan="1"></Label>
-									<!-- <Button horizontalAlignment="left" class="btn btn-active" id="button" text="Tap me!" (tap)="share()" row="5" col="4"></Button>					 -->
+								
 								</GridLayout>					
 							</CardView>							
 				</StackLayout>			
 		</ScrollView>
  	</PullToRefresh>
-</StackLayout>
+</StackLayout> -->
 
 <!-- res://profile  -->

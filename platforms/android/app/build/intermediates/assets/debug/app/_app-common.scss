@@ -250,13 +250,14 @@ ActionBar .action-bar-title {
         selected-tab-text-color: rgb(255, 255, 255);  
         tab-background-color:#2A56C6;
         android-selected-tab-highlight-color:rgb(255, 255, 255);
-        // font-size: 10px;
-        text-transform: capitalize;
+        font-size: 15rem;
+        
 
     }
 
     TabViewTitle {
         color: #aaa;
+        text-transform: lowercase;       
      }
 
 

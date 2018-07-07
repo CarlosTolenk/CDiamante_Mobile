@@ -9,18 +9,15 @@ import { RadioComponent } from "./radio/radio.component";
 import { ContactComponent } from "./contact/contact.component";
 import { ProductoComponent } from "./producto/producto.component";
  
-const routes: Routes = [
-    { path: "", component: TabsComponent },
-   
+const routes: Routes = [  
 
-//   { path: "", redirectTo: "/(homeTab:home//canalTab:canal//radioTab:radio//contactTab:contact)", pathMatch: "full" },  // 
+    { path: "", redirectTo: "/(homeTab:home//canalTab:canal//radioTab:radio//contactTab:contact//)", pathMatch: "full" },  
+    { path: "home", component: HomeComponent, outlet: "homeTab" },
+    { path: "canal", component: CanalComponent, outlet: "canalTab" },
+    { path: "radio", component: RadioComponent, outlet: "radioTab" },
+    { path: "contact", component: ContactComponent, outlet: "contactTab" },
 
-    { path: "home", component: HomeComponent, outlet: 'homeTab'}, 
-    { path: "canal", component: CanalComponent, outlet: 'canalTab'},
-    { path: "radio", component: RadioComponent, outlet: 'radioTab'},
-    { path: "contact", component: ContactComponent, outlet: 'contactTab'},
-
-    { path: "item", component: ProductoComponent}
+ 
 ];
 
 @NgModule({
