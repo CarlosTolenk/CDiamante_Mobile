@@ -11,12 +11,9 @@ const firebaseWebApi = require("nativescript-plugin-firebase/app");
 const connectivityModule = require("tns-core-modules/connectivity");
 
 
-
-
-
-
 //Modelos
 import { Planes } from "../models/planes";
+import { Actividad } from "../models/actividad";
 import { Likes } from "../models/likes";
 
 @Injectable({
@@ -24,11 +21,13 @@ import { Likes } from "../models/likes";
 })
 export class PlanesServices {
     public allPlanes: Array<Planes> = [];
+    public allActividad: Array<Actividad> = [];
     public captureInfo: Array<Planes> = [];
     public likesPlan: Array<Likes> = [];
     public allId: Array<Planes> = [];
     public prueba:string;
     public planesU:Planes;
+    public ActividadU:Actividad;
 
 
   constructor(
@@ -74,8 +73,7 @@ export class PlanesServices {
                         }
                     }else{
                         for(let i=0;i<this.allPlanes.length;i++){
-                            this.allPlanes[i].class_likes = "font-awesome ico-dislike";
-                           
+                            this.allPlanes[i].class_likes = "font-awesome ico-dislike";                           
                         }
                     }     
                     appSettings.setString("allPlanes", JSON.stringify(this.allPlanes));       
@@ -85,6 +83,23 @@ export class PlanesServices {
         });        
                
         return this.allPlanes;
+    }
+
+    getAllActividad(){
+        this.allActividad = [];
+        const actividadCollection = firebase.firestore().collection("actividades"); 
+        this.ngZone.run(() => {           
+            actividadCollection.get().then(querySnapshot => {
+                querySnapshot.forEach(doc => {
+                    this.allActividad.push(doc.data()); 
+                    console.log("Servicio");
+                    console.log(this.allActividad);
+                });
+                appSettings.setString("allEventos", JSON.stringify(this.allActividad));
+            });          
+        });
+
+        return this.allActividad;
     }
 
     getConexion(){
@@ -108,6 +123,7 @@ export class PlanesServices {
                     // Denotes a WiFi connection.  
                         console.log("Wifi connection");               
                         // console.log("Guadando en AppSetting");
+                        // this.getAllActividad();
                         this.captureInfo = this.getAllPlanes();
                         // console.log(this.captureInfo);
                         let info = JSON.stringify(this.captureInfo);
@@ -124,6 +140,7 @@ export class PlanesServices {
                         // Denotes a mobile connection, i.e. cellular network or WAN.
                         console.log("Mobile connection");  
                         // console.log("Guadando en AppSetting");
+                        // this.getAllActividad();
                         this.captureInfo = this.getAllPlanes();
                         // console.dir(this.captureInfo);
                         let data = JSON.stringify(this.captureInfo);
@@ -168,6 +185,19 @@ export class PlanesServices {
         // }
         // });
       
+    }
+
+    getActividadId(id){
+        console.log("GetActividadId");
+        this.allActividad = JSON.parse(appSettings.getString("allEventos", ""));
+        console.log(this.allActividad);
+        for(let i=0;i<this.allActividad.length;i++){
+            if(id == this.allActividad[i].id){
+                this.ActividadU = this.allActividad[i];
+            }
+        }
+        console.log(this.ActividadU);
+        return this.ActividadU;
     }
 
     putPlusLike(id, like){

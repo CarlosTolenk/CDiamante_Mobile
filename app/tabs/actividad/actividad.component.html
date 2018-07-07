@@ -1,0 +1,54 @@
+<ActionBar class="action-bar">
+        <!-- <NavigationButton [nsRouterLink]="['../../home']" android.systemIcon="ic_menu_back"></NavigationButton> -->
+        <NavigationButton (tap)="backPage()" android.systemIcon="ic_menu_back"></NavigationButton>
+        <Label class="action-bar-title" [text]="actividad.nombre_actividad" style="Color: #ffffff;"></Label>
+</ActionBar>
+
+
+<StackLayout horizontalAlignment="stretch">
+        <ScrollView orientation="vertical" ios.pagingEnabled="true" >		
+                <StackLayout orientation="vertical">					
+                    <GridLayout rows="10,30,40,40,40,30,10" [columns]="xColumnas">
+                            <CardView class="cardStyle" colSpan="2" col="0" row="0" rowSpan="7" margin="10" elevation="10" radius="1">
+                                    <Image [src]="actividad.imagen_url" class="img-product"  stretch="fill" ></Image>
+                            </CardView>
+                        
+                        <!-- <Image src="res://icon"  class="logo-image" stretch="aspectFit" verticalAlignment="stretch" col="1" row="1" rowSpan="2"></Image>                    -->
+                        <Label class="font-awesome text-fecha-publish" horizontalAlignment="left" text="&#xf073; Fecha:" row="2" col="3" ></Label>
+                        <!-- <Label class="font-awesome text-date " horizontalAlignment="left" text="&#xf017;" row="2" col="5" ></Label>                    -->
+                        <Label class="text-date-string" horizontalAlignment="left" [text]="actividad.fecha" row="2" col="4" colSpan="2" ></Label> 
+
+                        <Label class="font-awesome text-fecha-publish" horizontalAlignment="left" text="&#xf017; Hora:" row="3" col="3" ></Label>
+                        <Label class="text-date-string" horizontalAlignment="left" [text]="actividad.hora" row="3" col="4" colSpan="2" ></Label> 
+
+
+    
+                        <Label class="font-awesome text-precio-publish" horizontalAlignment="left" text="&#xf155; Precio:" row="4" col="3" ></Label>   
+                        <!-- <Label class="font-awesome icon-money" horizontalAlignment="left" text="&#xf155;" row="3" col="5"></Label> -->
+                        <Label class="text-money" horizontalAlignment="left" [text]="actividad.precio" row="4" col="4" colSpan="2"></Label>                  
+                    </GridLayout>
+    
+                    
+                    <GridLayout rows="10,40,30,170,50,50,50,10" columns="20,90,80,*,auto,*,20">                        
+                        
+
+                        <Label class="font-awesome text-place" horizontalAlignment="left" text="&#xf041; Lugar:" row="1" col="2" ></Label>
+                        <Label class="text-place-string" horizontalAlignment="left" [text]="actividad.lugar" row="1" col="3" colSpan="3" ></Label> 
+                        <Label class="text-title-description" horizontalAlignment="center" text="Descripción:" row="2" col="1" colSpan="8" ></Label> 
+                        <Label class="text-content-description" horizontalAlignment="center" [text]="actividad.descripcion" row="3" col="1" colSpan="5"  textWrap="true"></Label> 
+                        <Button  col="0" row="4" colSpan="8" rowSpan="2" class="btn btn-primary btn-canal" text="Llama Ahora para Reservar" (tap)="callHome('809-724-0272')"></Button>
+
+                        <!-- <Label class="font-awesome cant-message" horizontalAlignment="left" text="&#xf0e0; Total de Mensajes:" row="1" col="1" colSpan="2"></Label>
+                        <Label horizontalAlignment="left"  class="cantidad_mensaje"  col="3" row="1" [text]="plan.cantidad_mensaje" colSpan="3"></Label>
+                        <Label class="font-awesome cant-message" horizontalAlignment="left" text="&#xf292; Números a Jugar:" row="2" col="1" colSpan="2"></Label>
+                        <Label horizontalAlignment="left"  class="cantidad_mensaje"  col="3" row="2" [text]="plan.cantidad_numero" colSpan="4"></Label>
+                        <Label class="font-awesome cant-message" horizontalAlignment="left" text="&#xf073; Duración:" row="3" col="1" colSpan="3"></Label>
+                        <Label horizontalAlignment="left"  class="cantidad_mensaje"  col="3" row="3" [text]="plan.duracion" colSpan="3"></Label>
+                        <Label class="font-awesome cant-message" horizontalAlignment="left" text="&#xf1ad; Loterias:" row="4" col="1" colSpan="3"></Label>
+                        <Label horizontalAlignment="left"  class="cantidad_mensaje"  col="3" row="4" [text]="plan.loterias" colSpan="3"></Label>
+                        <Label class="font-awesome cant-message" horizontalAlignment="left" text="&#xf271; Días de Entregas:" row="5" col="1" colSpan="2"></Label>
+                        <Label horizontalAlignment="left"  class="cantidad_mensaje"  col="3" row="5" [text]="plan.dias_entreg" colSpan="3" ></Label> -->
+                    </GridLayout>
+                </StackLayout>	
+        </ScrollView>
+    </StackLayout>

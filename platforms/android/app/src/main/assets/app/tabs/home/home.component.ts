@@ -16,6 +16,7 @@ import { PlanesServices } from "../../services/planes.services";
 
 //Modelo
 import { Planes } from "../../models/planes";
+import { Actividad } from "../../models/actividad";
 
 //Plugin
 import * as SocialShare from "nativescript-social-share";
@@ -47,6 +48,7 @@ export class HomeComponent implements OnInit {
     public toogleLike:boolean;
     public pressShared:string;
     public planes: Array<Planes> = [];
+    public actividad: Array<Actividad> = [];
     public changePlanes: Array<any> = [];
     public prueba:string;
    
@@ -72,7 +74,9 @@ export class HomeComponent implements OnInit {
         this.ngZone.run(()=>{
             // this.planes =  this._planesService.getAllPlanes();
             // getInfo = this._planesService.getConexion();
-            this.planes =  this._planesService.getConexion();    
+            this.planes =  this._planesService.getConexion();   
+            this.actividad = this._planesService.getAllActividad();
+            console.log(this.actividad); 
             // console.log("Alex ees un locooo");
                //  imageCache(id_imagen, viewModel, url_imagen)
 
@@ -195,7 +199,8 @@ export class HomeComponent implements OnInit {
         console.log("Entrando");
         this.ngZone.run(()=>{
             this.planes = [];
-            this.planes =  this._planesService.getConexion();   
+            this.planes =  this._planesService.getConexion();  
+            this.actividad = this._planesService.getAllActividad(); 
             let cache = this._planesService.getLike();
             console.log(cache);
             this.pressShared = "font-awesome ico-share"; 

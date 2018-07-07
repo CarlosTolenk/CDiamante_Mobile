@@ -9,6 +9,7 @@ import { HomeComponent } from "./tabs/home/home.component";
 import { RadioComponent } from "./tabs/radio/radio.component";
 import { ContactComponent } from "./tabs/contact/contact.component";
 import { ProductoComponent } from "./tabs/producto/producto.component"
+import { ActividadComponent } from "./tabs/actividad/actividad.component";
 
 const routes: Routes = [
     // { path: "", redirectTo: "/tabs", pathMatch: "full" },
@@ -21,7 +22,8 @@ const routes: Routes = [
     { path: "radio", component: RadioComponent, outlet: "radioTab" },
     { path: "contact", component: ContactComponent, outlet: "contactTab" },
 
-    { path: "item/:id", component: ProductoComponent, outlet: "homeTab" }
+    { path: "item/:id", component: ProductoComponent, outlet: "homeTab" },
+    { path: "activi/:id", component: ActividadComponent, outlet: "homeTab" }
 ];
 
 @NgModule({

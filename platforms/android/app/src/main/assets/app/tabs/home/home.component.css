@@ -32,6 +32,8 @@
   
 }
 
+
+
 /* .text-plan::after{
     content: '';
     position: absolute;
@@ -95,6 +97,21 @@
     margin-left: -90rem;
     /* padding-bottom: 10; */
 
+}
+
+.location-icon{
+    
+    color: rgb(209, 46, 46);
+    font-size: 20rem;
+    padding-top: 15rem;
+    margin-left: 15rem;
+}
+
+.location-text{
+    font-size: 18rem;
+    padding-top: 14rem;
+    margin-left: -8rem;
+    color:black
 }
 
 

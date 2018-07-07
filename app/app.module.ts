@@ -17,6 +17,7 @@ import { HomeComponent } from "./tabs/home/home.component";
 import { RadioComponent } from "./tabs/radio/radio.component";
 import { ContactComponent } from "./tabs/contact/contact.component";
 import { ProductoComponent } from "./tabs/producto/producto.component"
+import { ActividadComponent } from "./tabs/actividad/actividad.component"
 
 @NgModule({
     bootstrap: [
@@ -35,7 +36,8 @@ import { ProductoComponent } from "./tabs/producto/producto.component"
         CanalComponent,
         RadioComponent,
         ContactComponent,
-        ProductoComponent
+        ProductoComponent,
+        ActividadComponent
     ],
     schemas: [
         NO_ERRORS_SCHEMA

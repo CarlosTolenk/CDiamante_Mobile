@@ -1,7 +1,7 @@
 import { Component, OnInit , OnDestroy} from "@angular/core";
 import * as utils from "utils/utils";
 import { Page } from "ui/page";
-import {setCurrentOrientation , orientationCleanup} from 'nativescript-screen-orientation';
+
 
 
 import { registerElement } from "nativescript-angular/element-registry";
@@ -17,12 +17,18 @@ registerElement("VideoPlayer", () => Video);
 })
 export class CanalComponent implements OnInit, OnDestroy{
 
-        private page:Page;
+       
 
-    constructor() {
-
+    constructor(page:Page) {
         // Use the component constructor to inject providers.
-        console.log("Entrando al canal constructor");
+        // page.on("navigatedTo",function(){
+        //     setCurrentOrientation("landscape",function(){
+        //     console.log("portrait orientation");
+        //     });
+        //  });
+        //  page.on("navigatingFrom",function(){
+        //      orientationCleanup();
+        //  });       
 
     }
 
