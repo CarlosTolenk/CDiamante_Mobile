@@ -87,19 +87,22 @@ export class PlanesServices {
 
     getAllActividad(){
         this.allActividad = [];
+        let array = [];
         const actividadCollection = firebase.firestore().collection("actividades"); 
         this.ngZone.run(() => {           
             actividadCollection.get().then(querySnapshot => {
                 querySnapshot.forEach(doc => {
                     this.allActividad.push(doc.data()); 
-                    console.log("Servicio");
-                    console.log(this.allActividad);
+                    // console.log("Servicio");
+                    // console.log(this.allActividad);
                 });
                 appSettings.setString("allEventos", JSON.stringify(this.allActividad));
             });          
         });
 
-        return this.allActividad;
+        return this.allActividad; 
+        // return array;
+        
     }
 
     getConexion(){

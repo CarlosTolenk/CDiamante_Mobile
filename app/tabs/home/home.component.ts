@@ -1,5 +1,5 @@
 //Component and Modules
-import { Component, ElementRef, OnInit, ViewChild, NgZone} from "@angular/core";
+import { Component, ElementRef, OnInit, ViewChild, NgZone, DoCheck} from "@angular/core";
 import { Observable } from 'rxjs';
 import { RouterExtensions } from "nativescript-angular/router";
 import { Page } from "ui/page";
@@ -39,7 +39,7 @@ registerElement("pullToRefresh",() => require("nativescript-pulltorefresh").Pull
     styleUrls: ['./home.component.css'],
     
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, DoCheck {
 
     public items:any;
     public image:string;
@@ -51,6 +51,7 @@ export class HomeComponent implements OnInit {
     public actividad: Array<Actividad> = [];
     public changePlanes: Array<any> = [];
     public prueba:string;
+    public isEvent:boolean;
    
     
 
@@ -64,6 +65,7 @@ export class HomeComponent implements OnInit {
         this.toogleHeart = "font-awesome ico-dislike";
         this.toogleLike = false;
         this.pressShared = "font-awesome ico-share";
+        this.isEvent = false;
               
 
    
@@ -75,14 +77,34 @@ export class HomeComponent implements OnInit {
             // this.planes =  this._planesService.getAllPlanes();
             // getInfo = this._planesService.getConexion();
             this.planes =  this._planesService.getConexion();   
-            this.actividad = this._planesService.getAllActividad();
-            console.log(this.actividad); 
+            this.actividad = this._planesService.getAllActividad();          
+            if(this.actividad.length > 0){
+                console.log("Existen eventos ");
+                this.isEvent = true;
+            }
             // console.log("Alex ees un locooo");
                //  imageCache(id_imagen, viewModel, url_imagen)
 
         });    
        
     } 
+
+    ngDoCheck(){
+        this.ngZone.run(()=>{
+            console.log("DoCheck");
+            console.log(this.actividad);
+            if(this.actividad.length > 0){
+                console.log("Existen eventos ");
+                this.isEvent = true;
+               
+            } else{
+                this.isEvent = false;
+            }
+    
+        });
+      
+        console.log(this.isEvent);
+    }
 
  
 
@@ -194,18 +216,23 @@ export class HomeComponent implements OnInit {
         
         var pullRefresh = args.object;
         setTimeout(function () {             
-           pullRefresh.refreshing = false;
-        }, 1000);
-        console.log("Entrando");
+           pullRefresh.refreshing = false;          
+        }, 1000);    
         this.ngZone.run(()=>{
             this.planes = [];
-            this.planes =  this._planesService.getConexion();  
-            this.actividad = this._planesService.getAllActividad(); 
-            let cache = this._planesService.getLike();
-            console.log(cache);
+            this.planes =  this._planesService.getConexion();             
+            let cache = this._planesService.getLike();           
             this.pressShared = "font-awesome ico-share"; 
+            // this.actividad = this._planesService.getAllActividad();          
+           
+         
+            
                                 
         });  
-       
+       console.log(this.isEvent);
+   }
+
+   IsEventA(){
+    this.actividad = this._planesService.getAllActividad(); 
    }
 }
