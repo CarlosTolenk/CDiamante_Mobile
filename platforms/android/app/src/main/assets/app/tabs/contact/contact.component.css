@@ -11,6 +11,36 @@
     /* display: block;    */
 }
 
+.office-santiago{
+    animation-name: opacity;
+    animation-duration: 1;
+}
+
+.office-sd{
+    animation-name: opacity;
+    animation-duration: 2;
+}
+
+.social-following{
+    animation-name: opacity;
+    animation-duration: 3;
+}
+
+@keyframes opacity {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+@keyframes heartbeat {
+    0% { transform: scale(1, 1); }
+    25% { transform: scale(1.2, 1.2); }
+    50% { transform: scale(1.3, 1.3); }
+    75% { transform: scale(1.2, 1.2); }
+    100% { transform: scale(1, 1); }
+ }
+ 
+
 .text-followed{
     color: red;
     text-align: center;

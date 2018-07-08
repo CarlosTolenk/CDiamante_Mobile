@@ -1,24 +1,24 @@
 
 <TabView (selectedIndexChanged)="onSelectedIndexChanged($event)"  class="tab-view" androidTabsPosition="bottom" tabTextColor="#DFE2E8" selectedTabTextColor="#FFFFFF" androidSelectedTabHighlightColor="#FFFFFF">
 
-    <page-router-outlet
+    <page-router-outlet pageTransition="slide"
         *tabItem="{iconSource: getIconSource('whitehome')}"
-        name="homeTab" >
+        name="homeTab"  >
     </page-router-outlet>
 
-    <page-router-outlet
+    <page-router-outlet  pageTransition="slide"
         *tabItem="{iconSource: getIconSource('television')}"
-        name="canalTab">
+        name="canalTab" >
     </page-router-outlet>
 
-    <page-router-outlet
+    <page-router-outlet pageTransition="slide"
         *tabItem="{iconSource: getIconSource('radio')}"
-        name="radioTab">
+        name="radioTab"  >
     </page-router-outlet>
 
-    <page-router-outlet
+    <page-router-outlet pageTransition="slide"
         *tabItem="{iconSource: getIconSource('chat')}"
-        name="contactTab">
+        name="contactTab"  >
     </page-router-outlet>    
 
 </TabView>

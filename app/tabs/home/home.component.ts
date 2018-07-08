@@ -179,6 +179,7 @@ export class HomeComponent implements OnInit, DoCheck {
         // console.log("ID:" + id + "Total:"+ t_shared);
         console.log(this._planesService.getConection());
         let connection = this._planesService.getConection();
+        this.pressShared = "font-awesome ico-share-press"; 
    
 
         if(connection == "No connection"){
@@ -234,5 +235,16 @@ export class HomeComponent implements OnInit, DoCheck {
 
    IsEventA(){
     this.actividad = this._planesService.getAllActividad(); 
+   }
+
+   flipDetail(id){
+    console.log("Ir a item");
+    this.router.navigate(["/canal"], {
+        transition: {
+            name: "flip",
+            duration: 2000,
+            curve: "linear"
+        }
+    });
    }
 }

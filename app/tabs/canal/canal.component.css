@@ -1,7 +1,12 @@
 .logo-tv{
     /* margin-left: 6%; */
     max-width: 50%;
-    margin-top: 5%;
+    margin-top: 5%;   
+}
+
+@keyframes translate {
+    from { transform: translate(0, 600); }
+    to { transform: translate(0, 0); }
 }
 
 .horario-tv{
@@ -35,6 +40,8 @@
 .btn-canal{
     font-size: 18px;
     padding-bottom: 15px;
+    animation-name: translate;
+    animation-duration: 1;
 }
 
 .btn{
