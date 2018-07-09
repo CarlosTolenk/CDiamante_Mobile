@@ -1,11 +1,4 @@
-.reproductor{
-    z-index: 20000;
-    background: crimson;
-    background-color: brown;
-    color: azure;
-}
-
 .stack{
-    z-index: 1;
+   
     background-color: black;
 }

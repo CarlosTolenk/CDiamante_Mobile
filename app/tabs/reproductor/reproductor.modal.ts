@@ -4,7 +4,7 @@ import { ActivityIndicator } from "ui/activity-indicator";
 
 // import * as utils from "utils/utils";
 import { Page } from "ui/page";
-import {setCurrentOrientation , orientationCleanup} from 'nativescript-screen-orientation';
+
 
 
 // import { registerElement } from "nativescript-angular/element-registry";
@@ -13,6 +13,8 @@ import {setCurrentOrientation , orientationCleanup} from 'nativescript-screen-or
 
 import {registerElement} from "nativescript-angular/element-registry";
 registerElement("exoplayer", () => require("nativescript-exoplayer").Video);
+
+
 
 
 @Component({
@@ -32,18 +34,11 @@ export class ReproductorComponent implements OnDestroy{
         page: Page,
         private params: ModalDialogParams
     ) {
-        this.isBusy = false;
+        this.isBusy = true;
         var orientation = require('nativescript-orientation');
         orientation.setOrientation("landscape");  
         // Use the component constructor to inject providers.
-        page.on("navigatedTo",function(){
-            setCurrentOrientation("landscape",function(){
-            console.log("portrait landscape");
-            });
-         });
-         page.on("navigatingFrom",function(){
-             orientationCleanup();
-         });       
+        
 
         //  this.frameworks = [
         //      "M",
@@ -60,6 +55,7 @@ export class ReproductorComponent implements OnDestroy{
     onBusyChanged(args) {
         let indicator = <ActivityIndicator>args.object;
         console.log("indicator.busy changed to: " + indicator.busy);
+        this.isBusy = false;
     }
 
     // public close(response: string){
